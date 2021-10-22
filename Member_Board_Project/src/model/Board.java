@@ -40,6 +40,7 @@ public class Board {
 		this.writer = writer;
 		this.date = date;
 		this.view = view;
+		this.replylist = new ArrayList<>(); 
 	}
 	
 	

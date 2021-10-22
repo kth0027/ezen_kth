@@ -11,6 +11,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+//import javax.mail.Authenticator;
+//import javax.mail.Message;
+//import javax.mail.PasswordAuthentication;
+//import javax.mail.Session;
+//import javax.mail.Transport;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
+
 import database.File;
 import model.Member;
 
@@ -95,6 +103,7 @@ public class MemberController {
 	public static boolean forgotpassword(String id, String email) {
 		for ( Member member : memberlist) {
 			if ( member.getId().equals(id) && member.getEmail().equals(email) ) {
+				sendmail(member.getEmail(), 2, member.getPassword() );
 				return true; /// 비밀번호 찾기 성공시
 			}
 		}

@@ -2,7 +2,6 @@ package database;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.Date;
 
 import controller.BoardController;
 import controller.MemberController;
@@ -14,10 +13,10 @@ public class File {
 		// 필드
 			// 1. 회원정보를 저정하는파일의 경로
 		private static String memberpath 
-		= "D:/JAVA(김태호)/Member_Board_Project/src/database/memberlist.txt";
+		= "C:/Users/505/git/ezen_kth/Member_Board_Project/src/database/memberlist.txt";
 		
 		private static String boardpath 
-		= "D:/JAVA(김태호)/Member_Board_Project/src/database/boardlist.txt";
+		= "C:/Users/505/git/ezen_kth/Member_Board_Project/src/database/boardlist.txt";
 		
 		
 		
@@ -137,7 +136,7 @@ public class File {
 					}
 
 				} catch (Exception e) {
-					System.out.println( " [알림] : 파일 불러오기 오류 발생 [ 관리자에게 문의 ] ");
+					System.out.println( " [알림] : 파일 불러오기 오류 발생 [ 관리자에게 문의 ] " + e );
 			} // t e
 
 			return false; // 로딩 실패 시	

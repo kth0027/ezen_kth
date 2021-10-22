@@ -10,7 +10,7 @@ import model.Board;
 import model.Member;
 import model.Reply;
 
-public class Application {
+public class Application2 {
 
 	// 0.설정 [ main 밖에 만드는 이유?? : ]
 	public static Scanner scanner = new Scanner(System.in);
