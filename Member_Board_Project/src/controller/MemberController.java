@@ -142,7 +142,7 @@ public class MemberController {
 		
 		// 0. 설정 [ 보내는 사람의 아이디, 비밀번호, 메일회사의 호스트 ]
 		String fromemail = "so_dream@naver.com";
-		String frompassword = "Xogh0858^^";
+		String frompassword = "블라인드";
 		
 		Properties properties = new Properties(); // 설정 컬렉션 map 프레임워크
 		properties.put("mail.smtp.host", "smtp.naver.com"); // host : 호스트 주소 
