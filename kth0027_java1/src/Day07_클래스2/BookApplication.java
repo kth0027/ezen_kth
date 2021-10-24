@@ -73,7 +73,7 @@ public class BookApplication { // 실행 클래스
 		while(true) {
 			System.out.println(" ---------- Menu ----------");
 			System.out.println(" 1.도서목록 | 2.대여 | 3.반납 | 4.로그아웃 ");
-			System.out.print("선택 : ");	int ch = scanner.nextInt();
+			System.out.print("선택 : ");	int ch = scanner.nextInt();book_add
 			if( ch == 1 ) { book.book_list(); }
 			if( ch == 2 ) { book.book_rental( loginid ); } 
 			if( ch == 3 ) { book.book_return( loginid ); }
