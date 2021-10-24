@@ -12,7 +12,11 @@ public interface 호텔예약 {
 	public void 파일처리();
 	
 	// 3. 디폴트 메소드
-	default void 실행 () {System.out.println(" 예약을 실행합니다 ");}
+	default void 실행 () {
+		
+		System.out.println(" 예약을 실행합니다 ");
+		
+		}
 	
 	// 4. 정적메소드
 	

@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+
 import controller.MemberController;
 import model.Member;
 
@@ -16,6 +17,8 @@ public class Application {
 
 		// 1. 프로그램 시작
 		mainmenu();
+
+		
 	}// M E
 	
 	/////////////////////////////////////////////////////////////////////////////////////////
