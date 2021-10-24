@@ -2,7 +2,7 @@ package Day08_1TF;
 
 import java.util.Scanner;
 
-import Day08.Member;
+import Day08_»ó¼Ó.Member;
 
 public class Shop {
 

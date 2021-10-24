@@ -1,6 +1,6 @@
 package Day09_1;
 
-import Day09.A;
+import Day09_»ó¼Ó.A;
 
 public class D extends A {
 	public D() {

@@ -2,8 +2,8 @@ package Day12_1_회원관리입력;
 
 import java.util.Scanner;
 
-import Day07.Book;
-import Day07.Member;
+import Day07_클래스2.Book;
+import Day07_클래스2.Member;
 
 public class Manager {
 	// 0. 입력객체 선언
