@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Hotel-Reservation-System-master/src"/>
+	<classpathentry kind="src" path="kth0027_java1/src"/>
+	<classpathentry kind="src" path="Member_Board_Project/src"/>
+	<classpathentry kind="src" path="Sample/src"/>
+	<classpathentry kind="src" path="shop"/>
+	<classpathentry kind="lib" path="kth0027_java1/bin/라이브러리/activation.jar"/>
+	<classpathentry kind="lib" path="kth0027_java1/bin/라이브러리/mail-1.4.7.jar"/>
+	<classpathentry kind="lib" path="Member_Board_Project/bin/라이브러리/activation.jar"/>
+	<classpathentry kind="lib" path="Member_Board_Project/bin/라이브러리/mail-1.4.7.jar"/>
+	<classpathentry kind="output" path="Hotel-Reservation-System-master/bin"/>
+</classpath>
