@@ -1,6 +1,8 @@
 package Final;
 
 import java.util.ArrayList;
+import Final.File;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,13 +10,18 @@ public class TestMain {
 
 	// 입력객체 생성
 	public static Scanner scanner = new Scanner(System.in);
+	
+	
 
 //   public static ArrayList<Member> members = new ArrayList<>(); // user list
 //   public static ArrayList<호텔Total> 호텔Totals = new ArrayList<>(); // 객실예약 list
 //   public static 호텔Total[] 호텔Totals2 = new 호텔Total[100]; // 객실예약리스트(배열)
 
 	public static void main(String[] args) {
-
+		
+		// 0.프로그램 파일 로딩
+		File.fileload(1); // 회원 파일 불러오기
+		
 		// 1. 인터페이스 생성
 		호텔예약 호텔예약;
 
@@ -197,6 +204,7 @@ public class TestMain {
 						String h_pw = scanner.next();
 						if (h_id.equals("admin")) {
 							System.out.println(" 관리자가 로그인하셨습니다. ");
+							
 
 						} else {
 							System.out.println(" 다시 입력해주세요.");

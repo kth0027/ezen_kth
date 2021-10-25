@@ -10,3 +10,4 @@ aaaa,aaaa,aaaa,aaaa@aaaa,0
 kth0000,1234,1234,1234@1234,0
 qweqwe,1234,qweqwe,qweqwe@qweqwe,0
 5555,5555,5555,so_dream@naver.com,0
+9876,9876,9876,12@12,0
