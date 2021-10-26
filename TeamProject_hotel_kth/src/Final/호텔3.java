@@ -54,7 +54,19 @@ public class 호텔3 extends 호텔Total {
 	}
 	@Override
 	public void 본인예약조회() {
-		System.out.println("호텔 3 본인예약조회");
+		Member member = new Member();
+		for (int i = 0; i < 3; i++) {
+			if (room[1][i] != 0) {
+				if (i == 0) {
+					System.out.println("*** 호텔2 / 스위트룸 예약 ***");
+				} else if (i == 1) {
+					System.out.println("*** 호텔2 / 디럭스룸 예약 ***");
+				} else if (i == 2) {
+					System.out.println("*** 호텔2 / 스탠다드룸 예약 ***");
+				}
+				
+			}
+		}
 	}
 	@Override
 	public void 전체예약현황() {

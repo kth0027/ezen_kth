@@ -1,4 +1,4 @@
-package Final;
+package Final2;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,6 @@ public class MemberController {
 	private static final Object h_id = null;
 	// 1. 필드 [ 모든 회원을 담고 있는 객체 = 컬렉션 프레임워크 vs 배열 ]
 	public static ArrayList<Member> memberlist = new ArrayList<>();
-	public static ArrayList<Member> reservermemberlist = new ArrayList<>();
 
 	// 2. 메소드
 
@@ -19,6 +18,10 @@ public class MemberController {
 		// 1. 유효성검사
 		if (member.getH_id().length() < 4) {
 			System.out.println(" [알림] : ID는 4글자이상 가능 합니다");
+			return false;	
+		}
+		if(member.getH_id().equals("admin")) {
+			System.out.println("사용할 수 없는 아이디입니다");
 			return false;
 		}
 		if (member.getH_pw().length() != 4) {
@@ -33,19 +36,18 @@ public class MemberController {
 		// 2. ID 중복체크 [ 리스트내 동일한 아이디가 있는지 확인 ]
 		for (Member temp : memberlist) {
 			if (temp.getH_id().equals(member.getH_id())) {
-				System.out.println(" [알림] : 이미 사용중인 아이디 입니다");
+				System.out.println(" [알림] : 이미 사용 중인 아이디 입니다");
 				return false;
 			}
 		}
 
 		// 3. 리스트 저장
 		memberlist.add(member);
-		reservememberlist.add(reservemember);
+
 
 		// 4. 파일 처리
-			File.filesave(1);
-			File.filesave(2);
-		 
+		File.filesave(1);
+
 		// File file = new File();
 		// file.filesave(1);
 
@@ -57,8 +59,13 @@ public class MemberController {
 	
 	// 2. 로그인 
 	public static boolean login( String h_id , String h_pw ) {
+		
 		for( Member member : memberlist ) {
-			if( member.getH_id().equals(h_id) && 
+			if(h_id.equals("admin")) {
+				System.out.println("사용할 수 없는 아이디입니다");
+				return false;
+			}
+			else if( member.getH_id().equals(h_id) && 
 					member.getH_pw().equals(h_pw) ) {
 				return true; // 로그인 성공시 
 			}
@@ -66,3 +73,10 @@ public class MemberController {
 		return false; // 로그인 실패시
 	}
 }
+
+
+
+
+
+
+

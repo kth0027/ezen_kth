@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import Final.MemberController;
+import controller.BoardController;
+import model.Board;
 import Final.Member;
 
 public class File {
@@ -11,6 +13,10 @@ public class File {
 		// 1. 회원정보를 저장하는 파일의 경로 
 		private static String memberpath = 
 				"C:/Users/505/git/ezen_kth/TeamProject_hotel_kth/src/Final/memberlist.txt";
+		
+		// 2. 예약정보를 저장하는 파일의 경로 
+				private static String reservememberpath = 
+						"C:/Users/505/git/ezen_kth/TeamProject_hotel_kth/src/Final/reservememberlist.txt";
 		
 		// 2. 
 		
@@ -36,7 +42,17 @@ public class File {
 					
 					return true; // 파일처리 성공
 				}
-				if( type == 2 ) {}
+				if( type == 2 ) { // 예약회원저장
+					fileOutputStream = new FileOutputStream( reservememberpath );
+					for( Member reservemember : MemberController.reservememberlist ) {
+						String outstring = reservemember.getH_id()+","+reservemember.getH_pw()+","+
+								reservemember.getH_name()+","+reservemember.getH_phone()+"\n";
+						fileOutputStream.write( outstring.getBytes() );
+					}
+					fileOutputStream.flush();
+					fileOutputStream.close(); 
+					return true;
+					}
 				if( type == 3 ) {}
 					
 			} catch (Exception e) {

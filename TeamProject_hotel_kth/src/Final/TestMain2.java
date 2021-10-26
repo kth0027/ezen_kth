@@ -6,23 +6,18 @@ import Final.File;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TestMain {
+public class TestMain2 {
 
 	// 입력객체 생성
 	public static Scanner scanner = new Scanner(System.in);
-	
-	
 
-//   public static ArrayList<Member> members = new ArrayList<>(); // user list
-//   public static ArrayList<호텔Total> 호텔Totals = new ArrayList<>(); // 객실예약 list
-//   public static 호텔Total[] 호텔Totals2 = new 호텔Total[100]; // 객실예약리스트(배열)
+	// public static ArrayList<Member> members = new ArrayList<>(); // user list
+	// public static ArrayList<호텔Total> 호텔Totals = new ArrayList<>(); // 객실예약 list
+	// public static 호텔Total[] 호텔Totals2 = new 호텔Total[100]; // 객실예약리스트(배열)
 
 	public static void main(String[] args) {
-		
-		// 0.프로그램 파일 로딩
-		File.fileload(1); // 회원 파일 불러오기
-		File.fileload(2); // 회원 파일 불러오기
-		
+		File.fileload(1);
+
 		// 1. 인터페이스 생성
 		호텔예약 호텔예약;
 
@@ -54,16 +49,13 @@ public class TestMain {
 					} else {
 						System.err.println(" [알림] : 회원가입 실패 ");
 					}
-					System.out.println("+++++++++++++++++++++++++++++++++++++++");
-
-					System.out.println("회원가입 완료");
 
 				} else if (ch == 2) {
 					System.out.println("++++++++++++ 로그인 페이지 ++++++++++++");
 					System.out.println("\t1.회원 \t2.관리자");
 					System.out.print("선택 : ");
-					int ch4 = scanner.nextInt();
-					if (ch4 == 1) { // 회원
+					int ch1 = scanner.nextInt();
+					if (ch1 == 1) { // 회원
 						System.out.print(" Id : ");
 						String h_id = scanner.next();
 						System.out.print(" Password : ");
@@ -74,7 +66,7 @@ public class TestMain {
 							System.err.println(" [알림] : 로그인 성공 ");
 
 							while (true) {
-								System.out.println("1.예약등록 2.예약취소 3.본인예약조회 4.전체예약조회 5.객실세부정보");
+								System.out.println("1.예약등록 2.예약취소 3.본인예약조회 4.전체예약조회 5.객실세부정보 6.뒤로가기");
 								System.out.print(">>> 선택 : ");
 								int ch2 = scanner.nextInt();
 
@@ -90,30 +82,32 @@ public class TestMain {
 									if (hotelch == 1) {
 										호텔예약 = new 호텔1();
 										if (roomch == 1) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										}
+
+										호텔예약.예약등록(hotelch, roomch, h_id);
+
 									} else if (hotelch == 2) {
 										호텔예약 = new 호텔2();
-
 										if (roomch == 1) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										}
 									} else if (hotelch == 3) {
 										호텔예약 = new 호텔3();
 										if (roomch == 1) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약등록(hotelch, roomch);
+											호텔예약.예약등록(hotelch, roomch, h_id);
 										}
 									}
 
@@ -128,41 +122,42 @@ public class TestMain {
 									if (hotelch == 1) {
 										호텔예약 = new 호텔1();
 										if (roomch == 1) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										}
 									} else if (hotelch == 2) {
 										호텔예약 = new 호텔2();
 										if (roomch == 1) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										}
 									} else if (hotelch == 3) {
 										호텔예약 = new 호텔3();
 										if (roomch == 1) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 2) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										} else if (roomch == 3) {
-											호텔예약.예약취소(hotelch, roomch);
+											호텔예약.예약취소(hotelch, roomch, h_id);
 										}
 									}
-
 								} else if (ch2 == 3) { // 본인예약조회
 									System.out.println("---------------------------------");
 									System.out.println("\t본인예약현황조회");
 									System.out.println("---------------------------------");
-									호텔예약 = new 호텔1();	호텔예약.본인예약조회();
-									호텔예약 = new 호텔2();	호텔예약.본인예약조회();
-									호텔예약 = new 호텔3();	호텔예약.본인예약조회();
+									호텔예약 = new 호텔1();
+									호텔예약.본인예약조회();
+									호텔예약 = new 호텔2();
+									호텔예약.본인예약조회();
+									호텔예약 = new 호텔3();
+									호텔예약.본인예약조회();
 									System.out.println("---------------------------------");
-
 								} else if (ch2 == 4) { // 전체예약현황조회
 									System.out.println("---------------------------------");
 									System.out.println("\t전체예약현황조회");
@@ -170,63 +165,89 @@ public class TestMain {
 									System.out.println("호텔\t스위트룸\t디럭스룸\t스탠다드룸");
 									System.out.println("---------------------------------");
 									호텔예약 = new 호텔1();
-									호텔예약.전체예약현황();
+									호텔예약.전체예약현황(h_id);
 									호텔예약 = new 호텔2();
-									호텔예약.전체예약현황();
+									호텔예약.전체예약현황(h_id);
 									호텔예약 = new 호텔3();
-									호텔예약.전체예약현황();
+									호텔예약.전체예약현황(h_id);
 									System.out.println("---------------------------------");
-								} else if (ch2 == 5) {
+								} else if (ch2 == 5) { // 방정보
 									System.out.println("방정보 : 1.스탠다드 2.디럭스 3.스위트");
-
 									System.out.println(" 선택 : ");
-									int ch5 = scanner.nextInt();
+									int ch3 = scanner.nextInt();
 
-									if (ch5 == 1) {
-										Final.호텔예약.스탠다드();
-									} else if (ch5 == 2) {
-										Final.호텔예약.디럭스();
-									} else if (ch5 == 3) {
-										Final.호텔예약.스위트();
+									if (ch3 == 1) {
+										신우현.호텔예약.스탠다드();
+									} else if (ch3 == 2) {
+										신우현.호텔예약.디럭스();
+									} else if (ch3 == 3) {
+										신우현.호텔예약.스위트();
 									} else {
 										System.out.println("알 수 없는 행동");
+										ch3 = scanner.nextInt();
 									}
+								} else if (ch2 == 6) {
+									break;
 
 								} else {
 									System.out.println("알 수 없는 행동");
+									ch2 = scanner.nextInt();
 								}
 
 							}
 
 						} else {
-							System.err.println(" [알림] : 로그인 실패 ( 동일한 회원정보가 없습니다 ) ");
+							System.err.println(" 알 수 없는 행동 ");
+							break;
 						}
-					} else if (ch4 == 2) { // 관리자
+					} else if (ch1 == 2) { // 관리자
 						System.out.print(" Id : ");
 						String h_id = scanner.next();
 						System.out.print(" Password : ");
 						String h_pw = scanner.next();
 						if (h_id.equals("admin")) {
 							System.out.println(" 관리자가 로그인하셨습니다. ");
-							
+							while (true) {
+								System.out.println("1.예약현황 2.회원정보 3.뒤로가기");
+								System.out.print(">>> 선택 : ");
+								int ch3 = scanner.nextInt();
+								if (ch3 == 1) {
+									System.out.println("호텔\t스위트룸\t디럭스룸\t스탠다드룸");
+									호텔예약 = new 호텔1();
+									호텔예약.전체예약현황(h_id);
+									호텔예약 = new 호텔2();
+									호텔예약.전체예약현황(h_id);
+									호텔예약 = new 호텔3();
+									호텔예약.전체예약현황(h_id);
 
-						} else {
-							System.out.println(" 다시 입력해주세요.");
-							ch = scanner.nextInt();
+								} else if (ch3 == 2) {
+									호텔예약 = new 호텔1();
+									호텔예약.본인예약조회();
+									호텔예약 = new 호텔2();
+									호텔예약.본인예약조회();
+									호텔예약 = new 호텔3();
+									호텔예약.본인예약조회();
+								} else if (ch3 == 3) {
+									break;
+
+								} else {
+									System.out.println(" 다시 입력해주세요.");
+									ch3 = scanner.nextInt();
+								}
+							}
+
 						}
 
+					} else {
+						System.out.println("종료");
+						break;
 					}
-
-				} else {
-					System.out.println("종료");
-					break;
 				}
 
 			} catch (Exception e) {
 				System.err.println(" [알림] : 메뉴 페이지 오류 [ 관리자문의 ] ");
-				scanner = new Scanner(System.in); // 입력객체 초기화
-
-			}
+				scanner = new Scanner(System.in);
+			} // 입력객체 초기화
 
 		}
 
