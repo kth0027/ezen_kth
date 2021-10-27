@@ -1,10 +1,10 @@
-package Hotemsample1;
+package Hotemsample2;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HotelTestSw2 {
+public class HotelTestSw {
 	public static void main(String[] args){
 		
 		int join; //°´½Ç ÀÔ·Â °ª
