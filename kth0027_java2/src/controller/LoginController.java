@@ -81,7 +81,14 @@ public class LoginController implements Initializable {
 
     @FXML
     void login(ActionEvent event) {
-
+    	
+    	// txt 입력된 아이디와 패스워드 회원과 동일하면 로그인 성공
+    	if ( txtid.getText().equals("admin")&& txtpassword.getText().equals("1234") ) {
+    		// 아이디와 패스워드가 동일하며 로그인 성공
+    		lbconfirm.setText("로그인성공");
+    	} else {
+    		lbconfirm.setText(" 로그인 실패 : 동일한 회원 정보가 없습니다 ");
+    	}
     }
 
     @FXML
