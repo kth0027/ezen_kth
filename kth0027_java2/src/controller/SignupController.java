@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import Domain.Member;
+import dao.MemberDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,20 +30,28 @@ public class SignupController implements Initializable {
 	private Label btnback;
 
 	@FXML
+	private Button btnsignup;
+
+	@FXML
+	private Label lblconfirm;
+	
+	@FXML
 	private AnchorPane signuppane;
 
 	@FXML
-	void back(MouseEvent event) {
-		// !! 새로운 객체 선언시에는 새로운 메모리
+	private TextField txtemail;
 
-		// 1. 메소드 호출방법 (login > 객체화 해서 불러오자)
+	@FXML
+	private TextField txtid;
 
-		// LoginController loginController = new LoginController();
+	@FXML
+	private TextField txtname;
 
-		// 동일한 메모리 사용하기 위해 this 키워드를 사용한 객체 호출
-		LoginController.getinstance().loadpage("login");
+	@FXML
+	private PasswordField txtpassword;
 
-	}
+	@FXML
+	private PasswordField txtpasswordconfirm;
 	
 	@FXML
 	void signup(ActionEvent event) {
@@ -76,53 +85,35 @@ public class SignupController implements Initializable {
 			
 			// 2. 중복체크
 			
-			// 3. 객체화
-//			Member member = new Member ( txtid.getText(), txtpassword.getText() , txtname.getText(), txtemail.getText() );
+	    	// 3. 객체화 
+	    	Member member = new Member(txtid.getText(), txtpassword.getText(),
+	    								txtname.getText(), txtemail.getText() );
 			
-			// 4. 파일 혹은 DB처리
-
-			lblconfirm.setText("가입해주셔서 감사합니다");
-			// 5. 메세지창 띄오고 페이지 전환
-			
-			Alert alert = new Alert ( AlertType.INFORMATION); // 1. 메세지 작성
-			alert.setHeaderText(" 회원가입 성공 "); // 2. 메세지 내용
-			alert.setContentText(" Nike Community 가입을 축하드립니다 [ 포인트 1000원 지급 ] " ); // 3. 메세지 제목
-			alert.setTitle("알림");
-			alert.showAndWait(); // 4. 메세지를 띄우고 버튼입력시기까지 대기
-			LoginController.getinstance().loadpage("login"); // 로그인 fxml 파일로 이동
-			
-				
-			
-
-			
+			// 4. 파일 혹은 DB처리 ★★★★★★★★★★★★★★ sql memberdao 작성후
+			boolean result = MemberDao.getMemberDao().signup(member); // DB 메소드 호출
+			if (result) { // DB 성공시
+				lblconfirm.setText( " 가입해주셔서 감사합니다 ");
+				// 5. 메세지창 띄오고 페이지 전환
+				Alert alert = new Alert( AlertType.INFORMATION ); // 1. 메시지 객체 생성 
+	    		alert.setContentText("  회원가입 성공  "); // 2. 메시지 내용 
+	    		alert.setHeaderText(" Nike community 가입을 축하합니다. * 포인트 1000 지급 *"); // 3. 메시지 제목 
+	    		alert.setTitle("알림");
+	    		alert.showAndWait(); // 4. 메시지를 띄우고 버튼 입력시까지 대기 
+	    		LoginController.getinstance().loadpage("login"); // 로그인fxml 파일로 이동
+ 			} else { // DB 실패시
+ 				lblconfirm.setText("회원가입 실패 [ 관리자에게문의 : DB 오류 ]");
+ 			}			
 	}
-			
-			
-		
-
-
-
-
+	
 	@FXML
-	private Button btnsignup;
+	void back(MouseEvent event) {
+		// !! 새로운 객체 선언시에는 새로운 메모리
+	// LoginController loginController = new LoginController();
 
-	@FXML
-	private Label lblconfirm;
+		// 동일한 메모리 사용하기 위해 this 키워드를 사용한 객체 호출
+		LoginController.getinstance().loadpage("login");
 
-	@FXML
-	private TextField txtemail;
-
-	@FXML
-	private TextField txtid;
-
-	@FXML
-	private TextField txtname;
-
-	@FXML
-	private PasswordField txtpassword;
-
-	@FXML
-	private PasswordField txtpasswordconfirm;
+	}
 
 	
 

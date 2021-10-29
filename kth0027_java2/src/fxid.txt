@@ -32,33 +32,24 @@
 			
 			
 			
-아이디 찾기 페이지.fxml [ 이름, 이메일 ]
-		이름 입력창
-		이메일 입력창
-		찾기버튼
-		뒤로가기
-		
-비밀번호 찾기 페이지.fxml [ 아이디, 이메일동일 ]
-		아이디 입력창
-		이메일 입력창
-		찾기버튼
-		뒤로가기
-		
-		
-DTO [ 데이터 이동 객체 ]
-
-DVO
-
-Database : 데이터베이스
-	목적 : 데이터 저장, 관리
+아이디찾기페이지.fxml
+	AnchorPane : findidpane
+	Lable뒤로가기 : btnback		On mouse clicked : back
+	이름입력창 : txtname
+	이메일입력창 : txtemail
+	아이디찾기버튼 : btnfindid		On Action : findid
+	경고메시지 : lblconfirm
 	
-	서버 : 데이터를 가지고 있는 컴퓨터
-	
-	DB[데이터 테이블] <--------- DBMS [DB관리시스템] <----- DBA [DB관리자]
-									*MYSQL
-									
-ip : 집주소									
+	비밀번호찾기페이지.fxml
+	AnchorPane : findpasswordpane
+	Lable뒤로가기 : btnback		On mouse clicked : back
+	아이디입력창 : txtid
+	이메일입력창 : txtemail
+	비밀번호찾기버튼 : btnfindpassword		On Action : findpassword
+	경고메시지 : lblconfirm
 		
+		
+
 		
 
 

@@ -15,13 +15,13 @@ public class Appstart extends Application {
 		// 1. [씬빌더에서 작업한파일]fxml 불러오기 
 		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
 //		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/signup.fxml"));
-//		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/아이디찾기.fxml"));
-//		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/비밀번호찾기.fxml"));
+//		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/findid.fxml"));
+//		Parent parent = FXMLLoader.load(getClass().getResource("/fxml/findpassword.fxml"));
 
 		Scene scene = new Scene(parent);	// 2. parent -> scene
 		stage.setScene(scene); 	// 3. scene -> stage 씬을 스테이지에 넣기
 
-			stage.setResizable(false); // 크기고정
+			stage.setResizable(false); // 스테이지 크기 고정
 			stage.setTitle("Nike"); // 스테이지 이름
 
 			// 스테이지 아이콘
