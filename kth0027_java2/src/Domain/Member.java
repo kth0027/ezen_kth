@@ -100,7 +100,7 @@ public class Member {
 								// 받는사람 		// 내용 		// 메일 타입
 		// 보내는사람 정보
 		String fromemail = "so_dream@naver.com";
-		String frompassword = "비밀번호"; // 주의 사용 후 암호처리
+		String frompassword = "Xogh0858^^"; // 주의 사용 후 암호처리
 		
 		// 설정
 		Properties properties = new Properties();
