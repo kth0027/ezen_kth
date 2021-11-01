@@ -1,4 +1,4 @@
-package App;
+package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +20,6 @@ public class Appstart extends Application {
 
 		Scene scene = new Scene(parent);	// 2. parent -> scene
 		stage.setScene(scene); 	// 3. scene -> stage 씬을 스테이지에 넣기
-
 			stage.setResizable(false); // 스테이지 크기 고정
 			stage.setTitle("Nike"); // 스테이지 이름
 

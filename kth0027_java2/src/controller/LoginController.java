@@ -9,13 +9,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 										// 초기화 관련된 메소드 사용
@@ -32,6 +35,11 @@ public class LoginController implements Initializable {
 		// 3. private instance 반환
 	public static LoginController getinstance() {
 		return instance;
+	}
+	
+		// 4. 로그인 시 입력된 아이디 반환 ★★★★★★★★★★
+	public String getid() {
+		return txtid.getText();
 	}
 	
 	// fxml 실행 시 초기값 설정 메소드
@@ -89,6 +97,34 @@ public class LoginController implements Initializable {
  
     	if( result ) {
     		lblconfirm.setText(" 로그인 성공 ");
+    		
+    		// 기존 스테이지 끄기 ★★★★★★★★
+    		btnlogin.getScene().getWindow().hide();  // 해당 버튼의 씬 모두 닫기
+    		
+    		// 메인페이지 스테이지 실행 ★★★★★★★★
+    		Stage stage = new Stage();
+    		try {
+    			Parent parent = FXMLLoader.load( getClass().getResource("/fxml/mainpage.fxml"));
+    			Scene scene = new Scene( parent );
+    			stage.setScene(scene);
+    			
+    				//// 아이콘 표시 설정 ///
+	    			stage.setResizable(false); // 스테이지 크기 고정 
+	    			stage.setTitle("Nike"); // 스테이지 이름 
+	    			// 스테이지 아이콘 
+	    				// 1. 이미지 불러오기
+	    				Image image = new Image("C:/Users/505/git/ezen_kth/kth0027_java2/src/fxml/stageicon.png");
+	    				stage.getIcons().add(image);
+
+	    				
+	    				
+    			stage.show();
+    		}
+    		catch (Exception e) {
+				// TODO: handle exception
+			}
+    		
+    		
     	}else {
     		lblconfirm.setText(" 로그인 실패 : 동일한 회원정보가 없습니다");
     	}
