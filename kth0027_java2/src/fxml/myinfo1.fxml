@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MyinfoController">
    <children>
       <Text layoutX="26.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My">
          <font>
@@ -25,17 +24,19 @@
       <Line endX="-100.0" endY="490.0" layoutX="125.0" layoutY="-316.0" startX="80.0" startY="490.0" />
       <Line endX="-100.0" endY="490.0" layoutX="314.0" layoutY="110.0" startX="-100.0" startY="-91.0" />
       <Label layoutX="40.0" layoutY="270.0" prefHeight="14.0" prefWidth="45.0" text="ID" />
-      <Label layoutX="96.0" layoutY="270.0" prefHeight="14.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="id" />
+      <Label fx:id="lblid" layoutX="96.0" layoutY="270.0" prefHeight="14.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="id" />
       <Label layoutX="40.0" layoutY="299.0" prefWidth="45.0" text="NAME" />
-      <Label layoutX="96.0" layoutY="299.0" prefHeight="14.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="name" />
+      <Label fx:id="lblname" layoutX="96.0" layoutY="299.0" prefHeight="14.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="name" />
       <Label layoutX="40.0" layoutY="332.0" prefWidth="45.0" text="E-MAIL" />
-      <Label layoutX="96.0" layoutY="332.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="email" />
-      <Button layoutX="38.0" layoutY="449.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="UPDATE" textFill="WHITE">
+      <Label fx:id="lblemail" layoutX="96.0" layoutY="332.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="email" />
+      <Label layoutX="40.0" layoutY="362.0" prefWidth="45.0" text="Point" textFill="#001eff" />
+      <Label fx:id="lblpoint" layoutX="96.0" layoutY="362.0" prefWidth="100.0" style="-fx-background-color: ##00ff0000;" text="point" textFill="#0044ff" />
+      <Button fx:id="btnupdate" layoutX="38.0" layoutY="449.0" mnemonicParsing="false" onAction="#update" prefHeight="22.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="38.0" layoutY="496.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="DELETE" textFill="WHITE">
+      <Button fx:id="btndelete" layoutX="38.0" layoutY="496.0" mnemonicParsing="false" onAction="#delete" prefHeight="22.0" prefWidth="150.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
