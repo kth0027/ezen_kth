@@ -29,6 +29,7 @@ public class MainpageController implements Initializable {
 		
 		////////////////////////////////////////////////////////
 		loadpage("home"); // mainpage 실행 가운데 home.fxml 배치
+		 
 		
 	}
 	
@@ -104,7 +105,7 @@ public class MainpageController implements Initializable {
 
     @FXML
     void community(ActionEvent event) {
-    	loadpage("community");
+    	loadpage("boardlist");
     }
 
     @FXML
