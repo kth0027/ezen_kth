@@ -154,7 +154,7 @@ public class MainpageController implements Initializable {
 
     @FXML
     void myinfo(ActionEvent event) {
-    	loadpage("myinfo1");
+    	loadpage("myinfo");
     	
     	
     }
