@@ -35,7 +35,8 @@ public class Appstart extends Application {
 
 			// 스테이지 아이콘
 			// - 1. 이미지 불러오기
-			Image image = new Image("C:/Users/505/git/ezen_kth/kth0027_java2/src/fxml/stageicon.png");
+//			Image image = new Image("C:/Users/505/git/ezen_kth/kth0027_java2/src/fxml/stageicon.png");
+			Image image = new Image("C:/Users/pc/git/ezen_kth/kth0027_java2/src/fxml/stageicon.png"); // 집 PC
 			stage.getIcons().add(image);
 
 		stage.show(); 	// scene -> stage 스테이지 실행
