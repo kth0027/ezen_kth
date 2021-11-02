@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BoardwriteController" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BoardwriteController">
    <children>
       <Text layoutX="20.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community">
          <font>
@@ -24,7 +23,13 @@
       <Line endX="-100.0" endY="490.0" layoutX="115.0" layoutY="-380.0" startX="80.0" startY="490.0" />
       <TextField fx:id="txttitle" layoutX="65.0" layoutY="140.0" prefHeight="38.0" prefWidth="630.0" promptText="제목입력창" />
       <TextArea fx:id="txtcontents" layoutX="65.0" layoutY="190.0" prefHeight="318.0" prefWidth="630.0" promptText="내용입력창" />
-      <Button fx:id="btnwrite" layoutX="254.0" layoutY="522.0" mnemonicParsing="false" onAction="#write" prefHeight="22.0" prefWidth="250.0" style="-fx-background-color: #000000;" text="REGISTER" textFill="WHITE" />
-      <Button fx:id="btncancel" layoutX="254.0" layoutY="558.0" mnemonicParsing="false" onAction="#cancel" prefHeight="22.0" prefWidth="250.0" style="-fx-background-color: #000000;" text="CANCEL" textFill="WHITE" />
+      <Button fx:id="btnwrite" layoutX="254.0" layoutY="522.0" mnemonicParsing="false" onAction="#write" prefHeight="22.0" prefWidth="250.0" style="-fx-background-color: #000000;" text="REGISTER" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font></Button>
+      <Button fx:id="btncancel" layoutX="254.0" layoutY="558.0" mnemonicParsing="false" onAction="#cancel" prefHeight="22.0" prefWidth="250.0" style="-fx-background-color: #000000;" text="CANCEL" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

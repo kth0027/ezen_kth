@@ -5,16 +5,14 @@ module kth0027_java2 {
 	requires mail; 			// mail 관련 라이브러리
 	requires activation; 	// mail 관련 라이브러리
 	
-	opens application to javafx.graphics, javafx.fxml;
-	
 	opens Day01 to javafx.graphics, javafx.fxml;
 	opens Day02 to javafx.graphics, javafx.fxml;
 	
 	opens app to javafx.graphics, javafx.fxml;
-	
 	opens controller to javafx.graphics, javafx.fxml; 
 	opens dao to java.sql;
-	opens Domain to mail , activation;
-}
+	opens domain to mail , activation , javafx.base;
+									// view 출력하기위해 넣음
+}	
 
 
