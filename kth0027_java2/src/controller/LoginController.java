@@ -97,6 +97,8 @@ public class LoginController implements Initializable {
  
     	if( result ) {
     		lblconfirm.setText(" 로그인 성공 ");
+    		// [21.11.02.화:로그인 성공시 포인트 + 10] 
+    		MemberDao.getMemberDao().pointupdate(txtid.getText(), 10);
     		
     		// 기존 스테이지 끄기 ★★★★★★★★
     		btnlogin.getScene().getWindow().hide();  // 해당 버튼의 씬 모두 닫기

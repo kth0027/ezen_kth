@@ -35,7 +35,7 @@ public class MyinfoController implements Initializable{
 		lblid.setText( member.getM_id() );
 		lblname.setText( member.getM_name() );
 		lblemail.setText( member.getM_email() );
-		lblpoint.setText( member.getM_point() + "Á¡" );
+		lblpoint.setText( member.getM_point() + "" );
 		
 		
 	}

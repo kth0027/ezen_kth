@@ -1,4 +1,5 @@
-/app/
-/controller/
-/fxml/
 /dao/
+/controller/
+/app/
+/application/
+/fxml/
