@@ -1,4 +1,4 @@
-package Study01;
+package 로또판별기;
 
 import java.util.Scanner;
 

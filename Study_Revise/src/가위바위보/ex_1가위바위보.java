@@ -1,4 +1,4 @@
-package Study01;
+package 가위바위보;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MyinfoupdateController">
+   <children>
+      <Text layoutX="26.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My">
+         <font>
+            <Font name="Berlin Sans FB" size="47.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="30.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information">
+         <font>
+            <Font name="Berlin Sans FB" size="35.0" />
+         </font>
+      </Text>
+      <Text fill="#3a13ff" layoutX="29.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="update">
+         <font>
+            <Font name="Berlin Sans FB" size="35.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="490.0" layoutX="125.0" layoutY="-316.0" startX="80.0" startY="490.0" />
+      <Line endX="-100.0" endY="490.0" layoutX="314.0" layoutY="110.0" startX="-100.0" startY="-91.0" />
+      <Label layoutX="335.0" layoutY="275.0" prefHeight="14.0" prefWidth="45.0" text="ID" />
+      <Label fx:id="lblid" alignment="CENTER" layoutX="391.0" layoutY="275.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-color: #00ff0000;" text="id" />
+      <Label layoutX="335.0" layoutY="304.0" prefWidth="45.0" text="NAME" />
+      <TextField fx:id="txtname" layoutX="391.0" layoutY="300.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-color: #D8F6CE;" />
+      <Label layoutX="335.0" layoutY="337.0" prefWidth="45.0" text="E-MAIL" />
+      <TextField fx:id="txtemail" layoutX="391.0" layoutY="333.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-color: #D8F6CE;" />
+      <Label layoutX="335.0" layoutY="367.0" prefWidth="45.0" text="Point" textFill="#001eff" />
+      <Label fx:id="lblpoint" alignment="CENTER" layoutX="391.0" layoutY="367.0" prefHeight="15.0" prefWidth="200.0" style="-fx-background-color: #00ff0000;" text="point" textFill="#0044ff" />
+      <Button fx:id="btnupdate" layoutX="268.0" layoutY="451.0" mnemonicParsing="false" onAction="#update" prefHeight="32.0" prefWidth="374.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btncancel" layoutX="268.0" layoutY="498.0" mnemonicParsing="false" onAction="#cancel" prefHeight="32.0" prefWidth="374.0" style="-fx-background-color: #000000; -fx-ba: 0.5;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
