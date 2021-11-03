@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import dao.BoardDao;
 import domain.Board;
+import domain.Reply;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,8 +18,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class BoaderviewController implements Initializable {
 
@@ -26,6 +30,9 @@ public class BoaderviewController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		// 댓글 리스트 로드 21.11.03-5 
+		replytableload();
 
 
 
@@ -50,9 +57,30 @@ public class BoaderviewController implements Initializable {
 			btndelete.setVisible(false);
 			btnupdate.setVisible(false);
 		}
-	}
 
+		//21.11.03-3
+//		txttitle.setDisable(false);
+//		txtcontents.setDisable(false);
+//		txttitle.setEditable(false);
+//		txtcontents.setEditable(false);
+		
+	}
 	
+	// 21.11.03-1
+
+    @FXML
+    private TextArea txtreply;
+    
+    @FXML
+    private Label lbldate;
+
+    @FXML
+    private Label lblview;
+
+    @FXML
+    private Label lblwriter;
+    
+    
 	@FXML
 	private Button btncancel;
 
@@ -65,8 +93,30 @@ public class BoaderviewController implements Initializable {
 	@FXML
 	private Button btnupdate;
 
-	@FXML
-	private TableColumn replylist;
+	@FXML // 21.11.03-5
+	private TableView<Reply> replylist;
+	
+	// 테이블 값 로드 메소드 [ 새로 고침을 하기위해서 메소드화 ] 
+    public void replytableload() {
+    	
+    	ObservableList< Reply > replys = BoardDao.getboardDao().replylist( board.getB_no() );
+    	
+    	TableColumn tc = replylist.getColumns().get(0); // 테이블내 첫번째 열 
+    	tc.setCellValueFactory( new PropertyValueFactory<>("r_no")); // 리스트내 댓글번호
+    	
+    	tc = replylist.getColumns().get(1); // 테이블내 두번째 열 
+    	tc.setCellValueFactory( new PropertyValueFactory<>("r_write")); // 리스트내 댓글작성자 
+    	
+    	tc = replylist.getColumns().get(2); // 테이블내 세번째 열 
+    	tc.setCellValueFactory( new PropertyValueFactory<>("r_contents"));  // 리스트내 댓글내용
+    	
+    	
+    	tc = replylist.getColumns().get(3); // 테이블내 네번째 열 
+    	tc.setCellValueFactory( new PropertyValueFactory<>("r_date"));   // 리스트내 댓글작성일 
+    	
+    	replylist.setItems(replys);
+    }
+	
 
 	@FXML
 	private TextArea txtcontents;
@@ -79,7 +129,7 @@ public class BoaderviewController implements Initializable {
 		MainpageController.getinstance().loadpage("boardlist");
 	}
 
-	@FXML // 21.11.03-3
+	@FXML // 21.11.03-3 삭제
 	void delete(ActionEvent event) {
 		
 		Alert alert = new Alert (AlertType.CONFIRMATION);
@@ -93,24 +143,52 @@ public class BoaderviewController implements Initializable {
 		}
 	}
 
-	@FXML
-	void replaywrite(ActionEvent event) {
+	@FXML // 21.11.03-5 리플
+    void replywrite(ActionEvent event) {
+    	Reply reply = new Reply( 
+    			txtreply.getText() , 
+    			MainpageController.getinstance().getloginid()  , 
+    			board.getB_no()  
+    			); 
+    	boolean result =  BoardDao.getboardDao().replywrite( reply );
+    	if( result  ) { 
+    		Alert alert = new Alert( AlertType.INFORMATION); 
+    		alert.setHeaderText("댓글 등록");
+    		alert.showAndWait();
+    		// 댓글 리스트 로드
+    		replytableload();
+    		// 댓글 입력창 초기화
+    		txtreply.setText("");
+    	}
+    }
 
-	}
-
-	@FXML
+	boolean upcheck = true; // 업데이트 버튼 스위치 변수 21.11.03-4 수정 ★★★★★★★★★ 
+	@FXML // 21.11.03-4 수정
 	void update(ActionEvent event) {
+		
+		Alert alert = new Alert (AlertType.CONFIRMATION);
+		if(upcheck ) {
+	    	alert.setHeaderText("내용 수정후 다시 버튼 클릭시 수정 완료 됩니다");
+	    	alert.showAndWait();
+
+	    	txttitle.setEditable(true);
+	    	txtcontents.setEditable(true);
+	    	upcheck = false;
+    	}
+		else {
+			// DB 처리
+			BoardDao.getboardDao().update( board.getB_no() , txttitle.getText() , txtcontents.getText() );// DB 처리
+    		alert.setHeaderText("게시물이 수정 되었습니다.");
+	    	alert.showAndWait();
+	    	
+	    	upcheck = true;
+	    	txttitle.setEditable(false);
+	    	txtcontents.setEditable(false);
+		}
+		
+
 
 	}
 
-	// 21.11.03-1
-
-    @FXML
-    private Label lbldate;
-
-    @FXML
-    private Label lblview;
-
-    @FXML
-    private Label lblwriter;
+	
 }

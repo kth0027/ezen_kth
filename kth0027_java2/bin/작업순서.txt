@@ -78,5 +78,12 @@
 						
 						1 : M
 						    1 : M
+						    
+// ¸®ÇÃ
+	´ñ±Û ¹øÈ£		[PK] int auto
+	´ñ±Û ³»¿ë		String
+	´ñ±Û ÀÛ¼ºÀÚ		String -> loginid
+	´ñ±Û ÀÛ¼ºÀÏ		now()
+	°Ô½Ã¹°¹øÈ£		[FK]	
 				
 					

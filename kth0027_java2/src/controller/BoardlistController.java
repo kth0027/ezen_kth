@@ -45,19 +45,19 @@ public class BoardlistController implements Initializable {
 		tc = boardlist.getColumns().get(4); // 테이블뷰의 다섯번째 필드
 		tc.setCellValueFactory(new PropertyValueFactory<>("b_view") );
 
-		// 3. 테이블뷰에 리스트 설정
-		boardlist.setItems(boards);
-
+		// 3. 테이블뷰에 리스트 넣기
+		boardlist.setItems( boards );
+		
 		// 4. 클릭한 아이템을 가지고 페이지 전환
-		// boardlist.setOnMouseClicked( e -> { 정의 return } );
-		// 인수 -> 정의 : 익명메소드 [ 1회성 메소드 ]
+		//boardlist.setOnMouseClicked( e -> { 정의 return } );
+				//  인수 -> 정의 : 익명메소드 [ 1회성 메소드 ]
 		boardlist.setOnMouseClicked( e -> { 
 			if( e.getButton().equals( MouseButton.PRIMARY ) ) { // 해당 이벤트가 클릭이면 
 				board = boardlist.getSelectionModel().getSelectedItem();
 								// 테이블뷰에 선택된 모델의 아이템[ 객체 ]
 				MainpageController.getinstance().loadpage("boardview");
 			}
-		} ) ;	
+		} ) ;		
 	}
 	
 	public static Board board;
