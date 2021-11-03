@@ -21,17 +21,17 @@
          </font>
       </Text>
       <Line endX="-100.0" endY="490.0" layoutX="115.0" layoutY="-380.0" startX="80.0" startY="490.0" />
-      <Button fx:id="btnwrite" layoutX="604.0" layoutY="131.0" mnemonicParsing="false" onAction="#write" prefHeight="22.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="REGISTER" textFill="WHITE">
+      <Button fx:id="btnwrite" layoutX="589.0" layoutY="131.0" mnemonicParsing="false" onAction="#write" prefHeight="22.0" prefWidth="91.0" style="-fx-background-color: #000000;" text="REGISTER" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="12.0" />
          </font></Button>
-      <TableView fx:id="boardlist" layoutX="65.0" layoutY="164.0" prefHeight="403.0" prefWidth="630.0">
+      <TableView fx:id="boardlist" layoutX="55.0" layoutY="167.0" prefHeight="403.0" prefWidth="650.0">
         <columns>
           <TableColumn prefWidth="75.0" text="No" />
-          <TableColumn prefWidth="75.0" text="Title" />
-            <TableColumn prefWidth="312.0" text="Writer" />
-            <TableColumn prefWidth="112.0" text="Date" />
-            <TableColumn prefWidth="55.0" text="View" />
+          <TableColumn prefWidth="114.0" text="Title" />
+            <TableColumn prefWidth="212.0" text="Writer" />
+            <TableColumn minWidth="0.0" prefWidth="143.0" text="Date" />
+            <TableColumn prefWidth="105.0" text="View" />
         </columns>
       </TableView>
    </children>

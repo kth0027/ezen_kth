@@ -8,7 +8,7 @@ public class Board {
 	private String b_contents;
 	private String b_write;
 	private String b_date;
-	private int view;
+	private int b_view;
 	
 	
 	// 2. 생성자
@@ -17,13 +17,13 @@ public class Board {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Board(int b_no, String b_title, String b_contents, String b_write, String b_date, int view) {
+	public Board(int b_no, String b_title, String b_contents, String b_write, String b_date, int b_view) {
 		this.b_no = b_no;
 		this.b_title = b_title;
 		this.b_contents = b_contents;
 		this.b_write = b_write;
 		this.b_date = b_date;
-		this.view = view;
+		this.b_view = b_view;
 	}
 	
 	// 게시물 등록 생성자
@@ -82,12 +82,12 @@ public class Board {
 		this.b_date = b_date;
 	}
 
-	public int getView() {
-		return view;
+	public int getB_view() {
+		return b_view;
 	}
 
-	public void setView(int view) {
-		this.view = view;
+	public void setView(int b_view) {
+		this.b_view = b_view;
 	}
 	
 	
