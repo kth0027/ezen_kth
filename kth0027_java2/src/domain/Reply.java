@@ -1,39 +1,29 @@
 package domain;
 
-public class Reply { // 21.11.03-5
-
-	// 1. 필드
+public class Reply {
 	private int r_no;
 	private String r_contents;
 	private String r_write;
 	private String r_date;
 	private int b_no;
+	   
+	public Reply() { }
 
-	// 2. 생성자
-	// 2-1. 빈생성자
-	public Reply() {
-
-	}
-
-	// 2-2. 자동생성자
 	public Reply(int r_no, String r_contents, String r_write, String r_date, int b_no) {
-		super();
+
 		this.r_no = r_no;
 		this.r_contents = r_contents;
 		this.r_write = r_write;
 		this.r_date = r_date;
 		this.b_no = b_no;
 	}
-
-	// 2-3. 댓글등록 생성자
+	// 댓글 등록 생성자 
 	public Reply(String r_contents, String r_write, int b_no) {
-		super();
 		this.r_contents = r_contents;
 		this.r_write = r_write;
 		this.b_no = b_no;
 	}
-
-	// 3. gitter, setter
+	// get , set 
 	public int getR_no() {
 		return r_no;
 	}
@@ -73,5 +63,5 @@ public class Reply { // 21.11.03-5
 	public void setB_no(int b_no) {
 		this.b_no = b_no;
 	}
-
+	
 }

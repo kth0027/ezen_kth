@@ -129,19 +129,18 @@ public class BoardDao {
 		}
 		
 		// 7. 댓글 등록 메소드 21.11.03-5
-		public boolean replywrite (Reply reply) {
+		public boolean replywrite( Reply reply  ) {
 			
 			String sql = "insert into reply( r_contents , r_write , b_no ) values(?,?,?)";
-			
 			try {
 				preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1, reply.getR_contents() );
-				preparedStatement.setString(2, reply.getR_write() );
-				preparedStatement.setInt(3, reply.getB_no() );
+				preparedStatement.setString( 1 , reply.getR_contents() );
+				preparedStatement.setString( 2 , reply.getR_write() );
+				preparedStatement.setInt( 3 , reply.getB_no() );
 				preparedStatement.executeUpdate();
 				return true;
-				
-			} catch (Exception e) {}
+			}
+			catch (Exception e) {}
 			return false;
 		}
 		
