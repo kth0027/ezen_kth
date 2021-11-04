@@ -16,22 +16,22 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="984.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/loginimg.jpg" />
+                  <Image url="@loginimg.jpg" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="51.0" layoutY="116.0" opacity="0.86" prefHeight="385.0" prefWidth="352.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50;">
+            <AnchorPane layoutX="527.0" layoutY="116.0" opacity="0.86" prefHeight="385.0" prefWidth="352.0" style="-fx-background-color: #ffffff; -fx-background-radius: 50;">
                <children>
                   <Label fx:id="btnsignup" layoutX="260.0" layoutY="28.0" onMouseClicked="#signup" text="회원가입">
                      <font>
                         <Font name="Yj GABI Bold" size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="50.0" fitWidth="104.0" layoutX="145.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="104.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/stageicon.png" />
+                        <Image url="@loginicon_1.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="121.0" layoutY="64.0" prefHeight="26.0" prefWidth="97.0" text="스타벅스 로그인">
+                  <Label layoutX="121.0" layoutY="64.0" prefHeight="26.0" prefWidth="97.0" text="나이키 로그인">
                      <font>
                         <Font name="Yj GABI Bold" size="16.0" />
                      </font>

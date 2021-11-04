@@ -7,285 +7,282 @@ import java.sql.ResultSet;
 
 import domain.Member;
 
-
 public class MemberDao {
 
-	// JDBC 주요 인터페이스 , 클래스 
-		// 1. Connection : DB연결 인터페이스 [ DriverManager 클래스 ] 
-		
-	// 1. 필드 
-		private Connection connection ; // 연결 인터페이스 선언 
-		private PreparedStatement preparedStatement; // sql 연결 인터페이스
-		private ResultSet resultSet; // 쿼리(검색결과) 연결 인터페이스 선언 
-		
-		// 현재클래스내 객체 만들기 
-		private static MemberDao memberDao = new MemberDao();
-	// 2. 생성자 
-		public MemberDao() {
-			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				connection = DriverManager.getConnection(
-						"jdbc:mysql://localhost:3306/javafx?serverTimezone=UTC" , 
-						"root" , "1234");
-			}
-			catch (Exception e) {
-				System.out.println(" * DB 연동 실패 : " + e);
-			}
+	// JDBC 주요 인터페이스 , 클래스
+	// 1. Connection : DB연결 인터페이스 [ DriverManager 클래스 ]
+
+	// 1. 필드
+	private Connection connection; // 연결 인터페이스 선언
+	private PreparedStatement preparedStatement; // sql 연결 인터페이스
+	private ResultSet resultSet; // 쿼리(검색결과) 연결 인터페이스 선언
+
+	// 현재클래스내 객체 만들기
+	private static MemberDao memberDao = new MemberDao();
+
+	// 2. 생성자
+	public MemberDao() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx?serverTimezone=UTC", "root",
+					"1234");
+		} catch (Exception e) {
+			System.out.println(" * DB 연동 실패 : " + e);
 		}
-	
-	// 3. 메소드 
-		public static MemberDao getMemberDao() { return memberDao; }
-	
-		// 기능 메소드 
-		// 1. 회원가입 메소드  [ 인수로 member객체를 받아 db에 저장하는 메소드 ]
-	public boolean signup( Member member ) {
+	}
+
+	// 3. 메소드
+	public static MemberDao getMemberDao() {
+		return memberDao;
+	}
+
+	// 기능 메소드
+	// 1. 회원가입 메소드 [ 인수로 member객체를 받아 db에 저장하는 메소드 ]
+	public boolean signup(Member member) {
 		// 1. SQL 작성 [ SQL : DB 조작어 DML ]
-		String sql = "insert into member(m_id, m_password,m_name,m_email,m_point)"
-						+ " values( ? , ? , ? , ? , ?)";
+		String sql = "insert into member(m_id, m_password,m_name,m_email,m_point)" + " values( ? , ? , ? , ? , ?)";
 		try {
 			// 2. SQL ---> DB 연결 [ PreparedStatement 인터페이스 : 연결된 DB에 SQL 조작 ]
 			preparedStatement = connection.prepareStatement(sql);
-			// 3. SQL 설정 [ ? 에 데이터 넣기 ] : 
-				preparedStatement.setString( 1 , member.getM_id() );		// 첫번째 ? 에 데이터 넣기 
-				preparedStatement.setString( 2 , member.getM_password() );	// 두번째 ? 에 데이터 넣기 
-				preparedStatement.setString( 3 , member.getM_name() );
-				preparedStatement.setString( 4 , member.getM_email() );
-				preparedStatement.setInt( 5 , member.getM_point() );
-			// 4. SQL 실행 
-				preparedStatement.executeUpdate();
+			// 3. SQL 설정 [ ? 에 데이터 넣기 ] :
+			preparedStatement.setString(1, member.getM_id()); // 첫번째 ? 에 데이터 넣기
+			preparedStatement.setString(2, member.getM_password()); // 두번째 ? 에 데이터 넣기
+			preparedStatement.setString(3, member.getM_name());
+			preparedStatement.setString(4, member.getM_email());
+			preparedStatement.setInt(5, member.getM_point());
+			// 4. SQL 실행
+			preparedStatement.executeUpdate();
 			// 5. SQL 결과
-				return true; // DB 저장 성공시 true 반환	
+			return true; // DB 저장 성공시 true 반환
+		} catch (Exception e) {
 		}
-		catch (Exception e) {}
 		return false;
 	}
-		// 2. 로그인 메소드 
-	
-		public boolean login ( String id, String password) {
-			// 1. SQL 작성
-			String sql = "select * from member where m_id=? and m_password=?";
-			// 2. SQL > DB연결 [ 무조건 예외발생 ]
-			try {
-				preparedStatement = connection.prepareStatement(sql);
+	// 2. 로그인 메소드
+
+	public boolean login(String id, String password) {
+		// 1. SQL 작성
+		String sql = "select * from member where m_id=? and m_password=?";
+		// 2. SQL > DB연결 [ 무조건 예외발생 ]
+		try {
+			preparedStatement = connection.prepareStatement(sql);
 			// 3. SQL 설정 [ 현재 메소드로 들어온 인수를 ? 대입 ]
-				preparedStatement.setString(1, id);
-				preparedStatement.setString(2, password);
-						
+			preparedStatement.setString(1, id);
+			preparedStatement.setString(2, password);
+
 			// 4. SQL 실행
-				resultSet = preparedStatement.executeQuery();
-		    // 5. SQL 결과
-				if( resultSet.next() ) { // 쿼리결과에 다음내용이 있으면 true 	
-					return true; // 로그인 성공 
-				}
-				else {
-					return false; // 로그인 실패 
-				}	
-						
-					
-			} catch (Exception e) {}
-			return false ; // DB 오류 
+			resultSet = preparedStatement.executeQuery();
+			// 5. SQL 결과
+			if (resultSet.next()) { // 쿼리결과에 다음내용이 있으면 true
+				return true; // 로그인 성공
+			} else {
+				return false; // 로그인 실패
+			}
+
+		} catch (Exception e) {
 		}
-		
-		
-		// 3. 아이디찾기 메소드 
-		
-		public String findid (String name, String email) {
-			
-			// 1. SQL 작성
-			String sql = "select m_id from member where m_name=? and m_email =?";
-			// 2. SQL -> DB 연결
-			try {
-				preparedStatement = connection.prepareStatement(sql);
+		return false; // DB 오류
+	}
 
-				// 3. SQL 설정
-				preparedStatement.setString(1, name);
-				preparedStatement.setString(2, email);
+	// 3. 아이디찾기 메소드
 
-				// 4. SQL 실행
-				resultSet = preparedStatement.executeQuery();
+	public String findid(String name, String email) {
 
-				// 5. SQL 결과
-				if (resultSet.next()) {
-					// 검색결과가 있으면
-					return resultSet.getString(1); // 쿼리 (검색결과) 내 첫번째 필드를 반환
+		// 1. SQL 작성
+		String sql = "select m_id from member where m_name=? and m_email =?";
+		// 2. SQL -> DB 연결
+		try {
+			preparedStatement = connection.prepareStatement(sql);
 
-				} else {
-					return null; // 검색결과가없으면 null 반환
-				}
-			} catch (Exception e) {}
-			return null;
-			
-			
+			// 3. SQL 설정
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, email);
+
+			// 4. SQL 실행
+			resultSet = preparedStatement.executeQuery();
+
+			// 5. SQL 결과
+			if (resultSet.next()) {
+				// 검색결과가 있으면
+				return resultSet.getString(1); // 쿼리 (검색결과) 내 첫번째 필드를 반환
+
+			} else {
+				return null; // 검색결과가없으면 null 반환
+			}
+		} catch (Exception e) {
 		}
-		
-		// 4. 패스워드찾기 메소드 
-		
-		public String findpassword (String id, String email) {
-			
-			// 1. SQL 작성
-			String sql = "select m_passowrd from member where m_id=? and m_email =?";
-			// 2. SQL -> DB 연결
-			try {
-				preparedStatement = connection.prepareStatement(sql);
+		return null;
 
-				// 3. SQL 설정
-				preparedStatement.setString(1, id);
-				preparedStatement.setString(2, email);
+	}
 
-				// 4. SQL 실행
-				resultSet = preparedStatement.executeQuery();
+	// 4. 패스워드찾기 메소드
 
-				// 5. SQL 결과
-				if (resultSet.next()) { // 검색결과가 있으면
-					return resultSet.getString(1); // 쿼리 (검색결과) 내 첫번째 필드를 반환
-				} else {
-					return null; // 검색결과가없으면 null 반환
-				}
-			} catch (Exception e) {}
-			return null; // db 오류 
-			 
-			
+	public String findpassword(String id, String email) {
+
+		// 1. SQL 작성
+		String sql = "select m_passowrd from member where m_id=? and m_email =?";
+		// 2. SQL -> DB 연결
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+
+			// 3. SQL 설정
+			preparedStatement.setString(1, id);
+			preparedStatement.setString(2, email);
+
+			// 4. SQL 실행
+			resultSet = preparedStatement.executeQuery();
+
+			// 5. SQL 결과
+			if (resultSet.next()) { // 검색결과가 있으면
+				return resultSet.getString(1); // 쿼리 (검색결과) 내 첫번째 필드를 반환
+			} else {
+				return null; // 검색결과가없으면 null 반환
+			}
+		} catch (Exception e) {
 		}
-		
-		// 5. 회원수정 메소드 [21.11.02.화]
-		public boolean update( String id , String name , String email ) { 
-			String sql = "update member set m_name=? , m_email=? where m_id = ? ";
-						// update 테이블명 set 변경필드=값 , 변경필드2=값2 where 조건 
-			try {
-				preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1, name );
-				preparedStatement.setString(2, email );
-				preparedStatement.setString(3, id );
-				preparedStatement.executeUpdate();
+		return null; // db 오류
+
+	}
+
+	// 5. 회원수정 메소드 [21.11.02.화]
+	public boolean update(String id, String name, String email) {
+		String sql = "update member set m_name=? , m_email=? where m_id = ? ";
+		// update 테이블명 set 변경필드=값 , 변경필드2=값2 where 조건
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, email);
+			preparedStatement.setString(3, id);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {
+		}
+		return false;
+	}
+
+	// 6. 회원탈퇴 메소드
+
+	public boolean delete(String loginid) {
+		String sql = "delete from member where m_id=?";
+		// delete from 테이블명 => 전체 삭제
+		// delete from 테이블명 where 조건
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, loginid);
+			preparedStatement.executeUpdate();
+			return true; // 탈퇴 성공시
+		} catch (Exception e) {
+
+		}
+		return false; // DB 오류
+	}
+
+	// 7. 회원조회 메소드 [ 회원 아이디를 인수로 받아 회원정보 반환 ]
+
+	public Member getmember(String loginid) {
+
+		// 1. SQL 작성
+		String sql = "select * from member where m_id=?";
+
+		// 2. SQL 연결
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			// 3. SQL 설정
+			preparedStatement.setString(1, loginid);
+			// 3. SQL 실행
+			resultSet = preparedStatement.executeQuery();
+			// 3. SQL 결과
+			if (resultSet.next()) {
+				// 회원번호 , 패스워드를 제외한 회원정보 반환
+				Member member = new Member(resultSet.getString(2), "", resultSet.getString(4), resultSet.getString(5),
+						resultSet.getInt(6));
+				return member; // 찾은 정보를 객체로 반환
+			} else {
+				return null; // 회원정보가 없을경우
+			}
+
+		} catch (Exception e) {
+
+		}
+		return null; // db 오류
+	}
+
+	// 8. 아이디 체크 메소드 [21.11.02.화]
+	public boolean idcheck(String id) {
+		String sql = "select m_id from member where m_id=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
 				return true;
+			} // 현재 아이디가 존재하면
+			else {
+				return false;
+			} // 현재 아이디가 존재하지 않으면
+		} catch (Exception e) {
+		}
+		return true; // DB 오류
+	}
+
+	// 9. 포인트 증감 메소드 [21.11.02.화]
+	public boolean pointupdate(String id, int point) {
+
+		String sql = "update member set m_point = m_point + ? where m_id = ? ";
+		// update 테이블명 set 변경할필드명 = 변경할값 where 조건
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, point);
+			preparedStatement.setString(2, id);
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {
+		}
+		return false;
+	}
+	
+	// 10. 회원id의 회원번호 찾기 메소드 - 11.04-1.
+	public int bnocheck(String id ) {
+		String sql = "select m_no from member where m_id = ?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString( 1 , id  );
+			resultSet =  preparedStatement.executeQuery();
+			if( resultSet.next() ) {
+				return resultSet.getInt(1); 
 			}
-			catch (Exception e) {} return false;
-		}
-		
-		// 6. 회원탈퇴 메소드
-		
-		public boolean delete ( String loginid ) {
-			String sql = "delete from member where m_id=?";
-						// delete from 테이블명			=> 전체 삭제 
-						// delete from 테이블명 where 조건
-			try {
-				preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1, loginid);
-				preparedStatement.executeUpdate();
-				return true; // 탈퇴 성공시
-			} catch (Exception e) {
- 
-			} return false; // DB 오류
-		}
-		
-		// 7. 회원조회 메소드 [ 회원 아이디를 인수로 받아 회원정보 반환 ]
-		
-		public Member getmember ( String loginid ) {
+			else { return 0; }
+		}catch (Exception e) {} return 0;
+	}
+	
+	
+	// 11. 회원정보의 회원id 찾기 메소드 - 11.04-2.
+	public String midcheck( int m_no) {
+		String sql = "select m_id from member where m_no=?";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, m_no);
+			resultSet = preparedStatement.executeQuery();
 			
-			// 1. SQL 작성
-			String sql = "select * from member where m_id=?";
-			
-			// 2. SQL 연결
-			try {
-				preparedStatement = connection.prepareStatement(sql);
-				// 3. SQL 설정 
-				preparedStatement.setString(1, loginid);
-				// 3. SQL 실행
-				resultSet =  preparedStatement.executeQuery();
-				// 3. SQL 결과 
-				if( resultSet.next() ) {
-					// 회원번호 , 패스워드를 제외한 회원정보 반환
-					Member member = new Member(
-							resultSet.getString(2),
-							"", 
-							resultSet.getString(4), 
-							resultSet.getString(5), 
-							resultSet.getInt(6) );
-					return member; // 찾은 정보를 객체로 반환
-				}else {
-					return null; // 회원정보가 없을경우 
-				}
-				
-			} catch (Exception e) {
-
-			} return null; // db 오류
+			if( resultSet.next() ) { return resultSet.getString(1); } // 현재 아이디가 존재하면
+			else { return ""; } // 현재 아이디가 존재하지 않으면
 		}
-		
+		catch (Exception e) {}
+		return "";  // DB 오류 
+	}
+	
 
-		// 8. 아이디 체크 메소드 [21.11.02.화]
-		public boolean idcheck(String id) {
-			String sql = "select m_id from member where m_id=?";
-			try {
-				preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setString(1, id);
-				resultSet = preparedStatement.executeQuery();
-				if (resultSet.next()) {
-					return true;
-				} // 현재 아이디가 존재하면
-				else {
-					return false;
-				} // 현재 아이디가 존재하지 않으면
-			} catch (Exception e) {
-			}
-			return true; // DB 오류
-		}
-
-		// 9. 포인트 증감 메소드 [21.11.02.화]
-		public boolean pointupdate(String id, int point) {
-
-			String sql = "update member set m_point = m_point + ? where m_id = ? ";
-							// update 테이블명 set 변경할필드명 = 변경할값 where 조건
-			try {
-				preparedStatement = connection.prepareStatement(sql);
-				preparedStatement.setInt(1, point);
-				preparedStatement.setString(2, id);
-				preparedStatement.executeUpdate();
-				return true;
-			} catch (Exception e) {
-			}
-			return false;
-		}
-		
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	// DB 연동 테스트
 	/*
-	public static void main(String[] args) {
-		
-		try {
-			// 1.mysql 드라이브 확인
-			Class.forName("com.mysql.cj.jdbc.Driver");
-				System.out.println(" 1. 드라이브 가져오기 성공 ");
-			// 2. DB 연동 
-			Connection con = DriverManager.getConnection( 
-						"jdbc:mysql://localhost:3306/javafx?serverTimezome=UTC" ,"root" , "1234");
-				System.out.println(" 2. DB 연동 성공 ");
-				
-		}
-		catch (Exception e) {
-			System.out.println(" DB 연동 실패 ");
-		}
-	}
-	*/
+	 * public static void main(String[] args) {
+	 * 
+	 * try { // 1.mysql 드라이브 확인 Class.forName("com.mysql.cj.jdbc.Driver");
+	 * System.out.println(" 1. 드라이브 가져오기 성공 "); // 2. DB 연동 Connection con =
+	 * DriverManager.getConnection(
+	 * "jdbc:mysql://localhost:3306/javafx?serverTimezome=UTC" ,"root" , "1234");
+	 * System.out.println(" 2. DB 연동 성공 ");
+	 * 
+	 * } catch (Exception e) { System.out.println(" DB 연동 실패 "); } }
+	 */
 
 }
