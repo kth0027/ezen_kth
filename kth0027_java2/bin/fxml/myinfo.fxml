@@ -46,7 +46,7 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Text>
-      <TableView layoutX="246.0" layoutY="100.0" prefHeight="200.0" prefWidth="480.0">
+      <TableView fx:id="myboardlist" layoutX="246.0" layoutY="100.0" prefHeight="200.0" prefWidth="480.0">
          <columns>
             <TableColumn prefWidth="120.0" text="Num" />
             <TableColumn prefWidth="120.0" text="Title" />
@@ -59,7 +59,7 @@
             <Font name="Berlin Sans FB" size="20.0" />
          </font>
       </Text>
-      <TableView layoutX="246.0" layoutY="353.0" prefHeight="200.0" prefWidth="480.0">
+      <TableView fx:id="myproductlist" layoutX="246.0" layoutY="353.0" prefHeight="200.0" prefWidth="480.0">
          <columns>
             <TableColumn prefWidth="96.0" text="num" />
             <TableColumn prefWidth="96.0" text="Name" />

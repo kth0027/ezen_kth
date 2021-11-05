@@ -45,6 +45,7 @@
          <font>
             <Font name="Bauhaus 93" size="11.0" />
          </font></Button>
+      <Button fx:id="btnactivation" layoutX="212.0" layoutY="144.0" mnemonicParsing="false" onAction="#activation" prefHeight="22.0" prefWidth="65.0" style="-fx-background-color: #000000;" text="판매중" textFill="WHITE" />
       <AnchorPane layoutX="25.0" layoutY="169.0" prefHeight="200.0" prefWidth="250.0" style="-fx-border-color: #000000;">
          <children>
             <ImageView fx:id="pimg" fitHeight="200.0" fitWidth="250.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />

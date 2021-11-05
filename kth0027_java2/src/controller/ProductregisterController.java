@@ -85,7 +85,7 @@ public class ProductregisterController {
 
     		// 로그인된 id의 회원번호 검색 db처리 - 21.11.04
     		int m_no = MemberDao.getMemberDao().
-    				bnocheck( MainpageController.getinstance().getloginid() );
+    				mnocheck( MainpageController.getinstance().getloginid() );
     		
     	
     	// 객체화 [ 상태 초기값 = 1 ]

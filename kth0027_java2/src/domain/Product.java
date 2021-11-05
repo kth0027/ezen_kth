@@ -12,6 +12,8 @@ public class Product {
 	private int p_activation;
 	private String p_date;
 	private int m_no;
+	
+	private String activation; // 11.05 추가
 
 	// 2. 생성자
 
@@ -32,6 +34,10 @@ public class Product {
 		this.p_activation = p_activation;
 		this.p_date = p_date;
 		this.m_no = m_no;
+		
+		if( p_activation == 1 ) { activation="판매중"; }
+		else if( p_activation == 2 ) { activation="거래중" ; }
+		else if( p_activation == 3 ) { activation="거래완료"; }
 	}
 
 	// 2-3. 등록시 생성자 [ 제품번호, 등록날짜 제외한 필드 ]
@@ -120,5 +126,15 @@ public class Product {
 	public void setM_no(int m_no) {
 		this.m_no = m_no;
 	}
+
+	public String getActivation() {
+		return activation;
+	}
+
+	public void setActivation(String activation) {
+		this.activation = activation;
+	}
+	
+	
 	
 }
