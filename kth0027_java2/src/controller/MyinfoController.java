@@ -30,10 +30,11 @@ import javafx.stage.Stage;
 
 public class MyinfoController implements Initializable{
 	
-    @FXML
+	
+    @FXML // 21.11.05
     private TableView<Board> myboardlist;
 
-    @FXML
+    @FXML // 21.11.05
     private TableView<Product> myproductlist;
 
 	@Override
