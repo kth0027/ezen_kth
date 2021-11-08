@@ -1,106 +1,60 @@
-LoginController 
-	fx:controller="패키지명.컨트롤명"
+1. member
 
-로그인페이지.fxml
-	fx:id 정하기 	
-		BoarderPane 				: mainboardpane
-		AnchorPane 					: loginpane
-		회원가입Label 					: btnsignup
-						On mouse clicked : signup
-		아이디입력창 : TextField		: txtid
-		비밀번호입력창 : PasswordField 	: txtpassword
-		로그인버튼	button 				:  btnlogin
-						On Action : login
-		경고메시지	Label 				:  lblconfirm
-		아이디찾기	Label 				: btnfindid
-						On mouse clicked : findid
-		비밀번호찾기Label 				: btnfindpassword
-						On mouse clicked : findpassword
+CREATE TABLE javafx.new_table (
+  m_no INT NOT NULL AUTO_INCREMENT,
+  m_id VARCHAR(45) NOT NULL,
+  m_password VARCHAR(45) NOT NULL,
+  m_name VARCHAR(45) NOT NULL,
+  m_email VARCHAR(45) NOT NULL,
+  m_point INT NULL,
+  PRIMARY KEY (m_no));
+  
+  2. board
+  create table javafx.board( 
+    b_no int auto_increment primary key ,
+    b_title varchar(100) not null ,
+    b_contents varchar(5000) not null ,
+    b_write varchar(15) not null ,
+    b_date timestamp default now() ,
+    b_view int default 0
+)
+  
+ 3. reply
+ create table javafx.reply(
+   r_no int auto_increment primary key ,
+   r_contents varchar(100) not null , 
+    r_write varchar(15) not null ,
+    r_date timestamp default now() ,
+    b_no int not null  ,
+    foreign key( b_no ) references board(b_no) on delete cascade 
+)
+ 
+  
+4.product
+ 
+  create table javafx.product(
+	p_no int auto_increment primary key , 
+	p_name varchar(100) not null ,
+    p_img varchar(5000) not null ,
+	p_contents varchar(5000) not null ,
+    p_category varchar(100) not null ,
+    p_price int not null , 
+    p_activation int not null ,
+    p_date timestamp default now() ,
+    m_no int not null ,
+    foreign key( m_no ) references member( m_no ) on delete cascade
+	)
+	
+/////////////////////////////////////////////////////////////////////////
 
-회원가입페이지.fxml
-	AnchorPane : signuppane
-	Lable뒤로가기 : btnback		On mouse clicked : back
-	아이디입력창 : txtid
-	비밀번호입력창 : txtpassword
-	비밀번호확인입력창 : txtpasswordconfirm
-	이름입력창 : txtname
-	이메일입력창 : txtemail
-	회원가입버튼 : btnsignup 		On Action : signup
-	경고메시지 : lblconfirm
-
-아이디찾기페이지.fxml
-	AnchorPane : findidpane
-	Lable뒤로가기 : btnback		On mouse clicked : back
-	이름입력창 : txtname
-	이메일입력창 : txtemail
-	아이디찾기버튼 : btnfindid		On Action : findid
-	경고메시지 : lblconfirm
+1. 모든레코드 검색
+	select * from product
 	
-아이디찾기페이지.fxml
-	AnchorPane : findpasswordpane
-	Lable뒤로가기 : btnback		On mouse clicked : back
-	아이디입력창 : txtid
-	이메일입력창 : txtemail
-	아이디찾기버튼 : btnfindpassword		On Action : findpassword
-	경고메시지 : lblconfirm
-
-
-메인페이지.fxml
-	BoarderPane : mainpageborderpane
-	AnchorPane : lp
-	AnchorPane : cp
-	로그인된아이디 : lblloginid
-	홈버튼 : btnhome			home
-	제품버튼 : btnproduct		product
-	게시판버튼 : btncommunity	community
-	채팅버튼 : btnchatting		chatting
-	회원정보버튼 : btnmyinfo	myinfo
-	로그아웃버튼 : btnlogout	logout
-	
-	
-회원정보.fxml
-	아이디 : lblid
-	이름 : lblname
-	이메일 : lblemail
-	포인트 : lblpoint
-	수정 버튼 : btnupdate		update
-	탈퇴 버튼 : btndelete		delete
-
-회원수정.fxml
-	아이디 : lblid
-		이름 : txtname
-		이메일 : txtemail
-	포인트 : lblpoint
-	수정 버튼 : btnupdate			update
-		취소 버튼 : btncancel		cancel
-	
-	
-	
-	 포인트 증감 메소드 [21.11.02.화]
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+2. p_date 필드 기준으로 분해
+	select substring_index ()
 
 
-	
-
-
-
-
-
-
-	
+  
+  
+  
+  

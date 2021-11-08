@@ -271,6 +271,21 @@ public class MemberDao {
 		return "";  // DB 오류 
 	}
 	
+	// 12. 회원 수 반환 메소드 - 11.08-1
+	public int membercount() {
+		
+		String sql = "select count(*) from member";
+		try {
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			if( resultSet.next() ) {
+				return resultSet.getInt(1);
+			}
+		}catch (Exception e) {} return 0;
+	
+	}
+	
+	
 
 	// DB 연동 테스트
 	/*
