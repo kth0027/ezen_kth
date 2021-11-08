@@ -1,4 +1,4 @@
-1.board
+1. member
 
 CREATE TABLE javafx.new_table (
   m_no INT NOT NULL AUTO_INCREMENT,
@@ -8,6 +8,44 @@ CREATE TABLE javafx.new_table (
   m_email VARCHAR(45) NOT NULL,
   m_point INT NULL,
   PRIMARY KEY (m_no));
+  
+  2. board
+  create table javafx.board( 
+    b_no int auto_increment primary key ,
+    b_title varchar(100) not null ,
+    b_contents varchar(5000) not null ,
+    b_write varchar(15) not null ,
+    b_date timestamp default now() ,
+    b_view int default 0
+)
+  
+ 3. reply
+ create table javafx.reply(
+   r_no int auto_increment primary key ,
+   r_contents varchar(100) not null , 
+    r_write varchar(15) not null ,
+    r_date timestamp default now() ,
+    b_no int not null  ,
+    foreign key( b_no ) references board(b_no) on delete cascade 
+)
+ 
+  
+4.product
+ 
+  create table javafx.product(
+	p_no int auto_increment primary key , 
+	p_name varchar(100) not null ,
+    p_img varchar(5000) not null ,
+	p_contents varchar(5000) not null ,
+    p_category varchar(100) not null ,
+    p_price int not null , 
+    p_activation int not null ,
+    p_date timestamp default now() ,
+    m_no int not null ,
+    foreign key( m_no ) references member( m_no ) on delete cascade
+	)
+
+
   
   
   
