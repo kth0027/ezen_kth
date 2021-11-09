@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class Chattingontroller implements Initializable {
+public class ChattingController implements Initializable {
 
 	// 1. 클라이언트 소켓 선언
 	Socket socket;
