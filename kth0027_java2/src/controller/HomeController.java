@@ -93,7 +93,7 @@ public void initialize(URL arg0, ResourceBundle arg1) {
 		lc.getData().add(series); // 4. 계열을 차트에 넣기 
 		
 		// 레이블 증감 설정 [ 
-		if( productDates.get( productDates.size()-1 ).getCount() >productDates.get(productDates.size()-2).getCount() ) {
+		if( productDates.get( productDates.size()-1 ).getCount() >	productDates.get(productDates.size()-2).getCount() ) {
 					// 리스트내 마지막 객체내 날짜의 수  > 리스트내 마지막 전 객체내 날짜의 수 
 			lbldecrease.setVisible(false); // 감소 레이블 숨기기 
 		}else {
