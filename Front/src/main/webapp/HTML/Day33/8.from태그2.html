@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1> 폼 2 </h1>
+	
+	<form action="">
+		<label for=""> 색상 </label> <input type="color" />
+		<br />
+		<label for=""> 날짜 </label>	<input type="date" required="required"/> <!-- required 필수입력 (미입력시 진행안됌) -->
+		<br />
+		<label for=""> 날짜/시간 직접입력 </label>	<input type="datetime" size="100"/>
+		<br />
+		<label for=""> 날짜/시간 선택 </label>	<input type="datetime-Local" />
+		<br />
+		<label for=""> 이메일 [@필수] </label>	<input type="email" />
+		<br />
+		<label for=""> 월 달력 </label>	<input type="month" />
+		<br />
+		<label for=""> 시간 선택 </label>	<input type="time" />
+		<br />
+		<label for=""> 주 선택 </label>	<input type="week" />
+		<br />
+		<label for=""> 숫자 </label>	<input type="number" min="0" max="10"/>
+		<br />
+		<label for=""> 범위 </label>	<input type="range" min="0" max="100" step="10"/>
+		<br />
+		<label> 목록리스트 </label> <input list="list">
+			<datalist id="list">	<!--  -->
+				<option value="네이버">
+				<option value="다음">
+				<option value="네이트">
+			</datalist>
+		<br />
+		<input type="submit" value="전송">
+		
+		
+	</form>
+</body>
+</html>

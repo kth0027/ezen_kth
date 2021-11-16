@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+
+<style type="text/css">
+span {
+	color: red;
+	border: 1px solid red;
+}
+
+div {
+	background: #eeeeee;
+}
+
+#t1 {
+	display: inline;
+}
+
+#t2 {
+	display: block;
+}
+
+#t3 {
+	display: inline-block;
+}
+
+/* 숨기기  */
+#t4 {
+	display: none;
+}
+
+#a {
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	background-color: orange;
+	display: inline;
+}
+
+#b {
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	background-color: orange;
+	display: block;
+}
+
+#c {
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	background-color: orange;
+	display: inline-block;
+}
+
+</style>
+</head>
+<body>
+	<h1>display 속성</h1>
+
+	<ol>
+		<li>inline : 수평 방향 [ 자동 줄바꿈x ]
+			<ol>
+				<li>span, a, img 등</li>
+			</ol>
+		</li>
+
+		<li>block : 수평 행 전체 차지 [ 자동 줄바꿈 o ]
+			<ol>
+				<li>div, p, ul, li 등</li>
+			</ol>
+		</li>
+
+		<li>inline-block</li>
+	</ol>
+
+	<div>
+		글자1 <span id="t1"> 안녕하세요1 : 인라인 </span> 글자2
+	</div>
+
+	<div>
+		글자1 <span id="t2"> 안녕하세요1 : 블록 </span> 글자2
+	</div>
+
+	<div>
+		글자1 <span id="t3"> 안녕하세요1 : 인라인블록 </span> 글자2
+	</div>
+
+	<div>
+		글자1 <span id="t4"> 안녕하세요1</span> 글자2
+	</div>
+	
+	<br />
+	<br />
+
+	글자1
+	<span id="a"> box </span> 글자1
+	<br />
+	
+	글자2
+	<span id="b"> box </span> 글자2
+	<br />
+	
+	글자3
+	<span id="c"> box </span> 글자3
+	<br />
+</body>
+</html>

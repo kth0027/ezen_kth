@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>폼 양식 : 사용자가 키보드로 데이터 입력하거나 마우스 선택할 수 있는 서식</h1>
+
+	<form action="1.HTML시작_h1_태그.html">
+		이름 : <input type="text" value="유재석" readonly="readonly"> <!-- 태그명 속성명 = 값 -->	<!-- readeonly 수정불가 -->
+		아이디입력 : <input type="text" placeholder="아이디 입력" autofocus="autofocus"> <!-- 태그명 속성명 = 값 --> <!-- autofocus 커서 -->
+		회원등급 : <input type="text" value="일반" disabled="disabled"> <!-- 태그명 속성명 = 값 --> <!-- disabled 수정불가 -->
+		<br />
+		비밀번호 : <input type="password"> <!-- 태그명 속성명 = 값 -->
+		<br />
+		<input type="button" value="버튼">
+		<br />
+		<input type="radio" name="email"> 예 
+		<input type="radio" name="email">아니오
+		<!-- name 동일한 경우 그룹 [1개의 버튼만 선택가능] -->
+		 <br />
+		 <input type="checkbox" name="item1"/> 뉴스
+		 <input type="checkbox" name="item1"/> 드라마
+		 <input type="checkbox" name="item1"/> 스포츠
+		 <input type="checkbox" name="item1"/> 스포츠
+		 <br />
+		 	이메일 : <input type="text"> @
+		 	<select>
+				<option value="">직접입력</option>
+				<option value="">naver.com</option>
+				<option value="">daum.net</option>
+			</select>
+		<br />
+			자기소개 <textarea rows="6" cols="80"></textarea> <!-- rows : 행 갯수 // cols : 열 갯수 --> 
+		<br />
+		 <input type="file" />
+		 <br />
+		 <input type="button" value="버튼">	<!-- 폼 이벤트 -->
+		 <input type="submit" value="저장하기">	<!-- 폼 저장( 전송 action = "전송경로" ) -->
+		 <input type="reset" value="다시쓰기">	<!-- 폼 초기화 -->
+		 <!-- name 동일한 경우에도 복수 선택 -->
+	</form>
+</body>
+</html>
