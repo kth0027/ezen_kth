@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="1280.0" style="-fx-background-color: #D8E3e7;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.reservationcontroller.ReservationController">
+   <children>
+      <Text layoutX="15.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car rent" wrappingWidth="155.0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Line endX="90.0" layoutX="90.0" layoutY="25.0" startX="90.0" startY="500.0" />
+      <Button layoutX="207.0" layoutY="51.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="65.0" style="-fx-background-color: #000000;" text="날짜선택" textFill="WHITE" />
+      <Button fx:id="inputdateadd" layoutX="207.0" layoutY="88.0" mnemonicParsing="false" onAction="#inputdateaddac" prefHeight="30.0" prefWidth="214.0" text="예약일 등록">
+         <graphic>
+            <DatePicker fx:id="inputdateDatePicker" onAction="#inputdateac" prefHeight="22.0" prefWidth="128.0" promptText="예약날짜" />
+         </graphic>
+      </Button>
+      <Button fx:id="outputdateadd" layoutX="456.0" layoutY="88.0" mnemonicParsing="false" onAction="#outputdateaddac" prefHeight="30.0" prefWidth="214.0" text="반납일 등록">
+         <graphic>
+            <DatePicker fx:id="outputdateDatePicker" onAction="#outputdateac" prefHeight="22.0" prefWidth="128.0" promptText="반납날짜" />
+         </graphic>
+      </Button>
+      <TableView fx:id="rentcarlist" layoutX="737.0" layoutY="297.0" prefHeight="173.0" prefWidth="500.0">
+        <columns>
+          <TableColumn fx:id="c_num" prefWidth="48.0" text="No" />
+            <TableColumn fx:id="c_name" prefWidth="75.0" text="모델명" />
+            <TableColumn fx:id="c_ct1" text="(대형/중형/소형)" />
+            <TableColumn fx:id="c_ct2" text="(국산/외제)" />
+            <TableColumn fx:id="c_ct3" text="(세단 / suv)" />
+            <TableColumn fx:id="c_price" prefWidth="65.0" text="일일가격" />
+            <TableColumn fx:id="c_return" prefWidth="71.0" text="상태(렌트)" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="987.0" layoutY="87.0" prefHeight="160.0" prefWidth="250.0" style="-fx-border-color: #000000;">
+         <children>
+            <ImageView fx:id="cimg" fitHeight="160.0" fitWidth="250.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnreservecar" defaultButton="true" layoutX="207.0" layoutY="489.0" mnemonicParsing="false" onAction="#reservecar" prefHeight="22.0" prefWidth="201.0" text="예약하기 (Check In)" />
+      <Button fx:id="btnreturncar" layoutX="479.0" layoutY="489.0" mnemonicParsing="false" onAction="#returncar" prefHeight="22.0" prefWidth="201.0" text="반납하기(Check Out)" />
+      <Button layoutX="737.0" layoutY="51.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="65.0" style="-fx-background-color: #000000;" text="차량조회" textFill="WHITE" />
+      <TableView fx:id="reservationlist" layoutX="207.0" layoutY="297.0" prefHeight="173.0" prefWidth="473.0">
+        <columns>
+          <TableColumn fx:id="r_num" prefWidth="59.0" text="접수번호" />
+          <TableColumn fx:id="m_num" prefWidth="70.0" text="고객번호" />
+            <TableColumn fx:id="c_num2" prefWidth="62.0" text="차량번호" />
+            <TableColumn fx:id="r_dayin" prefWidth="70.0" text="예약일" />
+            <TableColumn fx:id="r_dayout" prefWidth="70.0" text="반납일" />
+            <TableColumn fx:id="r_totday" prefWidth="70.0" text="총기간" />
+            <TableColumn fx:id="r_totprice" prefWidth="71.0" text="렌트비용 " />
+        </columns>
+      </TableView>
+      <Pane layoutX="737.0" layoutY="88.0" prefHeight="160.0" prefWidth="236.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
+         <children>
+            <TextField fx:id="keyworldTextFilter" layoutX="10.0" layoutY="31.0" prefHeight="22.0" prefWidth="167.0" promptText="차종입력" />
+          <Button fx:id="btnsearch" layoutX="177.0" layoutY="31.0" mnemonicParsing="false" onAction="#search" text="Search" />
+         </children>
+      </Pane>
+      <Button layoutX="207.0" layoutY="271.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="65.0" style="-fx-background-color: #000000;" text="접수내역" textFill="WHITE" />
+      <Button layoutX="737.0" layoutY="271.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="82.0" style="-fx-background-color: #000000;" text="차량리스트" textFill="WHITE" />
+      <Pane layoutX="207.0" layoutY="144.0" prefHeight="112.0" prefWidth="214.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="lbltotdate" layoutX="32.0" layoutY="77.0" text="렌트기간 : " />
+            <Label fx:id="lbloutputdate" layoutX="20.0" layoutY="49.0" text="렌트 반납일:" />
+            <Label fx:id="lblinputdate" layoutX="17.0" layoutY="20.0" text="렌트 예약일 : " />
+            <TextField fx:id="lblinputdateck" layoutX="92.0" layoutY="17.0" onAction="#inputdateck" prefHeight="22.0" prefWidth="101.0" promptText="렌트예약일" />
+            <TextField fx:id="lbloutputdateck" layoutX="92.0" layoutY="46.0" onAction="#outputdateck" prefHeight="22.0" prefWidth="101.0" promptText="렌트반납일" />
+            <Label fx:id="lbltotdateck" layoutX="98.0" layoutY="77.0" text="총기간" />
+         </children>
+      </Pane>
+      <Pane layoutX="456.0" layoutY="144.0" prefHeight="112.0" prefWidth="214.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="lbldayp" layoutX="7.0" layoutY="50.0" text="일일렌트비용 : " />
+            <Label fx:id="lblselectcar" layoutX="30.0" layoutY="17.0" text="선택차량 : " />
+            <Label fx:id="lbltotp" layoutX="18.0" layoutY="80.0" prefHeight="11.0" prefWidth="72.0" text="총렌트비용 : " />
+            <Label fx:id="lbldaypck" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="101.0" layoutY="49.0" prefHeight="14.0" prefWidth="72.0" text="렌트비용" textAlignment="RIGHT" />
+            <Label fx:id="lbldaypck1" layoutX="175.0" layoutY="49.0" text="원" textAlignment="RIGHT" />
+            <Label fx:id="lbltotpck" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="101.0" layoutY="80.0" prefHeight="14.0" prefWidth="72.0" text="총렌트비용" textAlignment="RIGHT" />
+            <Label fx:id="lbldaypck11" layoutX="175.0" layoutY="80.0" text="원" textAlignment="RIGHT" />
+            <Label fx:id="lblselectcarck" contentDisplay="RIGHT" layoutX="162.0" layoutY="17.0" prefHeight="14.0" prefWidth="51.0" text="차량" textAlignment="CENTER" />
+            <Label fx:id="lblc_num" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="90.0" layoutY="17.0" prefHeight="14.0" prefWidth="51.0" text="No" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Label fx:id="lblcname" layoutX="987.0" layoutY="66.0" text="모델명" />
+      <Pane layoutX="741.0" layoutY="151.0" prefHeight="89.0" prefWidth="236.0">
+         <children>
+            <RadioButton fx:id="opt_1_1" layoutX="6.0" layoutY="18.0" mnemonicParsing="false" text="대형">
+               <toggleGroup>
+                  <ToggleGroup fx:id="category0" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="opt_1_2" layoutX="64.0" layoutY="18.0" mnemonicParsing="false" text="중형" toggleGroup="$category0" />
+            <RadioButton fx:id="opt_1_3" layoutX="118.0" layoutY="18.0" mnemonicParsing="false" text="소형" toggleGroup="$category0" />
+            <RadioButton fx:id="opt_1_4" layoutX="172.0" layoutY="18.0" mnemonicParsing="false" text="기타 " toggleGroup="$category0" />
+            <RadioButton fx:id="opt_2_1" layoutX="6.0" layoutY="43.0" mnemonicParsing="false" text="국산">
+               <toggleGroup>
+                  <ToggleGroup fx:id="category1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="opt_2_2" layoutX="64.0" layoutY="43.0" mnemonicParsing="false" text="외제" toggleGroup="$category1" />
+            <RadioButton fx:id="opt_3_1" layoutX="6.0" layoutY="69.0" mnemonicParsing="false" text="suv">
+               <toggleGroup>
+                  <ToggleGroup fx:id="category2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="opt_3_2" layoutX="64.0" layoutY="69.0" mnemonicParsing="false" text="세단 " toggleGroup="$category2" />
+         </children>
+      </Pane>
+      <Button fx:id="btnbasket" defaultButton="true" layoutX="876.0" layoutY="489.0" mnemonicParsing="false" onAction="#basket" prefHeight="22.0" prefWidth="201.0" text="선택하기" />
+   </children>
+</AnchorPane>
