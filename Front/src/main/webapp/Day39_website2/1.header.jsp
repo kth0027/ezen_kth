@@ -60,7 +60,8 @@ header {
 .menu ul {
 	display: flex;
 	justify-content: flex-end;
-	align-items: center; margin-right : 50px;
+	align-items: center;
+	margin-right: 50px;
 	height: 70px;
 	margin-right: 50px;
 	margin-right: 50px;
@@ -78,7 +79,7 @@ header {
 		<div class="headerbox">
 			<div class="login">
 				<ul>
-					<li>´Ô</li> |
+					<li>±èÁö¿µ(jykim)´Ô</li> |
 					<li>·Î±×¾Æ¿ô</li> |
 					<li>Á¤º¸¼öÁ¤</li>
 				</ul>

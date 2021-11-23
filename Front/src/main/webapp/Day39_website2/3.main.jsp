@@ -35,9 +35,35 @@ main li {
 	padding: 10px;
 }
 
+.leftconentsbox li {
+line-height: 30px;
+}
+
+.title1 {
+	font-weight: bold;
+	padding-left: 10px;
+}
+
 .leftcontent1, .leftcontent2, .leftcontent3 {
 	border: 1px solid #000000;
 	margin-bottom: 10px;
+}
+
+.leftcontent1 {
+padding-bottom: 10px;
+}
+
+.leftcontent1 .title1 {
+background-color: rgb(12, 169, 163);
+color: #fff;
+}
+
+.leftcontent2 .title1 {border-bottom: 1px solid gray;}
+
+
+
+.leftcontent1>div>p {
+	padding: 10px;
 }
 
 .leftcontent1 form {
@@ -104,7 +130,7 @@ main li {
 }
 
 .breadbox p {
-padding: 5px;
+	padding: 5px;
 }
 
 .title2 {
@@ -122,7 +148,7 @@ padding: 5px;
 		<div class="maincontents">
 			<div class="leftconentsbox">
 				<div class="leftcontent1">
-					<p class="txt1">The 베이킹</p>
+					<p class="title1">The 베이킹</p>
 					<div>
 						<p>안녕하세요 쿠키와 빵 만들기 정보를 공유하고 소통하는 공간입니다.</p>
 						<form action="">
@@ -130,10 +156,10 @@ padding: 5px;
 								value="검색">
 						</form>
 					</div>
-
 				</div>
+				
 				<div class="leftcontent2">
-					<p class="txt2">베이킹/요리</p>
+					<p class="title1">베이킹/요리</p>
 					<ul>
 						<li>쿠키 만들기</li>
 						<li>빵 만들기</li>
@@ -141,7 +167,7 @@ padding: 5px;
 					</ul>
 				</div>
 				<div class="leftcontent3">
-					<p class="txt3">최근 댓글</p>
+					<p class="title1">최근 댓글</p>
 					<ul>
 						<li>안녕하세요</li>
 						<li>안녕하세요</li>

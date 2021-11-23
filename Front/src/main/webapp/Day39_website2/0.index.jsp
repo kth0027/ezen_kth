@@ -13,14 +13,12 @@
 }
 
 #wrap {
-	display: flex;
 	height: auto;
+	border: solid 1px #000000;
+	border: solid 1px #000000; display : flex;
 	flex-direction: column;
 	justify-content: center;
-	align-content: center;
-	border: solid 1px #000000;
-	flex-direction: column;
-	border: solid 1px #000000;
+	display: flex;
 }
 
 header {
@@ -32,7 +30,6 @@ header {
 nav {
 	width: 100%;
 	border: solid 1px #000000;
-
 }
 
 main {
@@ -45,7 +42,6 @@ footer {
 	width: 100%;
 	height: auto;
 	border: solid 1px #000000;
-
 }
 </style>
 
