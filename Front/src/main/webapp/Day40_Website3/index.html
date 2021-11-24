@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+/* 헤더 */
+header {
+	width: 100%;
+	background: #999999;
+}
+
+.box1 {
+	/* width: 1000px; */
+	width: 62.5rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100px;
+	border: 1px solid #000000;
+	align-items: center;
+	display: flex;
+	height: 100px;
+}
+
+.logo {
+	width: 20%;
+	padding-left: 1rem;
+}
+
+.menubar {
+	width: 80%;
+}
+
+.menubar ul {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.menubar ul li {
+	margin: 0 20px;
+}
+
+/* 배너 */
+.main_image {
+	width: 100%;
+}
+
+.main_image img {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+}
+
+/* 메인1 */
+.banners {
+	/* width: 1000px; */
+	width: 62.5rem;
+	margin: 0 auto;
+	border: 1px solid #000000;
+}
+
+.box2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.box2_left, .box2_right {
+	width: 50%;
+}
+
+.box2 li:nth-of-type(1) {
+	float: left;
+	width: 25%;
+	/* background: red; */
+}
+
+.box2 li img {
+	display: block;
+	margin: 0 auto;
+	height: 100px;
+}
+
+.box2 li:nth-of-type(2) {
+	width: 75%;
+	margin-left: 25%;
+	padding: 5px;
+	line-height: 30px;
+	/* background: blue; */
+}
+
+/* 메인2 */
+.box3 {
+	/* width: 1000px; */
+	width: 62.5rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	display: flex;
+	border: 1px solid #000;
+}
+
+.box3-1, .box3-2, .box3-3, .box3-4 {
+	width: 25%;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	/* background: yellow; */
+}
+
+.box3content img {
+	/* width: 200px; */
+	width: 12.5rem;
+	display: block;
+	margin: 0 auto;
+}
+
+.box3content {
+	margin: 5px;
+	line-height: 30px;
+}
+
+/* 푸터 */
+footer {
+	width: 100%;
+	height: auto;
+	background-color: rgb(41, 44, 50);
+	border: 1px solid #fff;
+}
+
+.box4 {
+	/* width: 1000px; */
+	width: 62.5rem;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.box4 ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: 100px;
+}
+
+.box4 li {
+	color: #fff;
+	display: inline-block;
+	align-self: center;
+	text-align: center;
+	line-height: 50px;
+	/* border: 1px solid #fff; */
+}
+
+.box4 li:nth-child(1) {
+	width: 30%;
+	line-height: 40px;
+}
+
+.box4 li:nth-child(1) .service {
+	font-size: 25px;
+}
+
+.box4 li:nth-child(2) {
+	width: 40%;
+	line-height: 20px;
+}
+
+.box4 li:nth-child(2) span {
+	font-size: 10px;
+}
+
+.box4 li:nth-child(3) {
+	width: 30%;
+}
+
+.box4 li img {
+	vertical-align: middle;
+	margin: 0 15px;
+}
+</style>
+
+</head>
+<body>
+	<div class="wrap">
+		<!--  레이아웃 -->
+		<header>
+			<div class="box box1">
+				<div class="logo">
+					<a href=""><img src="img/logo.JPG" alt="로고" /></a>
+
+				</div>
+				<div class="menubar">
+					<ul>
+						<li><a href="#">스튜디오 소개</a></li>
+						<li><a href="#">스튜디오 예약</a></li>
+						<li><a href="#">블로그</a></li>
+						<li><a href="#">포토 갤러리</a></li>
+						<li><a href="#">오시는 길</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<section class="main_image">
+			<img src="img/main.jpg" alt="" />
+		</section>
+
+		<section class="banners">
+			<div class="box box2">
+				<div class="box2_left">
+					<ul>
+						<li><img src="img/icon1.png" alt="" /></li>
+						<li>
+							<h4>예약안내</h4>
+							<p>스튜디오 대여는 사전에 인터넷 예약을 하셔야 합니다. 예약은 1일이전까지 가능합니다.</p>
+						</li>
+
+					</ul>
+				</div>
+				<div class="box2_right">
+					<ul>
+						<li><img src="img/icon2.png" alt="" /></li>
+						<li>
+							<h4>포토 갤러리</h4>
+							<p>취업 사진, 가족 사진, 프로필사진, 우정사진 등 개인 또는 단체가 이용할 수 있습니다.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="items">
+			<div class="box box3">
+				<div class="box3-1">
+					<div class="box3content">
+						<p>
+							<img src="img/image1.jpg" alt="" />
+						</p>
+						<h4>촬영 스튜디오</h4>
+						<p>카메라, 조명 등 촬영 장비 완비</p>
+					</div>
+				</div>
+				<div class="box3-2">
+					<div class="box3content">
+						<p>
+							<img src="img/image2.jpg" alt="" />
+						</p>
+						<h4>촬영 스튜디오</h4>
+						<p>카메라, 조명 등 촬영 장비 완비</p>
+					</div>
+				</div>
+				<div class="box3-3">
+					<div class="box3content">
+						<p>
+							<img src="img/image3.jpg" alt="" />
+						</p>
+						<h4>촬영 스튜디오</h4>
+						<p>카메라, 조명 등 촬영 장비 완비</p>
+					</div>
+				</div>
+				<div class="box3-4">
+					<div class="box3content">
+						<p>
+							<img src="img/image4.jpg" alt="" />
+						</p>
+						<h4>촬영 스튜디오</h4>
+						<p>카메라, 조명 등 촬영 장비 완비</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="box box4">
+				<ul>
+					<li>
+						<p class="service">고객센터</p>
+						<p>Tel : 1588 - 1588</p>
+					</li>
+					<li>
+						<p>
+							<span>회사소개 | 개인정처리방침 | 이용약관 | 제휴안내</span>
+						</p>
+						<p>
+							<span>주소 : 경기도 용인시 수지구 정평고 123</span><br> <span>emain
+								: photo@korea.com</span> <br /> <span>COPYRIGHTⓒ2021 The
+								스튜디오.ALL RIGHTS RESERVED.</span>
+						</p>
+					</li>
+					<li><img src="img/facebook.png" alt="" /> <img
+						src="img/blog.png" alt="" /> <img src="img/instagram.png" alt="" />
+
+					</li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+
+
+
+
+</body>
+</html>
+a
