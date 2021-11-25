@@ -34,12 +34,13 @@ nav {
 .carousel-indicators {
 	position: absolute;
 	cursor: pointer;
-	
 }
-
 
 /* 데스크탑 CSS */
 @media only screen and (min-width: 1200px) {
+	#wrap {
+		background-color: red;
+	}
 	header {
 		width: 75rem; /* 1200px */
 		height: auto;
@@ -234,6 +235,9 @@ nav {
 
 /* 테블릿 CSS */
 @media only screen and (min-width: 770px) and (max-width: 1199px) {
+	#wrap {
+		background-color: green;
+	}
 	header {
 		width: 48.125rem; /* 770px */
 		height: auto;
@@ -427,7 +431,12 @@ nav {
 }
 
 /* 핸드폰 CSS */
-@media only screen (min-width: 425px) and (max-width: 769px) {
+@media only screen and (min-width: 425px) and (max-width: 769px) {
+
+#wrap {
+		background-color: blue;
+	}
+	
 	header {
 		width: 26.5rem; /* 425px */
 		height: auto;
@@ -620,7 +629,6 @@ nav {
 	}
 }
 </style>
-
 </head>
 <body>
 	<div id="wrap">
@@ -643,9 +651,8 @@ nav {
 					<input type="text" placeholder="검색">
 				</div>
 				<div class="myinfo">
-					<span> <a href="#">
-							<img src="img/2.myinfo.JPG" alt="" />
-						</a>
+					<span> <a href="#"> <img src="img/2.myinfo.JPG" alt="" />
+					</a>
 					</span>
 				</div>
 			</div>
@@ -669,25 +676,18 @@ nav {
 					<img src="img/bn3.jpg" alt="세번째ㅣ 슬라이드" />
 				</div>
 			</div>
-
 			<!-- 버튼 -->
-
 			<div class="btn">
-				<a class="carousel-control-prev" href="#carouselcontents" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-				</a>
-				<a class="carousel-control-next" href="#carouselcontents" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
+				<a class="carousel-control-prev" href="#carouselcontents" data-slide="prev"> <span class="carousel-control-prev-icon"></span>
+				</a> <a class="carousel-control-next" href="#carouselcontents" data-slide="next"> <span class="carousel-control-next-icon"></span>
 				</a>
 			</div>
-
 			<!-- 슬라이드버튼 -->
 			<ol class="carousel-indicators">
 				<li class="active" data-target="#carouselcontents" data-slide-to="0"></li>
 				<li class="active" data-target="#carouselcontents" data-slide-to="1"></li>
 				<li class="active" data-target="#carouselcontents" data-slide-to="2"></li>
 			</ol>
-
 		</nav>
 		<article>
 			<section id="contents1">
@@ -716,7 +716,6 @@ nav {
 							<p>#기획전</p>
 							<p>H&M Happy Week 최대 40% OFF</p>
 						</div>
-
 					</div>
 					<div class="product2">
 						<p>
@@ -728,7 +727,6 @@ nav {
 							<p>15,800원</p>
 							<p>★★★★☆</p>
 						</div>
-
 					</div>
 					<div class="product3">
 						<p>
@@ -785,7 +783,6 @@ nav {
 							<p>★★★★☆</p>
 						</div>
 					</div>
-
 				</div>
 			</section>
 			<section id="contents2">
@@ -795,27 +792,23 @@ nav {
 						<p>
 							<img src="img/product9.jpg" alt="" />
 						</p>
-
 						<div class="ptxt">
 							<p>#기획전</p>
 							<p>H&M Happy Week 최대 40% OFF</p>
 							<p>15,800원</p>
 							<p>★★★★☆</p>
 						</div>
-
 					</div>
 					<div class="product9">
 						<p>
 							<img src="img/product10.jpg" alt="" />
 						</p>
-
 						<div class="ptxt">
 							<p>#기획전</p>
 							<p>H&M Happy Week 최대 40% OFF</p>
 							<p>15,800원</p>
 							<p>★★★★☆</p>
 						</div>
-
 					</div>
 					<div class="product10">
 						<p>
@@ -844,7 +837,6 @@ nav {
 		</article>
 		<footer>
 			<div class="foot1">
-
 				<ul>
 					<li>회사소개</li> |
 					<li>개인정보처리방침</li> |
@@ -855,7 +847,6 @@ nav {
 					<li>입점상담</li> |
 					<li>광고신청</li>
 				</ul>
-
 			</div>
 			<div class="foot2">
 				<div class="service">
@@ -867,9 +858,7 @@ nav {
 			</div>
 			<div class="foot3"></div>
 		</footer>
-
 	</div>
-
 	<!-- 쿼리 / 부트스트랩의 script 가져오기   -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
