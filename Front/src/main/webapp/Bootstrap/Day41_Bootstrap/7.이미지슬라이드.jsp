@@ -38,7 +38,7 @@
 			<div class="carousel-item active">
 				<img src="강아지이미지_1.jpg" alt="첫번째 슬라이드" />
 				<!--  이미지 레이블ㄴ-->
-				<div class="carousel-caption">
+				<div class="carousel-caption b">
 					<h3>강아지</h3>
 					<p>안녕하세요 웰시코기 이미지입니다.</p>
 				</div>
