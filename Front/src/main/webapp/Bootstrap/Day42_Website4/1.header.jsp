@@ -28,8 +28,8 @@
 					</div>
 					<div class="col-4 d-flex justify-content-end align-items-center">
 						<ul class="nav header-topmenu">
-							<li><a href="#" class="text-info mx-1"> 로그인 </a> |</li>
-							<li><a href="#" class="text-info mx-1"> 회원가입 </a> |</li>
+							<li><a href="6.login.jsp" class="text-info mx-1"> 로그인 </a> |</li>
+							<li><a href="5.sign.jsp" class="text-info mx-1"> 회원가입 </a> |</li>
 							<li><a href="#" class="text-info mx-1"> 나의쇼핑 </a> |</li>
 						</ul>
 					</div>

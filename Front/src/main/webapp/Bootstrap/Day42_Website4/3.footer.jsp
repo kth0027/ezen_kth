@@ -15,7 +15,7 @@
 				<!-- 그리드3 -->
 				<div class="col-md-3 mb-4 ">
 					<h3 class="text-uppercase fw-bold mb-4 text-center">
-						<i class="far fa-tshirt me-3"></i>
+						<i class="fas fa-tshirt"></i>
 						안산남자쇼핑몰
 					</h3>
 					<p class="text-center">1599-3120</p>
