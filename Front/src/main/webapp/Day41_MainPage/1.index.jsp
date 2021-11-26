@@ -131,6 +131,9 @@ nav {
 		height: 6rem;
 		border-radius: 10px;
 	}
+	.hambug {
+		display: none;
+	}
 	article {
 		
 	}
@@ -267,7 +270,7 @@ nav {
 		background: gold;
 	}
 	.headmid .logo {
-		width: 18.75rem;
+		width: 12rem;
 	}
 	.logo img {
 		display: block;
@@ -300,7 +303,7 @@ nav {
 		padding: 1px;
 	}
 	.headmid .myinfo {
-		width: 18.75rem;
+		width: 12rem;
 	}
 	.myinfo img {
 		display: block;
@@ -327,6 +330,9 @@ nav {
 		width: 20rem;
 		height: 6rem;
 		border-radius: 10px;
+	}
+	.hambug {
+		display: none;
 	}
 	article {
 		
@@ -432,11 +438,9 @@ nav {
 
 /* 핸드폰 CSS */
 @media only screen and (min-width: 425px) and (max-width: 769px) {
-
-#wrap {
+	#wrap {
 		background-color: blue;
 	}
-	
 	header {
 		width: 26.5rem; /* 425px */
 		height: auto;
@@ -462,20 +466,21 @@ nav {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-between;
 		background: gold;
 	}
 	.headmid .logo {
-		width: 18.75rem;
+		width: 5rem;
 	}
 	.logo img {
 		display: block;
+		width: 4rem;
 		margin: 0 auto;
-		height: 40px;
-		margin-top: 5px;
+		height: 20px;
+		margin-top: 15px;
 	}
 	.headmid .search {
-		width: 37.5rem;
+		width: 13rem;
 		background: yellow;
 		position: relative;
 	}
@@ -485,10 +490,8 @@ nav {
 		position: absolute;
 		transform: translate(-50%, -50%);
 		top: 50%;
-		left: 50%;
+		left: 30%;
 		/* background: red; */
-		top: 50%;
-		left: 50%;
 	}
 	.search button {
 		float: right;
@@ -499,6 +502,7 @@ nav {
 		padding: 1px;
 	}
 	.headmid .myinfo {
+		display: none;
 		width: 18.75rem;
 	}
 	.myinfo img {
@@ -529,6 +533,10 @@ nav {
 	}
 	article {
 		
+	}
+	.hambug {
+		width: 4rem;
+		border: 1px solid #000;
 	}
 	#contents1 {
 		width: 26.5rem;
@@ -646,17 +654,28 @@ nav {
 				<div class="logo">
 					<img src="img/1.logo.JPG" alt="" />
 				</div>
+
+
+
+				<!--  검색 및 마이인포-->
 				<div class="search">
 					<button type="submit">검색</button>
 					<input type="text" placeholder="검색">
 				</div>
-				<div class="myinfo">
-					<span> <a href="#"> <img src="img/2.myinfo.JPG" alt="" />
-					</a>
+				<div id="navbarcontents" class="myinfo collapse">
+					<span>
+						<a href="#">
+							<img src="img/2.myinfo.JPG" alt="" />
+						</a>
 					</span>
 				</div>
+
+				<!-- 메뉴 없어질경우 버튼 햄버그버튼-->
+				<button class="navbar-toggler hambug" type="button" data-toggle="collapse" data-target="#navbarcontents" aria-controls="navbarcontents" aria-expanded="false" aria-label="Toggle navi">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
 			</div>
-			<div class="menu"></div>
 		</header>
 		<nav class="container">
 			<div id="carouselcontents" class="carousel slide" data-ride="carousel" data-interval="3500">
@@ -678,8 +697,11 @@ nav {
 			</div>
 			<!-- 버튼 -->
 			<div class="btn">
-				<a class="carousel-control-prev" href="#carouselcontents" data-slide="prev"> <span class="carousel-control-prev-icon"></span>
-				</a> <a class="carousel-control-next" href="#carouselcontents" data-slide="next"> <span class="carousel-control-next-icon"></span>
+				<a class="carousel-control-prev" href="#carouselcontents" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#carouselcontents" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
 				</a>
 			</div>
 			<!-- 슬라이드버튼 -->
@@ -850,10 +872,20 @@ nav {
 			</div>
 			<div class="foot2">
 				<div class="service">
-					<span>(주)에스에스지닷컴</span> <span>전화문의 전 클릭</span> <span>1:1 고객센터 톡</span> <span>고객센터/전자금융거래분쟁처리</span>
+					<span>(주)에스에스지닷컴</span>
+					<span>전화문의 전 클릭</span>
+					<span>1:1 고객센터 톡</span>
+					<span>고객센터/전자금융거래분쟁처리</span>
 				</div>
 				<div class="company">
-					<span>대표자:강희석</span> <span>서울특별시 종로구 우정국로 26</span> <span>사업자등록번호: 870-88-01143 </span> <span>통신판매업 신고번호: 제2020-서울종로-1154호 </span> <br /> <span>개인정보보호책임자: 김우진</span> <span>Fax: 02-2068-7118</span> <span>ssg@ssg.com</span>
+					<span>대표자:강희석</span>
+					<span>서울특별시 종로구 우정국로 26</span>
+					<span>사업자등록번호: 870-88-01143 </span>
+					<span>통신판매업 신고번호: 제2020-서울종로-1154호 </span>
+					<br />
+					<span>개인정보보호책임자: 김우진</span>
+					<span>Fax: 02-2068-7118</span>
+					<span>ssg@ssg.com</span>
 				</div>
 			</div>
 			<div class="foot3"></div>
