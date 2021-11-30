@@ -9,9 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<!-- "C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt" -->
-
 	<%
 	// 세션 호출 
 	String loginid = (String) session.getAttribute("loginid");
@@ -20,8 +18,16 @@
 	ArrayList<Member> members = new ArrayList<>(); // 1. 회원초기화
 
 	// 2. 파일입력스트림 선언
+	// 학원
+	//FileInputStream fileInputStream = new FileInputStream(
+	//		"C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
+	
+	// 집
 	FileInputStream fileInputStream = new FileInputStream(
-			"C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
+			"C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
+	
+	
+	
 
 	byte[] bytes = new byte[1000]; // 3. 읽어올 바이트를 저장할 바이트배열
 
@@ -37,7 +43,6 @@
 		members.add(member); // 리스트에 객체 저장
 	}
 	%>
-
 	<h3>
 		<a href="main.jsp"> 페이지 구역 </a>
 	</h3>
@@ -58,6 +63,5 @@
 		<li><a href="signup.jsp">회원가입</a></li>
 		<li><a href="boardlist.jsp">게시판</a></li>
 	</ul>
-
 </body>
 </html>

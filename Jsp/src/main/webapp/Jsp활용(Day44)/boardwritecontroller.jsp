@@ -19,7 +19,11 @@
 		Board board = new Board( title , contents , (String)session.getAttribute("loginid") );
 		// 3. 파일처리
 		FileOutputStream fileOutputStream = 
-		new FileOutputStream("C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/boardlist.txt" , true );
+		// 학원
+		// new FileOutputStream("C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/boardlist.txt" , true );
+		// 집
+		new FileOutputStream("C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/boardlist.txt" , true );
+		
 		String outstring = board.getTitle()+","+board.getContents()+","+board.getWriter()+"\n";
 		fileOutputStream.write( outstring.getBytes() );
 		// 4. 성공시 
