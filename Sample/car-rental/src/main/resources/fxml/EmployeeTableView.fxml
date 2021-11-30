@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.htwsaar.prog3.carrental.controller.table.EmployeeTableViewController"
+            onKeyPressed="#handleKeyEvent"
+            stylesheets="@styles.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="%menubar.file">
+                    <MenuItem text="%menubar.file.cars" onAction="#handleCarMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.customers" onAction="#handleCustomerMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.employees" onAction="#handleEmployeeMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.rentals" onAction="#handleRentalMenuItemClicked"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="%menubar.file.close" onAction="#handleCloseMenuItemClicked"/>
+                </Menu>
+                <Menu text="%menubar.edit">
+                    <MenuItem text="%menubar.edit.new" onAction="#handleNewClicked"/>
+                    <MenuItem text="%menubar.edit.edit" onAction="#handleEditClicked"/>
+                    <MenuItem text="%menubar.edit.delete" onAction="#handleDeleteClicked"/>
+                </Menu>
+                <Menu text="%menubar.help">
+                    <MenuItem text="%menubar.help.about" onAction="#handleAboutMenuItemClicked"/>
+                </Menu>
+            </MenuBar>
+            <HBox>
+                <ComboBox fx:id="searchAttributeComboBox" promptText="%search.prompt.column"
+                          HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <ComboBox fx:id="searchOperatorComboBox" promptText="%search.prompt.operator"
+                          HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <TextField fx:id="searchValueTextField" promptText="%search.prompt.value"
+                           HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <Button text="%search.button.submit" onAction="#handleSearchButtonClicked"
+                        HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <Button text="%search.button.reset" onAction="#handleClearFilterButtonClicked"
+                        HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="entityTable">
+            <columns>
+                <TableColumn text="%employee.label.id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%employee.label.first-name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%employee.label.last-name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%employee.label.position">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="position"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem text="%menubar.edit.new" onAction="#handleNewClicked"/>
+                        <MenuItem text="%menubar.edit.edit" onAction="#handleEditClicked"/>
+                        <MenuItem text="%menubar.edit.delete" onAction="#handleDeleteClicked"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="80.0" alignment="CENTER">
+            <Button text="%button.new" onAction="#handleNewClicked" prefWidth="100.0"/>
+            <Button text="%button.edit" onAction="#handleEditClicked" prefWidth="100.0"/>
+            <Button text="%button.delete" onAction="#handleDeleteClicked" prefWidth="100.0"/>
+            <padding>
+                <Insets top="7.0" bottom="7.0"/>
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,13 @@
+
+	*module-info
+		requires 사용할 모델명
+		opens 패키지명 to 모듈명
+
+	1. Application 상속받기
+
+	2. start 메소드 오버라이딩
+
+	3. 스테이지명 정하기
+
+	4. main [ 스레드 ]
+			launch(args);

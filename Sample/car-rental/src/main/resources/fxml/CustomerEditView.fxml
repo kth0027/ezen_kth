@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.htwsaar.prog3.carrental.util.fx.IntegerField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.htwsaar.prog3.carrental.controller.edit.CustomerEditViewController"
+            onKeyPressed="#handleKeyEvent"
+            stylesheets="@styles.css">
+    <top>
+        <Label text="%customer.label.edit-title" styleClass="edit-title"/>
+    </top>
+    <center>
+        <GridPane hgap="15.0" vgap="3.0">
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints prefHeight="35.0" valignment="BASELINE"/>
+                <RowConstraints/>
+                <RowConstraints prefHeight="35.0" valignment="BASELINE"/>
+                <RowConstraints/>
+                <RowConstraints prefHeight="35.0" valignment="BASELINE"/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+            <!-- Row 1 -->
+            <Label text="%customer.label.first-name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="firstNameTextField" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label text="%customer.label.last-name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <TextField fx:id="lastNameTextField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <!-- Row 2 -->
+            <Label text="%customer.label.street" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="streetTextField" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label text="%customer.label.zipcode" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <IntegerField fx:id="zipcodeIntegerField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label text="%customer.label.city" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            <TextField fx:id="cityTextField" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+            <!-- Row 3 -->
+            <Label text="%customer.label.phone" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="phoneTextField" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <Label text="%customer.label.email" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <TextField fx:id="emailTextField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <Label text="%customer.label.date-of-birth" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+            <DatePicker fx:id="dateOfBirthDatePicker" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+            <!-- Row 4 -->
+            <Label text="%customer.label.id-number" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="idNumberTextField" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <Label text="%customer.label.driver-license-number" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <TextField fx:id="driverLicenseNumberTextField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+            <BorderPane.margin>
+                <Insets top="20.0" bottom="25.0"/>
+            </BorderPane.margin>
+        </GridPane>
+    </center>
+    <bottom>
+        <ButtonBar>
+            <buttons>
+                <Button text="%button.apply" onAction="#handleApplyButtonClicked"/>
+                <Button text="%button.cancel" onAction="#handleCancelButtonClicked"/>
+            </buttons>
+        </ButtonBar>
+    </bottom>
+    <padding>
+        <Insets top="25.0" right="30.0" bottom="30.0" left="30.0"/>
+    </padding>
+</BorderPane>

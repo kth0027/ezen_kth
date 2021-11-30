@@ -22,7 +22,7 @@
 	//FileInputStream fileInputStream = new FileInputStream(
 	//		"C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
 	
-	// 집
+	// 집컴
 	FileInputStream fileInputStream = new FileInputStream(
 			"C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
 	
