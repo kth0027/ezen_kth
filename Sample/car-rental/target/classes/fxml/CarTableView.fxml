@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.htwsaar.prog3.carrental.controller.table.CarTableViewController"
+            onKeyPressed="#handleKeyEvent"
+            stylesheets="@styles.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="%menubar.file">
+                    <MenuItem text="%menubar.file.cars" onAction="#handleCarMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.customers" onAction="#handleCustomerMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.employees" onAction="#handleEmployeeMenuItemClicked"/>
+                    <MenuItem text="%menubar.file.rentals" onAction="#handleRentalMenuItemClicked"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="%menubar.file.close" onAction="#handleCloseMenuItemClicked"/>
+                </Menu>
+                <Menu text="%menubar.edit">
+                    <MenuItem text="%menubar.edit.new" onAction="#handleNewClicked"/>
+                    <MenuItem text="%menubar.edit.edit" onAction="#handleEditClicked"/>
+                    <MenuItem text="%menubar.edit.delete" onAction="#handleDeleteClicked"/>
+                    <MenuItem text="%menubar.edit.rent" onAction="#handleRentClicked"/>
+                </Menu>
+                <Menu text="%menubar.help">
+                    <MenuItem text="%menubar.help.about" onAction="#handleAboutMenuItemClicked"/>
+                </Menu>
+            </MenuBar>
+            <HBox>
+                <ComboBox fx:id="searchAttributeComboBox" promptText="%search.prompt.column"
+                          HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <ComboBox fx:id="searchOperatorComboBox" promptText="%search.prompt.operator"
+                          HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <TextField fx:id="searchValueTextField" promptText="%search.prompt.value"
+                           HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <Button text="%search.button.submit" onAction="#handleSearchButtonClicked"
+                        HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+                <Button text="%search.button.reset" onAction="#handleClearFilterButtonClicked"
+                        HBox.hgrow="ALWAYS" prefWidth="100.0" maxWidth="Infinity"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="entityTable">
+            <columns>
+                <TableColumn text="%car.label.id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.year">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.brand">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="brand"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.model">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="model"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.type" styleClass="labelable-enum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.color" styleClass="labelable-enum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="color"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.daily-rate">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dailyRate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.doors">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="doors"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.transmission" styleClass="labelable-enum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="transmission"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.fuel" styleClass="labelable-enum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fuel"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.horsepower">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="horsepower"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.mileage">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="mileage"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.tires" styleClass="labelable-enum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="tires"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.parking-lot">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="parkingLot"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.license-number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="licenseNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.vin">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="vin"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.next-inspection">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nextInspection"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%car.label.defects">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="defects"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem text="%menubar.edit.new" onAction="#handleNewClicked"/>
+                        <MenuItem text="%menubar.edit.edit" onAction="#handleEditClicked"/>
+                        <MenuItem text="%menubar.edit.delete" onAction="#handleDeleteClicked"/>
+                        <MenuItem text="%menubar.edit.rent" onAction="#handleRentClicked"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="80.0" alignment="CENTER">
+            <Button text="%button.new" onAction="#handleNewClicked" prefWidth="100.0"/>
+            <Button text="%button.edit" onAction="#handleEditClicked" prefWidth="100.0"/>
+            <Button text="%button.delete" onAction="#handleDeleteClicked" prefWidth="100.0"/>
+            <Button text="%button.rent" onAction="#handleRentClicked" prefWidth="100.0"/>
+            <padding>
+                <Insets top="7.0" bottom="7.0"/>
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
