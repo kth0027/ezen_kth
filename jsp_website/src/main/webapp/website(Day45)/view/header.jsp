@@ -7,10 +7,9 @@
 <!-- css 로드 -->
 <%-- <link href="${pageContext.request.contextPath}/website(Day45)/css/main.css" rel="stylesheet" type="text/css"> --%>
 <link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../../css/main.css">
 
 
-<style>
-</style>
 
 
 </head>

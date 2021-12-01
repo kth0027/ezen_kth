@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>웹사이트</title>
+
+
 </head>
 <body>
 
@@ -14,7 +16,7 @@
 	<%
 		MemberDao.getmemberDao();
 	%>
-	<p> 하하하 폰트적용 </p>
+	<p>하하하 폰트적용</p>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>
