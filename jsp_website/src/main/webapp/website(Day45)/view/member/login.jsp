@@ -20,9 +20,9 @@
 		
 		<div class="row m-3">
 			<!-- 가로 박스 -->
-			<div class="col-md-6">
+			<div class="col-md-6 d-flex justify-content-center align-items-center">
 				<!-- 6:6 -->
-				<img class="rounded mx-auto d-block img-fluid z-depth-1" src="../../img/logo.jpg" style="width: 40%" alt="로고" />
+				<img src="../../img/logo.jpg" style="width: 40%" alt="로고" />
 			</div>
 			<div class="col-md-6 align-self-center">
 				<!-- 가운데 정렬 -->
