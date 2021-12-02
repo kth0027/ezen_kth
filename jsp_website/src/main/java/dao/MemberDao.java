@@ -37,7 +37,7 @@ public class MemberDao {
 	// 1. 회원가입 메소드
 	public boolean membersignup(Member member) {
 
-		String sql = "insert into member(m_id, m_password, m_name, m_birth, m_sex, m_phone, m_address) values(?,?,?,?,?,?,?)";
+		String sql = "insert into member(m_id,m_password,m_name,m_birth,m_sex,m_phone,m_address) values(?,?,?,?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, member.getM_id());
@@ -48,21 +48,27 @@ public class MemberDao {
 			ps.setString(6, member.getM_phone());
 			ps.setString(7, member.getM_address());
 			ps.executeUpdate();
+			return true;
 		} catch (Exception e) {
+			System.out.println(e);
 		}
 		return false;
 	}
-	
-	// 2. 로그인 메소드
-	public boolean memberlogin(Member member) {
-		String sql = "insert into member(m_id, m_password) valuse(? , ?)";
-		
+
+	// 2. 아이디 체크
+	public boolean idcheck(String userid) {
+
+		String sql = "select m_id from member where m_id = ?";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, member.getM_id());
-			ps.setString(1, member.getM_password());
+			ps.setString(1, userid);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				return true;
+			} // 아이디 존재함
 		} catch (Exception e) {
-			
-		} return false;
+		}
+		return false; // 아이디 존재하지 않음
 	}
+
 }

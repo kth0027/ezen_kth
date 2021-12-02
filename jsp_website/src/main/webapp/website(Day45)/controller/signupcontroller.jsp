@@ -15,6 +15,7 @@
 	</script> -->
 
 	<%
+
 	request.setCharacterEncoding("utf-8"); // 한글 인코딩
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
@@ -26,7 +27,7 @@
 	String address = request.getParameter("address1") + "," + request.getParameter("address2") + ","
 			+ request.getParameter("address3") + "," + request.getParameter("address4");
 
-	// 유효성검사
+	/* // 유효성검사
 	if (id.equals("") || password.equals("") || passwordconfirm.equals("") || password.equals("") || password.equals("")
 			|| password.equals("") || password.equals("")) {
 		out.print("<script>alert('입력이 안됌. 사람이 없습니다.');</script>");
@@ -57,16 +58,19 @@
 	} else if (request.getParameter("address4").indexOf(",") > 0) {
 		out.print("<script>alert('상세주소는 , 제외한 입력해주세요');</script>");
 		out.println("<script>location.href='../view/member/signup.jsp';</script>");
-	} else {
-		// 객체화
-		Member member = new Member(id, password, name, birth, sex, phone, address);
-		// DB처리
-		boolean result = MemberDao.getmemberDao().membersignup(member);
-		if (result) { // 회원가입 성공
-			response.sendRedirect("../view/member/signupsuccess.jsp");
-		} else { // 회원가입 실패
-			response.sendRedirect("../view/member/signup.jsp");
-		}
+	} else { 
+
+		
+	} */
+
+	// 객체화
+	Member member = new Member(id, password, name, birth, sex, phone, address);
+	// DB처리
+	boolean result = MemberDao.getmemberDao().membersignup(member);
+	if (result) { // 회원가입 성공
+		response.sendRedirect("../view/member/signupsuccess.jsp");
+	} else { // 회원가입 실패
+		response.sendRedirect("../view/member/signup.jsp");
 	}
 	%>
 </body>
