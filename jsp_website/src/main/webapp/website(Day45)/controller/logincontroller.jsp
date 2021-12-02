@@ -21,10 +21,10 @@ String password = request.getParameter("password");
 
 
 /* boolean result = MemberDao.getMemberDao().memberlogin(member); */
-boolean logincheck = false;
+/* boolean logincheck = false;
 boolean memberlogin(Member member){
 	
-}
+} */
 	
 %>
 </body>
