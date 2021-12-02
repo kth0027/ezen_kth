@@ -26,10 +26,10 @@
 		FileOutputStream fileOutputStream 
 		
 		// 학원
-		// = new FileOutputStream("C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt" , true );
+		 = new FileOutputStream("C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt" , true );
 		
 		// 집
-		= new FileOutputStream("C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt" , true );
+		//= new FileOutputStream("C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt" , true );
 		
 		
 			// 2. 출력할 문자열 

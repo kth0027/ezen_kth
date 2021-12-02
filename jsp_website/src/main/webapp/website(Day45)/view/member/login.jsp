@@ -6,6 +6,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<!-- 만약에 로그인이 되어있는경우 -->
+	<%
+		// 로그인[세션]이 되어 있는경우
+		if( session.getAttribute("loginid") != null ){
+			out.print("<script>alert('로그인이 되어있습니다.');</script>");
+			out.println("<script>location.href='../main.jsp';</script>");
+		}
+	%>
+
+
 	<%@include file="../header.jsp"%>
 	<!-- 헤더 페이지 -->
 
@@ -17,7 +28,7 @@
 			<br>
 			<p style="color: orange;">· BMW에 가입하시면 다양한 이벤트를 제공 받을수 있습니다. ·</p>
 		</div>
-		
+
 		<div class="row m-3">
 			<!-- 가로 박스 -->
 			<div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -45,6 +56,22 @@
 							<input type="password" name="password" class="form-control" maxlength="15">
 						</div>
 					</div>
+
+
+					<%
+						
+						String result = request.getParameter("result");
+						if( result != null ){
+							%>
+					<div>
+						<span>회원정보가 올바르지 않습니다.</span>
+					</div>
+					<%
+						}
+					
+					%>
+
+
 					<div>
 						<input type="submit" value="로그인" class="form-control p-3 m-3">
 					</div>

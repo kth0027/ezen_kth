@@ -15,7 +15,6 @@
 	</script> -->
 
 	<%
-
 	request.setCharacterEncoding("utf-8"); // 한글 인코딩
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");

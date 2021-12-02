@@ -7,13 +7,29 @@
 
 </head>
 <body>
+
+	<!-- 만약에 로그인이 되어있는경우 -->
+	<%
+	// 로그인[세션]이 되어 있는경우
+	if (session.getAttribute("loginid") != null) {
+		out.print("<script>alert('로그인이 되어있습니다.');</script>");
+		out.println("<script>location.href='../main.jsp';</script>");
+	}
+	%>
+
 	<!-- 헤더 페이지 -->
 	<%@ include file="../header.jsp"%>
 
 
 	<div class="container">
+		<div class="text-center">
+			<h3 style="border-bottom: solid 1px #eeeee;">로그인</h3>
+			<br>
+			<p style="color: orange;">· BMW에 가입하시면 다양한 이벤트를 제공 받을수 있습니다. ·</p>
+		</div>
+
 		<!-- 가로박스 -->
-		<div class="row">
+		<div class="row m-3">
 			<div class="col-md-6 border bg-info position-relative">
 				<img class="position-absolute top-50 start-50 translate-middle" src="../../img/logo.jpg" style="width: 100%" alt="로고" />
 			</div>
@@ -40,6 +56,7 @@
 						<div class="col-md-8">
 							<input id="password" onchange="signupcheck();" type="password" name="password" class="form-control" maxlength="15" placeholder="대소문자 조합 5~15">
 						</div>
+
 					</div>
 					<div class="row">
 						<!-- 3:8 -->
@@ -83,10 +100,7 @@
 							<label>성별</label>
 						</div>
 						<div class="col-md-8 d-flex align-items-center">
-							<input type="radio" name="sex" value="man" id="sex1" onchange="signupcheck();" class="mx-2">
-							남
-							<input type="radio" name="sex" value="woman" id="sex2" onchange="signupcheck();" class="mx-2">
-							여
+							<input type="radio" name="sex" value="man" id="sex1" onchange="signupcheck();" class="mx-2"> 남 <input type="radio" name="sex" value="woman" id="sex2" onchange="signupcheck();" class="mx-2"> 여
 						</div>
 						<div>
 							<span id="sexresult"></span>
@@ -117,8 +131,7 @@
 									<input type="text" name="address1" id="sample4_postcode" placeholder="우편번호" class="form-control">
 								</div>
 								<div class="col-md-6">
-									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control">
-									<br>
+									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control"> <br>
 								</div>
 							</div>
 							<div class="row">

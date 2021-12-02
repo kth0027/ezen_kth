@@ -19,12 +19,12 @@
 
 	// 2. 파일입력스트림 선언
 	// 학원
-	//FileInputStream fileInputStream = new FileInputStream(
-	//		"C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
+	FileInputStream fileInputStream = new FileInputStream(
+			"C:/Users/505/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
 	
 	// 집컴
-	FileInputStream fileInputStream = new FileInputStream(
-			"C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
+	//FileInputStream fileInputStream = new FileInputStream(
+		//	"C:/Users/pc/git/ezen_kth/Jsp/src/main/java/Test/memberlist.txt");
 	
 	
 	
