@@ -87,30 +87,30 @@
 									</tr>
 									<tr>
 										<td>성별</td>
-										<td><%=member.getM_sex()%></td>
+										<td id="tdsex"><%=member.getM_sex()%></td>
 										<td>
-											<button class="form-control">수정</button>
+											<button onclick="sexchange();" class="form-control">수정</button>
 										</td>
 									</tr>
 									<tr>
-										<td>생년월일</td>
-										<td><%=member.getM_brith()%></td>
+										<td >생년월일</td>
+										<td id="birth"><%=member.getM_brith()%></td>
 										<td>
-											<button class="form-control">수정</button>
+											<button onclick="birthchange();" class="form-control">수정</button>
 										</td>
 									</tr>
 									<tr>
 										<td>연락처</td>
-										<td><%=member.getM_phone()%></td>
+										<td id="tdphone"><%=member.getM_phone()%></td>
 										<td>
-											<button class="form-control">수정</button>
+											<button onclick="phonechange();" class="form-control">수정</button>
 										</td>
 									</tr>
 									<tr>
 										<td>주소</td>
-										<td><%=member.getM_address()%></td>
+										<td id="address"><%=member.getM_address()%></td>
 										<td>
-											<button class="form-control">수정</button>
+											<button onclick="addresschange();" class="form-control">수정</button>
 										</td>
 									</tr>
 									<tr>

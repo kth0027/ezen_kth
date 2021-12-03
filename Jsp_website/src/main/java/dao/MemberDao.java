@@ -90,6 +90,7 @@ public class MemberDao {
 	public boolean delete(String id, String password) {
 
 		String sql1 = "select * from member where m_id =? and m_password=?"; // 회원검사
+
 		String sql2 = "delete from member where m_id=? and m_password=?"; // 회원삭제
 		try {
 			ps = con.prepareStatement(sql1);
@@ -134,6 +135,24 @@ public class MemberDao {
 			//
 		}
 		return null;
+	}
+
+	// 회원정보 수정 메소드
+
+	public boolean update(String type, String newdata, String id) {
+
+		String sql = "update member set "+type+"=? where m_id=?";
+
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, newdata);
+			ps.setString(2, id);
+			ps.executeUpdate(); return true;
+			
+		} catch (Exception e) {
+			
+		}
+		return false;
 	}
 
 }
