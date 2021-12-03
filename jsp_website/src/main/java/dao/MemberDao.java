@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import dto.Member;
 
 public class MemberDao {
-
 	// 1. 빌드 -> 라이브러리 추가
 	// 2. 프로젝트내 WEB-INF -> lib -> 라이브러리 추가
 
@@ -22,13 +21,14 @@ public class MemberDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsp?serverTimezone=UTC", "root", "1234");
-			System.out.println("[연동 성공]");
+
 		} catch (Exception e) {
 			System.out.println("[연동 실패]");
 		}
 	}
 
 	public static MemberDao memberDao = new MemberDao(); // 3. Dao 객체 생성
+
 	public static MemberDao getmemberDao() {
 		return memberDao;
 	} // 4. Dao 객체 반환
@@ -54,7 +54,7 @@ public class MemberDao {
 		return false;
 	}
 
-	// 2. 아이디 체크
+	// 아이디 체크 메소드
 	public boolean idcheck(String userid) {
 
 		String sql = "select m_id from member where m_id = ?";
@@ -69,22 +69,71 @@ public class MemberDao {
 		}
 		return false; // 아이디 존재하지 않음
 	}
-	
+
 	// 로그인 체크 메소드
 	public boolean login(String id, String password) {
-		String sql = "select * from member where m_id = ? and m_password = ? ";
+		String sql = "select * from member where m_id =? and m_password = ? ";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, password);
 			rs = ps.executeQuery();
-			if ( rs.next() ) {
+			if (rs.next()) {
 				return true;
 			}
-					
 		} catch (Exception e) {
- 
-		} return false;
+		}
+		return false;
+	}
+
+	// 회원 탈퇴 메소드
+	public boolean delete(String id, String password) {
+
+		String sql1 = "select * from member where m_id =? and m_password=?"; // 회원검사
+		String sql2 = "delete from member where m_id=? and m_password=?"; // 회원삭제
+		try {
+			ps = con.prepareStatement(sql1);
+			ps.setString(1, id);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+
+			if (rs.next()) { // 아이디와 비밀번호가 동일한경우에 결과가 있는경우에만 회원삭제
+				PreparedStatement ps2 = con.prepareStatement(sql2);
+				ps2.setString(1, id);
+				ps2.setString(2, password);
+				ps2.executeUpdate();
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+
+	}
+
+	// 회원 개인정보 메소드
+	public Member getmember(String id) {
+
+		String sql = "select * from member where m_id = ?";
+
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+
+				// 동일한 아이디의 레코드를 비밀번호 제외한 객체화
+				Member member = new Member(rs.getInt(1), rs.getString(2), null, rs.getString(4), rs.getString(5),
+						rs.getString(6), rs.getString(7), rs.getString(8), rs.getInt(9), rs.getString(10)
+
+				);
+				return member;
+
+			}
+		} catch (Exception e) {
+			//
+		}
+		return null;
 	}
 
 }

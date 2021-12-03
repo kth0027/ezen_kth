@@ -8,12 +8,7 @@
 </head>
 <body>
 <%
-
-String logout = request.getParameter("logout");
-
-session.setAttribute("loginid", null); // 특정 세션 초기화
-
-// 페이지 전환
+session.setAttribute("loginid", null); // 로그인 세션 초기화
 response.sendRedirect("../view/main.jsp");
 %>
 </body>
