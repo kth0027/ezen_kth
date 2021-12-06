@@ -8,17 +8,21 @@
 <body>
 
 	<!-- 만약에 로그인이 되어있는경우 -->
-	<%
-		// 로그인[세션]이 되어 있는경우
-		if( session.getAttribute("loginid") != null ){
-			out.print("<script>alert('로그인이 되어있습니다.');</script>");
-			out.println("<script>location.href='../main.jsp';</script>");
-		}
-	%>
+
+
+
 
 
 	<%@include file="../header.jsp"%>
 	<!-- 헤더 페이지 -->
+
+	<%
+		// 로그인[세션]이 되어 있는경우
+		if( loginid != null ){
+			out.print("<script>alert('로그인이 되어있습니다.');</script>");
+			out.println("<script>location.href='../main.jsp';</script>");
+		}
+	%>
 
 	<div class="container bg-info">
 		<!-- 박스권  -->
@@ -59,16 +63,14 @@
 
 
 					<%
-						
-						String result = request.getParameter("result");
-						if( result != null ){
-							%>
+					String result = request.getParameter("result");
+					if (result != null) {
+					%>
 					<div>
 						<span>회원정보가 올바르지 않습니다.</span>
 					</div>
 					<%
-						}
-					
+					}
 					%>
 
 

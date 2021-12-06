@@ -1,3 +1,4 @@
+<%@page import="dto.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +9,9 @@
 </head>
 <body>
 <%
-session.setAttribute("loginid", null); // 로그인 세션 초기화
+
+session.setAttribute("login", null); // 로그인 세션 초기화
+
 response.sendRedirect("../view/main.jsp");
 %>
 </body>

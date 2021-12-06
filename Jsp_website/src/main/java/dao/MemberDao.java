@@ -141,18 +141,36 @@ public class MemberDao {
 
 	public boolean update(String type, String newdata, String id) {
 
-		String sql = "update member set "+type+"=? where m_id=?";
+		String sql = "update member set " + type + "=? where m_id=?";
 
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, newdata);
 			ps.setString(2, id);
-			ps.executeUpdate(); return true;
-			
+			ps.executeUpdate();
+			return true;
+
 		} catch (Exception e) {
-			
+
 		}
 		return false;
+	}
+
+	// 회원정보 게시판 검색 메소드
+	public int getmembernum(String id) {
+
+		String sql = "select m_num from member where m_id=?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+		}
+		return 0;
+
 	}
 
 }

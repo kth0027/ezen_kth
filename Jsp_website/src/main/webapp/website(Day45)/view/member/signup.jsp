@@ -9,16 +9,18 @@
 <body>
 
 	<!-- 만약에 로그인이 되어있는경우 -->
-	<%
-	// 로그인[세션]이 되어 있는경우
-	if (session.getAttribute("loginid") != null) {
-		out.print("<script>alert('로그인이 되어있습니다.');</script>");
-		out.println("<script>location.href='../main.jsp';</script>");
-	}
-	%>
+	
 
 	<!-- 헤더 페이지 -->
 	<%@ include file="../header.jsp"%>
+	
+		<%
+		// 로그인[세션]이 되어 있는경우
+		if( loginid != null ){
+			out.print("<script>alert('로그인이 되어있습니다.');</script>");
+			out.println("<script>location.href='../main.jsp';</script>");
+		}
+	%>
 
 
 	<div class="container">
@@ -100,7 +102,10 @@
 							<label>성별</label>
 						</div>
 						<div class="col-md-8 d-flex align-items-center">
-							<input type="radio" name="sex" value="man" id="sex1" onchange="signupcheck();" class="mx-2"> 남 <input type="radio" name="sex" value="woman" id="sex2" onchange="signupcheck();" class="mx-2"> 여
+							<input type="radio" name="sex" value="man" id="sex1" onchange="signupcheck();" class="mx-2">
+							남
+							<input type="radio" name="sex" value="woman" id="sex2" onchange="signupcheck();" class="mx-2">
+							여
 						</div>
 						<div>
 							<span id="sexresult"></span>
@@ -131,7 +136,8 @@
 									<input type="text" name="address1" id="sample4_postcode" placeholder="우편번호" class="form-control">
 								</div>
 								<div class="col-md-6">
-									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control"> <br>
+									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control">
+									<br>
 								</div>
 							</div>
 							<div class="row">
