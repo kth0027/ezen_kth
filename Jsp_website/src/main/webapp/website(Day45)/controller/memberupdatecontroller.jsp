@@ -2,14 +2,12 @@
 <%@page import="dto.Member"%>
 <%@page import="dao.MemberDao"%>
 <%
-
 //로그인 아이디 [ 세션 객체를 씀 - 어디서든 변수 호출이 가능하다 ]
 
 //String id = (String) session.getAttribute("loginid");
 
 Login Login = (Login) session.getAttribute("login");
 String id = Login.getM_id();
-
 
 //AJX로부터 요청한 변수
 String newname = request.getParameter("newname");
@@ -18,13 +16,12 @@ String newbirth = request.getParameter("newbirth");
 String newphone = request.getParameter("newphone");
 String newaddress = request.getParameter("newaddress");
 
-
 // name db 처리
 if (newname != null) {
 	if (MemberDao.getmemberDao().update("m_name", newname, id)) {
-		out.print(1);
+		out.print("1");
 	} else {
-		out.print(2);
+		out.print("0");
 	}
 }
 

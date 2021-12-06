@@ -16,6 +16,7 @@ function namechange(){
 					if (result == 1) {
 						alert("1")
 						document.getElementById("tdname").innerHTML = document.getElementById("name").value;
+						
 					} else {
 						alert("수정 오류 : 관리자에게 문의")
 					}
@@ -28,7 +29,7 @@ function namechange(){
 }
 
 /* 회원정보 수정 end */
-
+/* 
 function sexchange(){
 	alert("클릭");
 	document.getElementById("tdsex").innerHTML = "<input type='text' id='sex' class='form-control'> <button id='sexchangebtn' class='form-control'>확인</button>"
@@ -56,6 +57,7 @@ function sexchange(){
 		});
 	});
 }
+*/
 
 
 
