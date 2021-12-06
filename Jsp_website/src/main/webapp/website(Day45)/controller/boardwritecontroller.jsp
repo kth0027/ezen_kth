@@ -35,7 +35,8 @@ request.setCharacterEncoding("utf-8"); // 요청시 [ request ] 한글 인코딩
 // request > multi 전환
 String title = multi.getParameter("title");
 String contents = multi.getParameter("contents");
-String file = multi.getFilesystemName("file");
+String file = multi.getFilesystemName("file1");
+String file2 = multi.getFilesystemName("file2");
 // getFilesystemName 로 사용 시 파일명 표기가능
 
 /* String title = request.getParameter("title");
@@ -47,10 +48,10 @@ Login login = (Login) session.getAttribute("login");
 int m_num = login.getM_num();
 
 // 객체화
-Board board = new Board(title, contents, m_num, file);
+Board board = new Board(title, contents, m_num, file, file2);
 
 // DB처리
-BoardDao.gemboarddao().boardwrite( board);
+BoardDao.getboarddao().boardwrite( board);
 
 // 페이지전환
 response.sendRedirect("../view/board/boardlist.jsp");

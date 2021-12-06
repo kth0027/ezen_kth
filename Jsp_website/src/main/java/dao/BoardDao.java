@@ -34,13 +34,14 @@ public class BoardDao {
 	// 게시물 작성
 	public boolean boardwrite(Board board) {
 
-		String sql = "insert into board( b_title , b_contents , m_num , b_file) values(?,?,?,?)";
+		String sql = "insert into board( b_title , b_contents , m_num , b_file, b_file2) values(?,?,?,?, ?)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, board.getB_title());
 			ps.setString(2, board.getB_contents());
 			ps.setInt(3, board.getM_num());
 			ps.setString(4, board.getB_file());
+			ps.setString(5, board.getB_file2());
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -59,7 +60,7 @@ public class BoardDao {
 			while (rs.next()) {
 
 				Board board = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7), rs.getInt(8));
+						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9));
 				boards.add(board);
 			}
 			return boards;
@@ -77,7 +78,7 @@ public class BoardDao {
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				Board board = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7), rs.getInt(8));
+						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9));
 				return board;
 			}
 		} catch (Exception e) {

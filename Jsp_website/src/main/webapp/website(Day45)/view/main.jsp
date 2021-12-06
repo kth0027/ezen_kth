@@ -17,7 +17,7 @@
 		MemberDao.getmemberDao();
 	%> --%>
 	<!-- 캐러셀 start -->
-	<div id="carouselcontent" class="carousel slide" data-ride="carousel" data-interval="5000">
+	<div id="carouselcontent" class="carousel slide" data-ride="carousel" data-interval="5000" style="position: relative;">
 		<!-- 캐러셀 하단버튼  -->
 		<ol class="carousel-indicators" style="cursor: pointer;">
 			<li data-target="#carouselcontent" data-slide-to="0" class="active"></li>
@@ -39,11 +39,8 @@
 		</div>
 
 		<!-- 케러셀 이미지 이동 버튼 -->
-		<a class="carousel-control-prev" href="#carouselcontent" data-slide="prev" style="transform: scale(2);">
-			<span class="carousel-control-prev-icon" ></span>
-		</a>
-		<a class="carousel-control-next" href="#carouselcontent" data-slide="next" style="transform: scale(2);">
-			<span class="carousel-control-next-icon"></span>
+		<a class="carousel-control-prev" href="#carouselcontent" data-slide="prev" style="transform: scale(2); pooverflow: hidden; height: 10vh; margin-top:40vh; position: absolute;"> <span class="carousel-control-prev-icon"></span>
+		</a> <a class="carousel-control-next" href="#carouselcontent" data-slide="next" style="transform: scale(2); overflow: hidden; height: 10vh; margin-top:40vh; position: absolute; z-index: 1"> <span class="carousel-control-next-icon"></span>
 		</a>
 	</div>
 	<!-- 캐러셀 end -->

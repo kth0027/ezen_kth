@@ -16,35 +16,40 @@
 	<!-- 고객센터 -->
 	<div class="container">
 
-		<a href="boardwrite.jsp"><button>글쓰기</button></a>
 
-		<table>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>작성일</th>
-				<th>조회수</th>
-			</tr>
-			<%
-				ArrayList<Board> boards = 
-					BoardDao.getboarddao().boardlist();
-			
-				for( Board board : boards ){
-			%>
-			<tr>
-				<td><%=board.getB_num() %></td>
-				<td><a href="boardview.jsp?b_num=<%=board.getB_num()%>"><%=board.getB_title() %></a></td>
-				<!-- 게시물 상세페이지 이동 [ 클릭한 게시물 번호 요청 ] -->
-				<td><%=board.getM_num() %></td>
-				<td><%=board.getB_date() %></td>
-				<td><%=board.getB_view() %></td>
-			</tr>
+		<div class="row">
+			<table class="col-md-12 border text-center table-striped table-bordered">
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>조회수</th>
+				</tr>
+				<%
+				ArrayList<Board> boards = BoardDao.getboarddao().boardlist();
 
-			<%
+				for (Board board : boards) {
+				%>
+				<tr>
+					<td><%=board.getB_num()%></td>
+					<td><a href="boardview.jsp?b_num=<%=board.getB_num()%>"><%=board.getB_title()%></a></td>
+					<!-- 게시물 상세페이지 이동 [ 클릭한 게시물 번호 요청 ] -->
+					<td><%=board.getM_num()%></td>
+					<td><%=board.getB_date()%></td>
+					<td><%=board.getB_view()%></td>
+				</tr>
+
+				<%
 				}
-			%>
-		</table>
+				%>
+			</table>
+
+			<a class="text-center offset-4 col-md-4 my-3" href="boardwrite.jsp"><button class="btn btn-info">글쓰기</button></a>
+		</div>
+
+
+
 	</div>
 
 

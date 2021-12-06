@@ -10,6 +10,7 @@ public class Board {
 	private String b_file;
 	private int b_view;
 	private int b_activation;
+	private String b_file2;
 
 	// 빈생성자
 	public Board() {
@@ -18,7 +19,7 @@ public class Board {
 
 	// 자동생성자
 	public Board(int b_num, String b_title, String b_contents, int m_num, String b_date, String b_file, int b_view,
-			int b_activation) {
+			int b_activation, String b_file2) {
 		super();
 		this.b_num = b_num;
 		this.b_title = b_title;
@@ -28,24 +29,21 @@ public class Board {
 		this.b_file = b_file;
 		this.b_view = b_view;
 		this.b_activation = b_activation;
+		this.b_file2 = b_file2;
 	}
-	
-
 
 	// 등록 생성자
-	public Board(String b_title, String b_contents, int m_num, String b_file) {
+	public Board(String b_title, String b_contents, int m_num, String b_file, String b_file2) {
 		super();
 		this.b_title = b_title;
 		this.b_contents = b_contents;
 		this.m_num = m_num;
 		this.b_file = b_file;
+		this.b_file2 = b_file2;
 	}
 
-	
-
-
-
 	// git / set
+
 	public int getB_num() {
 		return b_num;
 	}
@@ -110,6 +108,12 @@ public class Board {
 		this.b_activation = b_activation;
 	}
 
-	
+	public String getB_file2() {
+		return b_file2;
+	}
+
+	public void setB_file2(String b_file2) {
+		this.b_file2 = b_file2;
+	}
 
 }

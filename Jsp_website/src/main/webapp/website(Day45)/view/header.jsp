@@ -38,7 +38,7 @@
 			<!-- 상단 고정 , 배경 흰색 -->
 			<div class="container border">
 				<!-- 박스권 -->
-				<div class="py-3 border ">
+				<div class="py-3 border">
 					<!-- 안쪽 여백 -->
 					<div class="row border">
 						<!-- 가로배치 -->
@@ -74,7 +74,7 @@
 				</div>
 
 				<!-- 메인 메뉴  -->
-				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white" style="z-index: 50">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_manu">
 						<span class="navbar-toggler-icon"></span>
 					</button>
