@@ -32,49 +32,48 @@
 	%>
 
 	<!-- 헤더 스타트 -->
-	<header>
 
-		<div class="bg-white border">
+		<div class="bg-white">
 			<!-- 상단 고정 , 배경 흰색 -->
-			<div class="container border">
+			<div class="container">
 				<!-- 박스권 -->
-				<div class="py-3 border">
-					<!-- 안쪽 여백 -->
-					<div class="row border">
+				<header class="py-3">
+					<!-- p : 안쪽여백  // m : 바깥여백	// y : 위아래 , x : 왼쪽오른쪽 -->
+					<div class="row">
 						<!-- 가로배치 -->
-						<div class="col-md-4 offset-4 text-center border col-sm-4">
-							<a class="header_logo" href="/jsp_website/website(Day45)/view/main.jsp">BMW MOTORS</a>
+						<div class="col-md-4 offset-4 text-center">
+							<!-- 로고[웹사이트명] -->
+							<a href="/jsp_website/website(Day45)/view/main.jsp" class="header_logo">SUPER CAR SHOP </a>
 						</div>
-
-						<div class="col-md-4 d-flex justify-content-end border">
+						<div class="col-md-4 d-flex justify-content-end">
 							<!-- 상단 메뉴 -->
 							<ul class="nav">
 								<%
-								if (loginid != null) { // 로그인이 되어있는 경우
-									if (loginid.equals("adimn")) { // 로그인 + 관리자
+								if (loginid != null) { // 로그인이 되어 있는경우 
+									if (loginid.equals("admin")) { // 로그인 되어 있으면서 관리자 이면
 								%>
-								<li><a class="header_menu" href="/jsp_website/website(Day45)/view/member/adimin.jsp">관리자</a></li>
+								<li><a href="/jsp_website/website(Day45)/view/admin/adminmain.jsp" class="header_menu"> 관리자 </a></li>
 								<%
 								}
 								%>
-								<li><span class="header_menu"><span>welcome </span><%=loginid%>님</span></li>
-								<li class="myinfo"><a class="header_menu" href="/jsp_website/website(Day45)/view/member/memberinfo.jsp">회원정보</a></li>
-								<li class="logout"><a class="header_menu" href="/jsp_website/website(Day45)/controller/logoutcontroller.jsp">로그아웃</a></li>
+								<li><span class="header_menu"> <%=loginid%>님
+								</span></li>
+								<li><a href="/jsp_website/website(Day45)/view/member/memberinfo.jsp" class="header_menu"> 회원정보 </a></li>
+								<li><a href="/jsp_website/website(Day45)/controller/logoutcontroller.jsp" class="header_menu"> 로그아웃 </a></li>
 								<%
-								} else { // 로그인이 안되어 있는 경우
+								} else { // 로그이 안되어 있는 경우
 								%>
-								<li><a class="header_menu" href="/jsp_website/website(Day45)/view/member/signup.jsp">회원가입</a></li>
-								<li><a class="header_menu" href="/jsp_website/website(Day45)/view/member/login.jsp">로그인</a></li>
+								<li><a href="/jsp_website/website(Day45)/view/member/login.jsp" class="header_menu"> 로그인 </a></li>
+								<li><a href="/jsp_website/website(Day45)/view/member/signup.jsp" class="header_menu"> 회원가입 </a></li>
 								<%
 								}
 								%>
 							</ul>
 						</div>
 					</div>
-				</div>
-
+				</header>
 				<!-- 메인 메뉴  -->
-				<nav class="navbar navbar-expand-lg navbar-light bg-white" style="z-index: 50">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_manu">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -91,11 +90,9 @@
 						</ul>
 					</div>
 				</nav>
-
 			</div>
 		</div>
 
-	</header>
 
 	<!-- 헤더 종료 -->
 

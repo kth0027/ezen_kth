@@ -71,7 +71,7 @@ public class BoardDao {
 
 	// 게시물 번호의 해당 게시물 가져오기
 	public Board getboard(int b_num) {
-		String sql = "select * from board where b_num=?";
+		String sql = "select * from board where b_num = ?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, b_num);
@@ -85,6 +85,49 @@ public class BoardDao {
 		}
 		return null;
 
+	}
+
+	// 게시물번호의 해당 게시물 가져오기
+	public boolean boardcount(int b_num) {
+		String sql = "update board set b_view = b_view+1 where b_num = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, b_num);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+		}
+		return false;
+	}
+
+	// 게시물 삭제 메소드
+	public boolean boarddelete(int b_num) {
+		String sql = "delete from board where b_num =?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, b_num);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+		}
+		return false;
+	}
+
+	// 게시물 업데이트 메소드
+	public boolean boardupdate(Board board) {
+		String sql = "update board set b_title=? , b_contents=? , b_file=? , b_file2=? " + "where b_num = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, board.getB_title());
+			ps.setString(2, board.getB_contents());
+			ps.setString(3, board.getB_file());
+			ps.setString(4, board.getB_file2());
+			ps.setInt(5, board.getB_num());
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+		}
+		return false;
 	}
 
 }

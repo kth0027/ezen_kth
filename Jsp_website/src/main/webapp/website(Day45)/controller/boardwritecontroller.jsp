@@ -18,11 +18,13 @@
 // 4. "인코딩타입"
 // 5. DefaultFileRenamePolicy() : "보안(파일명 동일 시 .1~ 임의숫자 부여)"
 
-
 // 현재 작업폴더 업로드
 /* String folderpath = "C:/Users/505/git/ezen_kth/Jsp_website/src/main/webapp/website(Day45)/upload"; */
 
-// 서버 폴더 업로드
+//* 현재 작업폴더 업로드
+//String folderpath = request.getSession().getServletContext().getRealPath("website(Day45)/upload");
+
+//* 서버 실제 경로
 String folderpath = request.getSession().getServletContext().getRealPath("website(Day45)/upload");
 
 //System.out.print( folderpath );
@@ -35,7 +37,18 @@ request.setCharacterEncoding("utf-8"); // 요청시 [ request ] 한글 인코딩
 // request > multi 전환
 String title = multi.getParameter("title");
 String contents = multi.getParameter("contents");
-String file = multi.getFilesystemName("file1");
+
+// 1. html <>   ->    문자변환 [정교 표현식x]
+// 2. \n        ->   <br> 줄바꿈 변환 
+
+// contents = contents.replace("\r\n" , "<br>");
+
+// 프론트 <> 태그 방지  ( 입력상자 사용 시 필수 )
+//contents = contents.replaceAll(" <(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\S)*(/)? ", "");
+contents = contents.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
+title = title.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\S)*(/)?", "");
+
+String file1 = multi.getFilesystemName("file1");
 String file2 = multi.getFilesystemName("file2");
 // getFilesystemName 로 사용 시 파일명 표기가능
 
@@ -48,12 +61,11 @@ Login login = (Login) session.getAttribute("login");
 int m_num = login.getM_num();
 
 // 객체화
-Board board = new Board(title, contents, m_num, file, file2);
+Board board = new Board(title, contents, m_num, file1, file2);
 
 // DB처리
-BoardDao.getboarddao().boardwrite( board);
+BoardDao.getboarddao().boardwrite(board);
 
 // 페이지전환
 response.sendRedirect("../view/board/boardlist.jsp");
-
 %>

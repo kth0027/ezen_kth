@@ -9,19 +9,27 @@
 request.setCharacterEncoding("utf-8");
 String filename1 = request.getParameter("file1");
 String filename2 = request.getParameter("file2");
-// 2. 서버내 업로드폴더에서 파일 찾기
+
+// 2. 서버내 업로드폴더에서 파일 찾기 *작업폴더 경로에서 파일 찾기 
+//String folderpath1 = request.getSession().getServletContext().getRealPath("website(Day45)/upload/" + filename1);
+//String folderpath2 = request.getSession().getServletContext().getRealPath("website(Day45)/upload/" + filename2);
+
+// 2. 서버내 업로드폴더에서 파일 찾기 *서버내 업로드폴더에서 파일 찾기
 String folderpath1 = request.getSession().getServletContext().getRealPath("website(Day45)/upload/" + filename1);
 String folderpath2 = request.getSession().getServletContext().getRealPath("website(Day45)/upload/" + filename2);
 // request.getSession().getServletContext().getRealPath() : 서버내 경로찾기
+
 // 3. 파일 객체화
 File file1 = new File(folderpath1);
 File file2 = new File(folderpath2);
+
 // 4. 다운로드 형식변경
 response.setHeader("Content-Disposition", "attachment;filename=" + filename1 + ";");
 response.setHeader("Content-Disposition", "attachment;filename=" + filename2 + ";");
 // setHeader("다운로드형식html" , 다운로드형식에 표시할 파일명 )
 // 내보내기 [ 스트림(바이트) ]
 // 2. 만약에 파일이 존재하며
+
 if (file1.isFile()) { //file.isFile() : 파일이 있는지 없는지 유무 확인
 	// 3.입력스트림 [ 파일을 바이트형으로 읽어오기 ]
 	BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(file1));
