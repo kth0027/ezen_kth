@@ -1,3 +1,4 @@
+<%@page import="dto.Reply"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.BoardDao"%>
 <%@page import="dto.Board"%>
@@ -63,47 +64,23 @@
 			<table class="table offset-1 col-md-10 table-striped">
 
 				<tr>
-					<td style="width: 20%">
-						작성자
-						<%=board.getB_writer()%>
+					<td style="width: 20%">작성자 <%=board.getB_writer()%>
 					</td>
-					<td>
-						작성일
-						<%=board.getB_date()%>
+					<td>작성일 <%=board.getB_date()%>
 					</td>
-					<td>
-						조회수
-						<%=board.getB_view()%>
+					<td>조회수 <%=board.getB_view()%>
 					</td>
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td colspan="2">
-						<%=board.getB_title()%>
-					</td>
+					<td colspan="2"><%=board.getB_title()%></td>
 				</tr>
 				<tr>
 					<td style="height: 300px;">내용</td>
-					<td colspan="2">
-						<%=board.getB_contents()%>
-					</td>
+					<td colspan="2"><%=board.getB_contents()%></td>
 				</tr>
 				<tr>
-					<td>
-						첨부파일1
-						<br>
-						다운로드
-						<br>
-						<%
-						if (board.getB_file() == null) {
-						%>
-						<%
-						} else {
-						%>
-						<a href="../../controller/filedowncontroller.jsp?file=<%=board.getB_file()%>"><%=board.getB_file()%></a>
-						<%
-						}
-						%>
+					<td>첨부파일1 <br> 다운로드 <br> <% if (board.getB_file() == null) { %> <% } else { %> <a href="../../controller/filedowncontroller.jsp?file=<%=board.getB_file()%>"> <%=board.getB_file()%></a> <% } %>
 					</td>
 					<%
 					if (board.getB_file() == null) {
@@ -113,10 +90,7 @@
 					} else {
 					%>
 					<td colspan="2" height="300px;">
-						<!-- 박스권 안에 사진 사이징 : max-width , max-height -->
-						미리보기
-						<br>
-						<img src="../../upload/<%=board.getB_file()%>" style="max-width: 20rem; max-height: 20rem">
+						<!-- 박스권 안에 사진 사이징 : max-width , max-height --> 미리보기 <br> <img src="../../upload/<%=board.getB_file()%>" style="max-width: 20rem; max-height: 20rem">
 					</td>
 					<%
 					}
@@ -125,88 +99,108 @@
 				</tr>
 
 				<tr>
-					<td>
-						첨부파일2
-						<br>
-						다운로드
-						<br>
-						<%
-						if (board.getB_file2() == null) {
-						%>
-						<%
-						} else {
-						%>
-						<a href="../../controller/filedowncontroller.jsp?file=<%=board.getB_file2()%>"><%=board.getB_file2()%></a>
-						<%
-						}
-						%>
+					<td>첨부파일2 <br> 다운로드 <br> <% if (board.getB_file2() == null) { %> <% } else { %> <a href="../../controller/filedowncontroller.jsp?file=<%=board.getB_file2()%>"> <%=board.getB_file2()%></a> <% } %>
 					</td>
 					<%
-					if (board.getB_file2() == null) {
-					%>
+                    if (board.getB_file2() == null) {
+                    %>
 					<td colspan="2" height="300px;"></td>
 					<%
-					} else {
-					%>
+                    } else {
+                    %>
 					<td colspan="2" height="300px;">
-						<!-- 박스권 안에 사진 사이징 : max-width , max-height -->
-						미리보기
-						<br>
-						<img src="../../upload/<%=board.getB_file2()%>" style="max-width: 20rem; max-height: 20rem">
+						<!-- 박스권 안에 사진 사이징 : max-width , max-height --> 미리보기 <br> <img src="../../upload/<%=board.getB_file2()%>" style="max-width: 20rem; max-height: 20rem">
 					</td>
 					<%
-					}
-					%>
+                    }
+                    %>
 
 				</tr>
 			</table>
 
-			<br>
-			<br>
+			<br> <br>
 			<hr>
-			<div class="row col-md-12 d-flex justify-content-center align-items-center">
 
-				<form action="../../controller/replywritecontroller.jsp" method="post">
-					<div class="col-md-2">
-						<h6>댓글작성</h6>
-					</div>
-					<div class="col-md-8">
-						<textarea rows="" cols="" class="form-control" name="replycontents"></textarea>
-					</div>
-					<div class="col-md-2">
-						<button class="form-control" name="replyadd">등록</button>
-					</div>
-				</form>
 
-			</div>
+			<form class="row col-md-12 d-flex justify-content-center align-items-center text-center" action="../../controller/replywritecontroller.jsp" method="post">
 
-			<form action="../../controller/replywritecontroller.jsp" method="post">
+				<!-- 댓글 저장시 : 1.댓글내용 2.댓글작성자[세션] 3.게시물번호 -->
+				<input type="hidden" name="b_num" value="<%=b_num%>">
+
+				<div class="col-md-2">
+					<h6>댓글작성</h6>
+				</div>
+				<div class="col-md-8">
+					<textarea rows="" cols="" class="form-control" name="r_contents"></textarea>
+				</div>
+				<div class="col-md-2">
+					<input type="submit" value="등록" class="form-control">
+				</div>
+			</form>
+
+			<div class="row col-md-12 d-flex justify-content-center">
 				<table class="table">
 					<tr>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>작성일</th>
+					</tr>
+
+					<% 
+                    ArrayList<Reply> replies = BoardDao.getboarddao().replylist(b_num);
+                    for( Reply reply : replies ){
+                %>
+
+					<tr>
+						<th class="col-2"><%=reply.getR_writer() %></th>
+						<th class="col-6"><%=reply.getR_contents() %></th>
+						<th class="col-2"><%=reply.getR_date() %></th>
+						<th class="col-2">
+							<!-- 삭제버튼 눌렀을때 댓글번호 이동 --> <a href="../../controller/replydeletecontroller.jsp?r_num=<%=reply.getR_num()%>&b_num=<%=b_num%>">
+								<button class="form-control">삭제</button>
+
+						</a>
+					</tr>
+					<%} %>
+				</table>
+			</div>
+
+
+
+			<%-- <form class="row col-md-12" action="../../controller/replywritecontroller.jsp" method="post">
+				<table class="table text-center border">
+
+					<tr class="">
+						<th class="" name="r_num">구분</th>
 						<th class="" name="m_id">작성자</th>
 						<th class="" name="replycontents">내용</th>
 						<th class="" name="rdate">작성일</th>
+						<th>기타</th>
 					</tr>
 					<tr>
-						<th class="" name="m_id">qweqwe</th>
-						<th class="" name="replycontents">안녕하세요~~~~~~</th>
-						<th class="" name="rdate">2021-12-07</th>
-						<th><button class="form-control" name="replydelete">삭제</button>
+					<td><%=Reply.getR_num() %></td>
+						<td class="" name="r_num">1</td>
+						<td class="" name="m_id">qweqwe</td>
+						<td class="" name="replycontents">안녕하세요~~~~~~</td>
+						<td class="" name="rdate">2021-12-07</td>
+						<td>
+							<button class="form-control" name="replydelete">삭제</button>
+						</td>
+						<td>
 					</tr>
 					<tr>
-						<th class="" name="m_id">qweqwe</th>
-						<th class="" name="replycontents">안녕하세요~~~~~~</th>
-						<th class="" name="rdate">2021-12-07</th>
-						<th><button class="form-control" name="replydelete">삭제</button>
+						<td class="" name="r_num">1</td>
+						<td class="" name="m_id">qweqwe</td>
+						<td class="" name="replycontents">안녕하세요~~~~~~</td>
+						<td class="" name="rdate">2021-12-07</td>
+						<td>
+							<button class="form-control" name="replydelete">삭제</button>
+						</td>
+						<td>
 					</tr>
-					<tr>
-						<th class="" name="m_id">qweqwe</th>
-						<th class="" name="replycontents">안녕하세요~~~~~~</th>
-						<th class="" name="rdate">2021-12-07</th>
-						<th><button class="form-control" name="replydelete">삭제</button>
-					</tr>
+
 				</table>
-			</form>
+			</form> --%>
 
 
 

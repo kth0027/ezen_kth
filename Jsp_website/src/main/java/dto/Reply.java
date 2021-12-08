@@ -21,7 +21,7 @@ public class Reply {
 
 	}
 
-	// 2 자동생성자
+	// 2 자동생성자 : 2-1. DB 꺼내올때
 	public Reply(int r_num, String r_contents, String r_date, int m_num, int b_num) {
 		super();
 		this.r_num = r_num;
@@ -50,7 +50,7 @@ public class Reply {
 
 	}
 
-	// 등록 생성자
+	// 등록 생성자 : 2-2. DB 넣을때
 	public Reply(String r_contents, int m_num, int b_num) {
 		super();
 		this.r_contents = r_contents;
@@ -97,6 +97,13 @@ public class Reply {
 
 	public void setB_num(int b_num) {
 		this.b_num = b_num;
+	}
+	
+	public String getR_writer() {
+		return r_writer;
+	}
+	public void setR_writer(String r_writer) {
+		this.r_writer = r_writer;
 	}
 
 }

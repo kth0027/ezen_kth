@@ -18,6 +18,7 @@ public class Board {
 	private String b_file2;
 	// 추가
 	private String b_writer;
+	
 
 	// 빈생성자
 	public Board() {

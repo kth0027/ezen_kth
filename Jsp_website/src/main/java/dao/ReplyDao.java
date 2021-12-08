@@ -33,14 +33,13 @@ public class ReplyDao { // C S
 	// 댓글 작성 메소드
 
 	public boolean replywrite(Reply reply) {
-		String sql = " insert into reply (r_contents, r_date, m_num, b_num) values(? , ? , ? , ? )";
+		String sql = " insert into reply (r_contents, m_num, b_num) values(? , ? , ?)";
 
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, reply.getR_contents() );
-			ps.setString(2, reply.getR_date() );
-			ps.setInt(3, reply.getM_num() );
-			ps.setInt(4, reply.getB_num() );
+			ps.setInt(2, reply.getM_num() );
+			ps.setInt(3, reply.getB_num() );
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -48,5 +47,7 @@ public class ReplyDao { // C S
 		}
 		return false;
 	}
+	
+	// 댓글 삭제 메소드
 
 } // C E
