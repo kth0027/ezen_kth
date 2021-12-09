@@ -26,23 +26,16 @@
 			<li data-target="#carouselcontent" data-slide-to="1"></li>
 			<li data-target="#carouselcontent" data-slide-to="2"></li>
 			<li data-target="#carouselcontent" data-slide-to="3"></li>
-			<li data-target="#carouselcontent" data-slide-to="4"></li>
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="../img/casper-21lc-main-update-w.jpg">
+				<img src="../img/slide1.jpg">
 			</div>
 			<div class="carousel-item">
-				<img src="../img/ioniq5_w.jpg">
+				<img src="../img/slide2.jpg">
 			</div>
 			<div class="carousel-item">
-				<img src="../img/kona-n-21lc-main-w.jpg">
-			</div>
-			<div class="carousel-item">
-				<img src="../img/avante-n-main-w.jpg">
-			</div>
-			<div class="carousel-item">
-				<img src="../img/tucson-n-line-21lc-main-w.jpg">
+				<img src="../img/slide3.jpg">
 			</div>
 		</div>
 		<!-- 케러셀 이미지 이동 버튼 -->
@@ -69,13 +62,12 @@
 	<div class="container cardbox">
 		<div class="row">
 			<%
-                ArrayList<Product> products = 
-                ProductDao.getProductDao().getproductlist();
-                for( Product product : products ){
-            %>
+			ArrayList<Product> products = ProductDao.getProductDao().getproductlist(null, null);
+			for (Product product : products) {
+			%>
 			<div class="col-md-4">
 				<div class="card">
-					<a href="product/productview.jsp?p_num=<%=product.getP_num()%>">
+					<a href="admin/productview.jsp?p_num=<%=product.getP_num()%>">
 						<img class="card-img-top pimg " src="../upload/<%=product.getP_img()%>">
 					</a>
 					<div class="card-body">
@@ -85,15 +77,16 @@
 						<hr>
 						<p class="item">
 							<%=product.getP_contents()%>
-							<br>
-							<br> <span class="price"> <%=product.getprice( )%> 원
+							<br> <br> <span class="price"> <%=product.getprice()%> 원
 							</span> <br> <span class="badge badge-pill badge-danger"> <%=product.getactive()%>
 							</span>
 						</p>
 					</div>
 				</div>
 			</div>
-			<% } %>
+			<%
+			}
+			%>
 		</div>
 	</div>
 
