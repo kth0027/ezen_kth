@@ -6,7 +6,7 @@
     int p_num = Integer.parseInt(request.getParameter("p_num"));
     
     //DB처리
-    boolean result = ProductDao.getProductDao().prodctdelete(p_num);
+    boolean result = ProductDao.getProductDao().productdelete(p_num);
     
     if (result) {
         out.print("<script>alert('제품 삭제 되었습니다.');</script>");
