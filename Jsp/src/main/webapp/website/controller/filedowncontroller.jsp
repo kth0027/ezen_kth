@@ -2,9 +2,7 @@
 <%@page import="java.io.FileInputStream"%>
 <%@page import="java.io.BufferedInputStream"%>
 <%@page import="java.io.File"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 
 	// 1. 경로에서 파일명 가져오기 [ 조건 : ../../controller/filedowncontroller.jsp?file=파일명 ]

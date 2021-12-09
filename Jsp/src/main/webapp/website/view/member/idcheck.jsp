@@ -1,6 +1,5 @@
 <%@page import="dao.MemberDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	// 1. ajax 통신된 데이터를 요청 
 	String userid = request.getParameter("userid");

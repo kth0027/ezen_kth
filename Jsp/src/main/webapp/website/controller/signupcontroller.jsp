@@ -1,7 +1,6 @@
 <%@page import="dao.MemberDao"%>
 <%@page import="dto.Member"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
 	<%
 		request.setCharacterEncoding("UTF-8");	// 한글 인코딩
 		String id = request.getParameter("id");
@@ -59,22 +56,9 @@
 			}else{	// 회원가입 실패
 				response.sendRedirect("../view/member/signup.jsp");
 			}
-		/* } */
+
 		
 		
 	%>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
