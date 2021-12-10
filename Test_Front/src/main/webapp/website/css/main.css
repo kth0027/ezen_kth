@@ -28,9 +28,6 @@ header a {
 	color: #fff;
 }
 
-
-
-
 /* 메인 */
 main .mainpage {
 	width: 1140px;
@@ -116,15 +113,42 @@ footer {
 }
 
 .signbox h6 {
-    margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .signbox span {
-	display : inline-block;
+	display: inline-block;
 	width: 100px;
 	text-align: right;
 	margin-right: 5px;
 	overflow: hidden;
 }
 
+/* boardlistpage */
+.boardlistpage {
+	width: 1140px;
+	height: 580px;
+}
 
+.buttonbox {
+	height: 30px;
+	margin-top: 20px;
+}
+
+/* boardviewpage */
+.boardwritepage {
+	width: 1140px;
+	height: 580px;
+}
+
+.formbox {
+	margin-top: 50px;
+}
+
+
+
+/* boardwritepage */
+.boardviewpage {
+	width: 1140px;
+	height: 580px;
+}
