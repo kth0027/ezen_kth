@@ -102,7 +102,9 @@
 	<script src="../../js/signupcheck.js" type="text/javascript"></script>
 	<script src="../../js/memberdelete.js" type="text/javascript"></script>
 	<script src="../../js/memberinfo.js" type="text/javascript"></script>
-	<script src="../../js/productinfo.js" type="text/javascript"></script>
+ 	<script src="../../js/productinfo.js" type="text/javascript"></script>
+ 	<script src="../../js/productchange.js" type="text/javascript"></script>
+
 
 
 	<!-- 다음 주소 api js 호출 -->
