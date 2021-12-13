@@ -48,6 +48,11 @@
     transform: scale(1.1);
 }
 
+#total{
+	font-family: 'GongGothicBold';
+	font-size: 1.5rem;
+}
+
 
 /* 대쉬보드 */
 

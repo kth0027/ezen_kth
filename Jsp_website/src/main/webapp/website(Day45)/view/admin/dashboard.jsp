@@ -70,7 +70,7 @@
 				<td><%=product.getP_stock()%></td>
 				<td><%=product.getP_date()%></td>
 				<td>
-					<a href="./" >
+					<a href="#" >
 						<button class="btn-outline-info" style="cursor: pointer;">수정</button>
 					</a>
 					<a href="../../controller/productdeletecontroller.jsp?p_num=<%=product.getP_num() %>" style="cursor: pointer;">

@@ -4,7 +4,10 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-String folderpath = "C:/Users/505/git/ezen_kth/Jsp_website/src/main/webapp/website(Day45)/upload";
+
+// String folderpath = "C:/Users/505/git/ezen_kth/Jsp_website/src/main/webapp/website(Day45)/upload"; // 학원
+String folderpath = "C:/Users/pc/git/ezen_kth/Jsp_website/src/main/webapp/website(Day45)/upload"; // 집
+
 MultipartRequest multipartRequest = new MultipartRequest(request, folderpath, 1024 * 1024 * 100, "UTF-8",
 		new DefaultFileRenamePolicy());
 

@@ -21,7 +21,6 @@ public class Product {
 		return decimalFormat.format(this.p_price);
 	}
 
-	// int > string 변환 : 상태 문자형 변환 메소드
 	public String getactive() { // 상태 문자형 변환 메소드
 		if (this.p_active == 1) {
 			return "준비중";
@@ -38,15 +37,12 @@ public class Product {
 		return null;
 	}
 
-	// 생성자
+	// 1. 빈생성자 2.풀생성자 3.등록생성자
 	public Product() {
-		// TODO Auto-generated constructor stub
 	}
 
-	// 자동생성자
 	public Product(int p_num, String p_name, int p_price, String p_category, String p_manufacturer, int p_active,
 			String p_size, int p_stock, String p_img, String p_contents, String p_date) {
-		super();
 		this.p_num = p_num;
 		this.p_name = p_name;
 		this.p_price = p_price;
@@ -60,7 +56,6 @@ public class Product {
 		this.p_date = p_date;
 	}
 
-	// pnum , pdate 제외
 	public Product(String p_name, int p_price, String p_category, String p_manufacturer, int p_active, String p_size,
 			int p_stock, String p_img, String p_contents) {
 		this.p_name = p_name;
@@ -74,7 +69,6 @@ public class Product {
 		this.p_contents = p_contents;
 	}
 
-	// get,set
 	public int getP_num() {
 		return p_num;
 	}
@@ -135,8 +129,8 @@ public class Product {
 		return p_stock;
 	}
 
-	public void setStock(int stock) {
-		this.p_stock = stock;
+	public void setP_stock(int p_stock) {
+		this.p_stock = p_stock;
 	}
 
 	public String getP_img() {
