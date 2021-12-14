@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<%@include file="부트스트랩스크립트.jsp"%>
+	<%@include file="./부트스트랩스크립트.jsp"%>
 
 	<%
 	Login login = (Login) session.getAttribute("login");
@@ -104,6 +104,7 @@
 	<script src="../../js/memberinfo.js" type="text/javascript"></script>
  	<script src="../../js/productinfo.js" type="text/javascript"></script>
  	<script src="../../js/productchange.js" type="text/javascript"></script>
+ 	<script src="../../js/productcart.js" type="text/javascript"></script>
 
 
 

@@ -35,6 +35,43 @@ function activeupdate(p_num) { // function : 함수만들기
 
 /* 제품 상태변경 end */
 
+// 장바구니
+
+function cartadd() {
+
+    // 제이쿼리를 이용한 값 가져오기
+
+    // 1. ID 이용
+    var p_num2 = $("#p_num").val();
+    alert("id속성 : " + p_num2);
+
+    // 2. CLASS 속성 이용
+    var p_num3 = $(".p_num").val();
+    alert("클래스속성 : " + p_num3);
+
+    // 3. NAME 속성 이용
+    var p_num4 = $("input[name=p_num]").val();
+    alert("name값 속성 : " + p_num4);
+
+    // 3. 클래스 이용
+    var p_num = document.getElementById(p_num).value;
+
+    // js를 이용한 값 가져오기
+
+    // 1. id 이용
+    var p_num = document.getElementById("p_num").value;
+    alert("s id 속성 : " + p_num);
+
+    // 2. class 이용
+    var p_num5 = document.getElementsByClassName("p_num")[0].value;
+    alert("s class 속성 : " + p_num5);
+
+    // 3. name 속성 이용 // class 속성 허용하기 때문에 배열이용
+    var p_num6 = document.getElementsByName("p_num")[0].value;
+    alert("s name 속성 : " + p_num6);
+
+}
+
 
 
 
