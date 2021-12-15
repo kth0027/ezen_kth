@@ -91,8 +91,11 @@
 	<script src="../../js/productchange.js" type="text/javascript"></script>
 	<script src="../../js/productcart.js" type="text/javascript"></script>
 	<script src="../../js/productcartchange.js" type="text/javascript"></script>
+	<script src="../../js/payment.js" type="text/javascript"></script>
+	<script src="../../js/membercheck.js" type="text/javascript"></script>
 	<!-- 다음 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	
 
 </body>
 </html>
