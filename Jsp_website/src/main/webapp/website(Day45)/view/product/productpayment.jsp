@@ -41,11 +41,11 @@
 				<th>수량</th>
 				<th>가격</th>
 			</tr>
-			<%
+	<%-- 		<%
 			for (Cart cart : carts) {
 				Product product = ProductDao.getProductDao().getproduct(cart.getP_num());
 				totalprice += cart.getP_count() * product.getP_price();
-			%>
+			%> --%>
 			<tr>
 				<td width="10%" class="align-middle"><img src="../../upload/<%=product.getP_img()%>" style="max-width: 100%;"></td>
 				<td width="50%">
