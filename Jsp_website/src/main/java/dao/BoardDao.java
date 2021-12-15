@@ -131,6 +131,7 @@ public class BoardDao {
 				sql = "select * from board where " + key + " like '%" + keyword + "%' order by b_num desc limit ? , ?";
 			}
 		}
+		
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, startrow);

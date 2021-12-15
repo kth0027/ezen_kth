@@ -48,7 +48,7 @@
 								if (loginid != null) { // 로그인이 되어 있는경우 
 									if (loginid.equals("admin")) { // 로그인 되어 있으면서 관리자 이면
 								%>
-							<li><a href="/jsp_website/website(Day45)/view/admin/dashboard.jsp" class="header_menu"> 관리자 </a></li>
+							<li><a href="../view/admin/dashboard.jsp" class="header_menu"> 관리자 </a></li>
 							<%
 								}
 								%>
@@ -83,6 +83,7 @@
 						<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">구매후기</a></li>
 						<li class="nav-item"><a href="/jsp_website/website(Day45)/view/board/boardlist.jsp" class="nav-link">고객센터</a></li>
+						<li class="nav-item"> <a href="/jsp_website/website(Day45)/view/product/productcart.jsp" class="nav-link">장바구니</a> </li>
 					</ul>
 				</div>
 			</nav>
@@ -105,6 +106,7 @@
  	<script src="../../js/productinfo.js" type="text/javascript"></script>
  	<script src="../../js/productchange.js" type="text/javascript"></script>
  	<script src="../../js/productcart.js" type="text/javascript"></script>
+ 	<script src="../../js/productcartchange.js" type="text/javascript"></script>
 
 
 
