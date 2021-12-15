@@ -1,8 +1,8 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="dto.Product"%>
 <%@page import="dao.ProductDao"%>
-<%@page import="dto.Cart"%>
 <%@page import="dto.Login"%>
+<%@page import="dto.Cart"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,13 +17,13 @@
 	String sname = "cart"+ login.getM_id();
 	ArrayList<Cart> carts = (ArrayList<Cart>)session.getAttribute(sname);
 	int totalprice = 0; // 총금액
-	
 	// java 천단위 쉼표 클래스
 	DecimalFormat decimalFormat = new DecimalFormat("###,###");
 	%>
 	<div class="container">
 		<h3 style="border-bottom: solid 1px #eeeee;">장바구니</h3>
-		<br> <br>
+		<br>
+		<br>
 		<table class="table">
 			<tr>
 				<th>이미지</th>
@@ -64,7 +64,7 @@
 					</div>
 					<button class="btn btn-outline-secondary" onclick="pchange2(<%=i %> ,'m' , <%=product.getP_stock()%>  , <%=product.getP_price() %> )">-</button>
 				</td>
-				<td width="15%" class="align-middle" id="total<%=i%>"><%=product.getprice() %> 원</td>
+				<td width="15%" class="align-middle" id="total<%=i%>"><%=decimalFormat.format( cart.getP_count() * product.getP_price() ) %></td>
 				<td width="5%"><button class="form-control" onclick="cartdelete('in' , '<%=cart.getP_num()%>' , '<%=cart.getP_size()%>'   )">X</button></td>
 			</tr>
 			<% i++; }} %>
@@ -79,13 +79,22 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 offset-3">
-				<button class="form-control bg-success text-white p-3">주문하기</button>
+				<a href="productpayment.jsp">
+					<button class="form-control bg-success text-white p-3">주문하기</button>
+				</a>
 			</div>
 			<div class="col-md-3">
 				<button class="form-control p-3">쇼핑하기</button>
 			</div>
 		</div>
-		<br> <br> <br> <br> <br> <br> <br> <br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
 </body>
 </html>

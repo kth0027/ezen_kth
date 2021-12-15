@@ -125,8 +125,7 @@
 				<th>조회수</th>
 			</tr>
 			<%
-			if (boards.size() == 0 ) {
-			
+			if (boards.size() == 0) {
 			%>
 			<tr>
 				<td colspan="5" class="text-center">검색 결과가 없습니다.</td>

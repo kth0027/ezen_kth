@@ -3,21 +3,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <!-- css 로드 -->
 <%-- <link href="${pageContext.request.contextPath}/website(Day45)/css/main.css" rel="stylesheet" type="text/css"> --%>
-
 <link rel="stylesheet" href="../css/main.css?v=3">
 <link rel="stylesheet" href="../../css/main.css?v=3">
-
-
 </head>
-
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
-
 	<%
 	Login login = (Login) session.getAttribute("login");
 	String loginid = null;
@@ -26,9 +20,7 @@
 		loginid = login.getM_id();
 	}
 	%>
-
 	<!-- 헤더 스타트 -->
-
 	<div class="bg-white">
 		<!-- 상단 고정 , 배경 흰색 -->
 		<div class="container">
@@ -83,36 +75,24 @@
 						<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">구매후기</a></li>
 						<li class="nav-item"><a href="/jsp_website/website(Day45)/view/board/boardlist.jsp" class="nav-link">고객센터</a></li>
-						<li class="nav-item"> <a href="/jsp_website/website(Day45)/view/product/productcart.jsp" class="nav-link">장바구니</a> </li>
+						<li class="nav-item"><a href="/jsp_website/website(Day45)/view/product/productcart.jsp" class="nav-link">장바구니</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
 	</div>
-
-
 	<!-- 헤더 종료 -->
-
-
-
-
-
-
 	<!-- 본인 js 호출 -->
 	<script src="../../js/main.js" type="text/javascript"></script>
 	<script src="../../js/signupcheck.js" type="text/javascript"></script>
 	<script src="../../js/memberdelete.js" type="text/javascript"></script>
 	<script src="../../js/memberinfo.js" type="text/javascript"></script>
- 	<script src="../../js/productinfo.js" type="text/javascript"></script>
- 	<script src="../../js/productchange.js" type="text/javascript"></script>
- 	<script src="../../js/productcart.js" type="text/javascript"></script>
- 	<script src="../../js/productcartchange.js" type="text/javascript"></script>
-
-
-
+	<script src="../../js/productinfo.js" type="text/javascript"></script>
+	<script src="../../js/productchange.js" type="text/javascript"></script>
+	<script src="../../js/productcart.js" type="text/javascript"></script>
+	<script src="../../js/productcartchange.js" type="text/javascript"></script>
 	<!-- 다음 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
 
 </body>
 </html>

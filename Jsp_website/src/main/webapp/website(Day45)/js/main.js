@@ -4,7 +4,7 @@
 function sample4_execDaumPostcode() {
 	new daum.Postcode(
 		{
-			oncomplete: function(data) {
+			oncomplete: function (data) {
 				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
 				// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
@@ -64,6 +64,38 @@ function sample4_execDaumPostcode() {
 }
 
 /* 카카오 주소 API 끝 */
+
+/* 결재 코드  */
+
+function payment() {
+
+	var IMP = window.IMP;
+	IMP.init("imp57335471"); // [본인]관리자 식별코드 
+
+	IMP.request_pay({ // param
+		pg: "html5_inicis",
+		pay_method: "card",
+		merchant_uid: "ORD20180131-0000011",
+		name: "나만의 쇼핑몰", // 결제창에 나오는 결제이름
+		amount: document.getElementById("totalprice").value * 1, // 결제금액
+		buyer_email: "gildong@gmail.com",
+		buyer_name: "홍길동",
+		buyer_tel: "010-4242-4242",
+		buyer_addr: "서울특별시 강남구 신사동",
+		buyer_postcode: "01181"
+
+	}, function (rsp) { // callback
+		if (rsp.success) {
+			// 결제 성공했을때 -> 주문 완료 페이지로 이동 
+
+		} else {
+			// 결제 실패 했을때 
+		}
+	});
+
+}
+
+/* 결재 코드 종료  */
 
 
 
