@@ -53,3 +53,13 @@ function plike(p_num, m_num) { // 비동기식 통신 함수
 }
 
 /* 찜하기 end */
+
+/* 장바구니 수량 변경  */
+function pchange2 (i, type, stock, price) {
+
+    var p_count = document.getElementById("pcount + i").value;
+    alert(p_count);
+
+}
+
+/* 장바구니 수량 변경 end  */
