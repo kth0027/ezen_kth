@@ -89,7 +89,6 @@
 	<script src="../../js/memberinfo.js" type="text/javascript"></script>
 	<script src="../../js/productinfo.js" type="text/javascript"></script>
 	<script src="../../js/productchange.js" type="text/javascript"></script>
-	<script src="../../js/productcart.js" type="text/javascript"></script>
 	<script src="../../js/productcartchange.js" type="text/javascript"></script>
 	<script src="../../js/payment.js" type="text/javascript"></script>
 	<script src="../../js/membercheck.js" type="text/javascript"></script>
