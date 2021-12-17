@@ -30,7 +30,7 @@
 			<li class="nav-item myinfo"><a href="#" class="nav-link">My info</a></li>
 			<li class="nav-item board"><a href="./board/boardlist.jsp" class="nav-link">Board</a></li>
 			<li class="nav-item"><a href="./member/signup.jsp" class="nav-link">Sign Up</a></li>
-			<li class="nav-item"><a href="./member/signup.jsp" class="nav-link">Sign In</a></li>
+			<li class="nav-item"><a href="./member/login.jsp" class="nav-link">Sign In</a></li>
 			<li class="nav-item logout"><a href="#" class="nav-link">Logout</a></li>
 		</ul>
 	</header>

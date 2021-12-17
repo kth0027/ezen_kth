@@ -8,12 +8,12 @@
 </head>
 <body>
 	<!-- 헤더 로드 -->
-	<%@include file="../header.jsp"%>
+	<%@include file="./header2.jsp"%>
 
 	<div class="container boardviewpage">
 		<div class="row offset-9 col-3">
 			<ul class="d-flex p-2">
-				<a href=""><li class="btn btn-info">목록</li></a>
+				<a href="./boardlist.jsp"><li class="btn btn-info">목록</li></a>
 				<li>|</li>
 				<a href=""><li class="btn btn-info">수정</li></a>
 				<li>|</li>
@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="row justify-content-center border">
-			<form action="" style="width: 60vw">
+			<form action="" class="" style="width: 90%">
 				<table class="table table-striped">
 					<tr>
 						<td>작성자</td>
