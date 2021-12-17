@@ -8,7 +8,8 @@
 </head>
 <body>
 	<!-- 헤더 로드 -->
-	<%@include file="./header2.jsp"%>
+		<%@include file="../header.jsp"%>
+	<%-- <%@include file="./header2.jsp"%> --%>
 
 	<div class="container boardviewpage">
 		<div class="row offset-9 col-3">

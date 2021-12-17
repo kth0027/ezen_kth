@@ -12,7 +12,8 @@
 </head>
 <body>
 	<!-- 헤더 로드 -->
-	<%@include file="./header1.jsp"%>
+	<%@include file="../header.jsp"%>
+	<%-- 	<%@include file="./header1.jsp"%> --%>
 	<!-- 회원가입페이지 스타트 -->
 	<main class="container signuppage">
 		<div class="row signbox">

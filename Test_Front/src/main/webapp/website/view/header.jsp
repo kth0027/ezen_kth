@@ -24,13 +24,13 @@
 		</div>
 		
 		<ul class="nav nav-pills col-md-10 justify-content-end">
-			<li class="nav-item"><a href="../view/main.jsp" class="nav-link active" aria-current="page">Home</a>
-			<a href="./main.jsp" class="nav-link active" aria-current="page" style="display: none;">Home</a>
+			<li class="nav-item"><a href="/Test_Front/website/view/main.jsp" class="nav-link active" aria-current="page">Home</a>
+			<a href="/Test_Front/website/view/main.jsp" class="nav-link active" aria-current="page" style="display: none;">Home</a>
 			</li>
 			<li class="nav-item myinfo"><a href="#" class="nav-link">My info</a></li>
-			<li class="nav-item board"><a href="./board/boardlist.jsp" class="nav-link">Board</a></li>
-			<li class="nav-item"><a href="./member/signup.jsp" class="nav-link">Sign Up</a></li>
-			<li class="nav-item"><a href="./member/login.jsp" class="nav-link">Sign In</a></li>
+			<li class="nav-item board"><a href="/Test_Front/website/view/board/boardlist.jsp" class="nav-link">Board</a></li>
+			<li class="nav-item"><a href="/Test_Front/website/view/member/signup.jsp" class="nav-link">Sign Up</a></li>
+			<li class="nav-item"><a href="/Test_Front/website/view/member/login.jsp" class="nav-link">Sign In</a></li>
 			<li class="nav-item logout"><a href="#" class="nav-link">Logout</a></li>
 		</ul>
 	</header>

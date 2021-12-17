@@ -7,7 +7,8 @@
 </head>
 <body>
 	<!-- 헤더 로드 -->
-	<%@include file="./header2.jsp"%>
+		<%@include file="../header.jsp"%>
+	<%-- <%@include file="./header2.jsp"%> --%>
 	<div class="container boardwritepage border">
 		<div class="row d-flex justify-content-center align-items-center">
 			<form class="formbox b" action="">

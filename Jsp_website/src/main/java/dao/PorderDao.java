@@ -48,6 +48,8 @@ public class PorderDao extends DB {
 					ps.setInt(3, cart.getP_count());
 					ps.setInt(4, 1);
 					ps.executeUpdate();
+					
+					// 3. 
 				}
 				return true;
 			}
