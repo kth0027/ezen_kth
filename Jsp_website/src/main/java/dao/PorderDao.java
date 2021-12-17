@@ -48,8 +48,13 @@ public class PorderDao extends DB {
 					ps.setInt(3, cart.getP_count());
 					ps.setInt(4, 1);
 					ps.executeUpdate();
-					
-					// 3. 
+
+					// 3. 재고 업데이트 처리 [ 주문시 주문수량 만큼 제품 재고 차감 ]
+					sql = "update product set p_stock = p_stock-? where p_num =?";
+					ps = con.prepareStatement(sql);
+					ps.setInt(1, cart.getP_count());
+					ps.setInt(2, cart.getP_num());
+					ps.executeUpdate();
 				}
 				return true;
 			}

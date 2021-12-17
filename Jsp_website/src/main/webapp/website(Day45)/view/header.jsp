@@ -1,4 +1,5 @@
 
+<%@page import="dao.ProductDao"%>
 <%@page import="dto.Login"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +13,13 @@
 </head>
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
+	
+	<% 
+		// 재고가 0일경우 제품의 상태를 품절로 변경
+		ProductDao.getProductDao().stockupdate(); 
+	%>
+	
+	
 	<%
 	Login login = (Login) session.getAttribute("login");
 	String loginid = null;

@@ -47,7 +47,7 @@
 								<%
 								for (int i = 0; i < 2; i++) {
 								%>
-								<!-- 주문2개  -->
+								<!-- 기본 주문2개  -->
 								<div class="row mt-5">
 									<div class="col-md-4 border rounded p-3 d-flex align-content-center flex-wrap">
 										<!-- 주문 정보 -->
@@ -206,41 +206,52 @@
 													</div>
 													<input type="text" id="sample4_detailAddress" name="address4" placeholder="상세주소" class="form-control">
 												</div>
-											</div>
-										<td>
-									</tr>
-									<tr>
-										<td>가입일</td>
-										<td colspan="2"><%=member.getM_sdate()%></td>
+											</div> <td></tr>
+				
+														<tr>
+										<td> 가입일 </td> <td colspan="2">  <%=member.getM_sdate()%> </td> 
 									</tr>
 								</tbody>
 							</table>
+							
 						</div>
 					</div>
+					
 					<div class="tab-pane fade" id="pills-memberwrite">
-						<h3>내가 쓴글</h3>
-						<div class="container">하하하하하하ㅏ하하하하하</div>
+						<h3> 내가 쓴글 </h3>
+						<div class="container">
+							하하하하하하ㅏ하하하하하
+						</div>
 					</div>
+					
 					<div class="tab-pane fade" id="pills-memberupdate">
-						<h3>회원 수정</h3>
-						<div class="container">하하하하하하ㅏ하하하하하</div>
+						<h3> 회원 수정 </h3>
+						<div class="container">
+							하하하하하하ㅏ하하하하하
+						</div>
 					</div>
+			
+			
 					<div class="tab-pane fade" id="pills-memberdelete">
 						<div class="container">
 							<div class="col-md-6 offset-3">
-								<h3 id="deleteresult">회원탈퇴 하시겠습니까?</h3>
+								<h3 id="deleteresult"> 회원탈퇴 하시겠습니까?</h3>
 								<form id="deleteform">
 									<br>
-									<input type="password" id="password" name="password" class="form-control" placeholder="패스워드">
+									<input type="password" id="password" name="password" class="form-control" placeholder="패스워드"> 
 									<br>
 									<input type="button" id="delete" value="탈퇴" class="form-control">
 								</form>
 							</div>
 						</div>
 					</div>
+			
 				</div>
+				
 			</div>
 		</div>
 	</div>
-	<%@include file="../footer.jsp"%></body>
+	
+	<%@include file="../footer.jsp"%>
+										</body>
 </html>
