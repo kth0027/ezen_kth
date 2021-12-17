@@ -1,0 +1,13 @@
+SQL 설치
+
+*설치 : https://dev.mysql.com/downloads/
+	1. MySQL Installer for Windows [ MYSQL 서버와 관련 소프트웨어 제공 ]
+		1. Windows (x86, 32-bit), MSI Installer     			470.0M
+			1. MySQL Server 8.0.27 x64	[ MYSQL 서버 ] 
+				port , password 기억 
+			2. MySQL Workbench 8.0.27	[ MYSQL 관리 소프트웨어 ]
+			3. Connector/J 8.0.27	[ MYSQL JAVA 연동 드라이브 ] 
+			
+	2. Connector/J [ MYSQL 과 JAVA 연결해주는 라이브러리 ]
+		1. Platform Independent (Architecture Independent), ZIP Archive	4.8M 
+ㅁ

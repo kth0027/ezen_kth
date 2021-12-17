@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style>
+#box1, #box2, #box3 { /*  복수 선택자		*/
+	width: 300px; /*  가로 길이	*/
+	border: solid 1px red; /*  테두리	*/
+	margin: 0 auto; /*  가로 바깥여백 지정	*/
+	padding: 20px; /*  안쪽 여백	*/
+}
+
+#box2 {
+	text-align: right;
+}
+
+#box3 {
+	text-align: center;
+}
+
+#box3 img {
+	width: 100px;
+	
+}
+
+div {
+	width: 100px;
+	height: 50px;
+	margin: 10px;
+	color: black;
+	text-align: center;
+}
+
+#a, #b {
+	background: green;
+}
+
+#c {
+	float: right;
+	background: blue;
+}
+
+#d {
+	float: left;
+	background: gray;
+}
+
+#f {
+float: left;
+}
+
+h3 {clear: both;} /* clear = float 제거 */
+
+</style>
+</head>
+<body>
+	<!-- ㄱ -->
+	<div id="box1">안녕하세요</div>
+
+	<div id="box2">안녕하세요2</div>
+
+	<div id="box3">
+		<img src="상품1.JPG" alt="" />
+	</div>
+
+	<div id="a">요소 A</div>
+	<div id="b">요소 B</div>
+	<div id="c">요소 C</div>
+	<div id="d">요소 D</div>
+
+	<div id="f">
+		<img src="상품1.JPG" alt="" width="100" />
+	</div>
+	<h3>파인애플</h3>
+	<p>맛있는 파인애플 입니다</p>
+
+</body>
+</html>

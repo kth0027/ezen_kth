@@ -1,0 +1,12 @@
+1. javafx 플러그인 다운로드 
+	1. 이클립스 메뉴 =>  [Help] => Eclipse Marketplace
+	2.  javafx 검색 => install[ 설치 ] => 이클립스 재시작
+
+2. javafx 프로젝트 생성 [ SE11 ] 
+3. JAVAFX SDK ( 64bit ) 다운로드
+	1. 구글 => JAVAFX SDK => JavaFX - Gluon 홈페이지
+	2. JavaFX Windows SDK => 다운로드 => 압축풀기
+4. 해당 프로젝트에 라이브러리SDK  등록 
+	1. 현재 프로젝트 오른쪽클릭
+	2. [Build Path] → [Add External Achives] => JAVAFX SDK폴더 => lib => .jar 파일 모두 추가
+

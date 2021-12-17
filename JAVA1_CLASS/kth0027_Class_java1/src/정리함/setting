@@ -1,0 +1,18 @@
+	초기셋팅
+	
+	0. 제어판 / 시스템속성 / 고급 / 환경변수 / 
+	(1) 새 시스템 변수 추가
+		JAVA_HOME 추가
+		- 변수이름 : JAVA_HOME
+		- 변수 값 : C:\Program Files\Java\jdk-11.0.11
+		
+	(2)	CLASSPATH 추가
+		- 변수이름 : CLASSPATH
+		- 변수 값 : %JAVA_HOME%\lib
+		
+	(3)	Path 내 편집 변수 추가
+		- 변수 : %JAVA_HOME%bin
+	
+	1. jdk 다운로드 (ver 11)
+	
+	2. 이클립스 다운로드 (free) // <> 인텔리제이 ( fee)
