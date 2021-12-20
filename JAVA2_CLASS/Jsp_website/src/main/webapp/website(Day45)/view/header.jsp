@@ -13,13 +13,10 @@
 </head>
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
-	
 	<% 
 		// 재고가 0일경우 제품의 상태를 품절로 변경
 		ProductDao.getProductDao().stockupdate(); 
 	%>
-	
-	
 	<%
 	Login login = (Login) session.getAttribute("login");
 	String loginid = null;
@@ -52,8 +49,9 @@
 							<%
 								}
 								%>
-							<li><span class="header_menu"> <%=loginid%>님
-							</span></li>
+							<li><span class="header_menu">
+									<%=loginid%>님
+								</span></li>
 							<li><a href="/jsp_website/website(Day45)/view/member/memberinfo.jsp" class="header_menu"> 회원정보 </a></li>
 							<li><a href="/jsp_website/website(Day45)/controller/logoutcontroller.jsp" class="header_menu"> 로그아웃 </a></li>
 							<%
@@ -104,7 +102,9 @@
 	<script src="../../js/json.js" type="text/javascript"></script>
 	<!-- 다음 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	
-
+	<!-- 결제API [ 아임포트 ] 가져오기  -->
+	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	<!--  chart Api  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </body>
 </html>
