@@ -13,6 +13,25 @@
 </head>
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
+
+	<!-- 다음 주소 api js 호출 -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<!-- 결제API [ 아임포트 ] 가져오기  -->
+	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	<!--  chart Api  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<!-- 본인 js 호출 -->
+	<script src="../../js/main.js" type="text/javascript"></script>
+	<script src="../../js/signupcheck.js" type="text/javascript"></script>
+	<script src="../../js/memberdelete.js" type="text/javascript"></script>
+	<script src="../../js/memberinfo.js" type="text/javascript"></script>
+	<script src="../../js/productinfo.js" type="text/javascript"></script>
+	<script src="../../js/productchange.js" type="text/javascript"></script>
+	<script src="../../js/productcartchange.js" type="text/javascript"></script>
+	<script src="../../js/payment.js" type="text/javascript"></script>
+	<script src="../../js/membercheck.js" type="text/javascript"></script>
+	<script src="../../js/scroll.js" type="text/javascript"></script>
+	<script src="../../js/json.js" type="text/javascript"></script>
 	<% 
 		// 재고가 0일경우 제품의 상태를 품절로 변경
 		ProductDao.getProductDao().stockupdate(); 
@@ -88,23 +107,5 @@
 		</div>
 	</div>
 	<!-- 헤더 종료 -->
-	<!-- 본인 js 호출 -->
-	<script src="../../js/main.js" type="text/javascript"></script>
-	<script src="../../js/signupcheck.js" type="text/javascript"></script>
-	<script src="../../js/memberdelete.js" type="text/javascript"></script>
-	<script src="../../js/memberinfo.js" type="text/javascript"></script>
-	<script src="../../js/productinfo.js" type="text/javascript"></script>
-	<script src="../../js/productchange.js" type="text/javascript"></script>
-	<script src="../../js/productcartchange.js" type="text/javascript"></script>
-	<script src="../../js/payment.js" type="text/javascript"></script>
-	<script src="../../js/membercheck.js" type="text/javascript"></script>
-	<script src="../../js/scroll.js" type="text/javascript"></script>
-	<script src="../../js/json.js" type="text/javascript"></script>
-	<!-- 다음 주소 api js 호출 -->
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<!-- 결제API [ 아임포트 ] 가져오기  -->
-	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-	<!--  chart Api  -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 </body>
 </html>
