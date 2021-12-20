@@ -8,7 +8,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/pc/git/ezen_kth/Jsp_website/src/main/webapp/WEB-INF/lib/cos.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pc/git/ezen_kth/Jsp_website/src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/git/jsp_project/SNS/src/main/webapp/WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/git/jsp_project/SNS/src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/git/ezen_kth/JAVA2_CLASS/Jsp_website/src/main/webapp/WEB-INF/lib/cos.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pc/git/ezen_kth/JAVA2_CLASS/Jsp_website/src/main/webapp/WEB-INF/lib/json-simple-1.1.1.zip"/>
+	<classpathentry kind="lib" path="C:/Users/pc/git/ezen_kth/JAVA2_CLASS/Jsp_website/src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.27.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

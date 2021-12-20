@@ -18,7 +18,7 @@
 
 	<%
 		// 로그인[세션]이 되어 있는경우
-		if( loginid != null ){
+		if( login != null ){
 			out.print("<script>alert('로그인이 되어있습니다.');</script>");
 			out.println("<script>location.href='../main.jsp';</script>");
 		}
