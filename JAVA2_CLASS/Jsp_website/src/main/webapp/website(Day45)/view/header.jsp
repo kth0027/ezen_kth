@@ -13,7 +13,6 @@
 </head>
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
-
 	<!-- 다음 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<!-- 결제API [ 아임포트 ] 가져오기  -->
@@ -37,15 +36,13 @@
 		ProductDao.getProductDao().stockupdate(); 
 	%>
 	<%
-	Login login = (Login) session.getAttribute("login");
-	String loginid = null;
-	// 세션이 있을경우
-	if (login != null) {
-		loginid = login.getM_id();
-	}
+		Login login = (Login)session.getAttribute("login");
+		String loginid = null; 
+		// 세션이 있을경우
+		if( login != null ) {	loginid = login.getM_id();	}
 	%>
-	<!-- 헤더 스타트 -->
-	<div class="bg-white">
+	<!-- 헤더 start -->
+	<div class="fixed-top bg-white">
 		<!-- 상단 고정 , 배경 흰색 -->
 		<div class="container">
 			<!-- 박스권 -->
@@ -61,25 +58,25 @@
 						<!-- 상단 메뉴 -->
 						<ul class="nav">
 							<%
-								if (loginid != null) { // 로그인이 되어 있는경우 
-									if (loginid.equals("admin")) { // 로그인 되어 있으면서 관리자 이면
+									if( loginid != null ){	// 로그인이 되어 있는경우 
+										if( loginid.equals("admin") ){ // 로그인 되어 있으면서 관리자 이면
 								%>
-							<li><a href="../view/admin/dashboard.jsp" class="header_menu"> 관리자 </a></li>
-							<%
-								}
+							<li><a href="/jsp_website/website(Day45)/view/admin/dashboard.jsp" class="header_menu"> 관리자 </a></li>
+							<%			
+										} 
 								%>
 							<li><span class="header_menu">
-									<%=loginid%>님
+									<%=loginid %>님
 								</span></li>
 							<li><a href="/jsp_website/website(Day45)/view/member/memberinfo.jsp" class="header_menu"> 회원정보 </a></li>
 							<li><a href="/jsp_website/website(Day45)/controller/logoutcontroller.jsp" class="header_menu"> 로그아웃 </a></li>
 							<%
-								} else { // 로그이 안되어 있는 경우
+									}else{	// 로그이 안되어 있는 경우
 								%>
 							<li><a href="/jsp_website/website(Day45)/view/member/login.jsp" class="header_menu"> 로그인 </a></li>
 							<li><a href="/jsp_website/website(Day45)/view/member/signup.jsp" class="header_menu"> 회원가입 </a></li>
-							<%
-								}
+							<% 	
+									}
 								%>
 						</ul>
 					</div>
@@ -106,6 +103,14 @@
 			</nav>
 		</div>
 	</div>
-	<!-- 헤더 종료 -->
+	<!-- 헤더 end -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
 </html>
