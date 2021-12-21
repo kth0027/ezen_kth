@@ -15,45 +15,50 @@
 <body>
 	<!-- "https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=10&serviceKey=juS3Pm2CxPvLETD1kN5hrThRunzg1fLGtOx0uOe2VpkbzV%2BRZ8UMfC2gb2Bx03%2FJMJQhIOeI4TuhTv8jyR9NCQ%3D%3D" -->
 	<%@include file="../header.jsp"%>
-	<%
-	//api 가져오기 [json 형식]
-
-	// 1. 요청 url 가져오기
-	URL url = new URL(
-			"https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=10&serviceKey=juS3Pm2CxPvLETD1kN5hrThRunzg1fLGtOx0uOe2VpkbzV%2BRZ8UMfC2gb2Bx03%2FJMJQhIOeI4TuhTv8jyR9NCQ%3D%3D");
-	
-	// 호출개수 : page="시작번호"&peppage="마지막번호"
-	// 2. 스트림 버퍼를 통한 URL 내 HTML 가져오기
-	BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-
-	// BufferReader : 외부 [이클립스의] 입출력 버퍼 [ 통신 데이터 저장소 ]
-	// InputStreamReader (스트림,  " 인코딩 타입 ") : 입출력 스트림
-	// url.openStream() : 바이트 단위로 url 내용 읽기
-
-	// 3. 읽어온 내용 문자열 담기
-	String result = bf.readLine(); // .readLine();
-	//System.out.print("url내 문서 스트림 이용한 읽어오기 [String] " + result );
-	// 3. 읽어온 내용을 json으로 파싱하기
-	JSONParser jsonParser = new JSONParser();
-	JSONObject jsonObject = (JSONObject) jsonParser.parse(result);
-
-	// 1. JSONparser json 데이터 넣어 파싱
-	//System.out.print("rul내용을 json 변한 [json] : " + jsonObject) ;
-	JSONArray jsonArray = (JSONArray) jsonObject.get("data");
-	// "Data" 라는 키 요청해서 리스트 담기
-	// System.out.println("data키를 호출해서리스트 담기 : " +  jsonArray);
-
-	for (int i = 0; i < jsonArray.size(); i++) {
-		JSONObject content = (JSONObject) jsonArray.get(i);
-		// 반목문 통한 리스트 내 i번째 호출
-		// System.out.print("content");
-	%>
-	<tr>
-		<td class="col-4"><%=content.get("facilityName")%></td>
-		<!-- json명.get("키") -->
-	</tr>
-	<%
-	}
-	%>
+	<div class="container">
+		<table class="table">
+			<%
+			// api 가져오기 [ json 형식 ]
+			// 1. 요청 URL 가져오기 		
+			URL url = new URL(
+					"https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=300&serviceKey=z427Q0DLkQqM0SDOc1Lz8jPzk%2BKj0ng%2Bvz7h3I8CpVs3T90219bWi2o%2BmStIxJW%2B9lwayA%2FsAT6apxsxuvydQg%3D%3D");
+			// 2. 스트림 버퍼를 통한 URL내 HTML 읽어오기 							// 호출 개수 : page="시작번호"&perpage="마지막번호"
+			BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+			// BufferedReader : 외부[이클립스외 ] 입출력 버퍼[ 통신 데이터 저장소 ] // InputStreamReader( 스트림 , "인코딩타입" ) : 입출력 스트림  // url.openStream() : 바이트 단위로 url 내용 읽기 
+			// 3. 읽어온 내용 문자열 담기 
+			String result = bf.readLine(); // .readLine() : 모든 문자열 읽어오기 
+			// System.out.println("url내 문서 스트림 이용한 읽어오기[ String ] : " +  result );
+			// 3. 읽어온 내용을 json으로 파싱 하기
+			JSONParser jsonParser = new JSONParser();
+			JSONObject jsonObject = (JSONObject) jsonParser.parse(result);
+			// 1.JSONparser json데이터 넣어서 파싱  // 2.jsonobject 형 변환  
+			// System.out.println("rul 내용을 json 변환[ json ] : " +  jsonObject );
+			JSONArray jsonArray = (JSONArray) jsonObject.get("data");
+			// "data" 라는 키 요청 해서 리스트 담기  
+			// System.out.println("data 키 호출 해서 리스트 담기 : " +  jsonArray );
+			for (int i = 0; i < jsonArray.size(); i++) {
+				JSONObject content = (JSONObject) jsonArray.get(i);
+				// 반복문 통한 리스트내  i번째 호출
+				// System.out.println( content );
+			%>
+			<tr>
+				<td><%=content.get("facilityName")%></td>
+				<!--  json명.get("키")  -->
+				<td><%=content.get("address")%></td>
+				<td><%=content.get("phoneNumber")%></td>
+				<td>
+					<button onclick='map(<%=i%> , <%=content.get("lat")%> , <%=content.get("lng")%>)'>지도보기</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<div id="map<%=i%>" style="width: 100%; height: 350px;"></div>
+				</td>
+			</tr>
+			<%
+			}
+			%>
+		</table>
+	</div>
 </body>
 </html>

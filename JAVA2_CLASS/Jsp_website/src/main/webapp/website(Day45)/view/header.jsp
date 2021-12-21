@@ -19,6 +19,8 @@
 	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 	<!--  chart Api  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<!--  kakao 지도 api -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2734a971dc33346252b0b3c9205dd59e"></script>
 	<!-- 본인 js 호출 -->
 	<script src="../../js/main.js" type="text/javascript"></script>
 	<script src="../../js/signupcheck.js" type="text/javascript"></script>
@@ -31,6 +33,7 @@
 	<script src="../../js/membercheck.js" type="text/javascript"></script>
 	<script src="../../js/scroll.js" type="text/javascript"></script>
 	<script src="../../js/json.js" type="text/javascript"></script>
+	<script src="../../js/maps.js" type="text/javascript"></script>
 	<% 
 		// 재고가 0일경우 제품의 상태를 품절로 변경
 		ProductDao.getProductDao().stockupdate(); 
