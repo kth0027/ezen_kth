@@ -13,6 +13,9 @@
 </head>
 <body>
 	<%@include file="./부트스트랩스크립트.jsp"%>
+	
+	<!-- jquery[ ajax 필수 ] -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<!-- 다음 주소 api js 호출 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<!-- 결제API [ 아임포트 ] 가져오기  -->
@@ -85,27 +88,27 @@
 					</div>
 				</div>
 			</header>
-			<!-- 메인 메뉴  -->
-			<nav class="navbar navbar-expand-lg navbar-light bg-white">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_manu">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="main_manu">
-					<ul class="navbar-nav col-md-12 justify-content-between">
-						<li class="nav-item"><a href="#" class="nav-link">신차</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">베스트</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">브랜드별</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">국산차</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">수입차</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">구매후기</a></li>
-						<li class="nav-item"><a href="/jsp_website/website(Day45)/view/board/boardlist.jsp" class="nav-link">고객센터</a></li>
-						<li class="nav-item"><a href="/jsp_website/website(Day45)/view/product/productcart.jsp" class="nav-link">장바구니</a></li>
-					</ul>
-				</div>
-			</nav>
+							<!-- 메인 메뉴  -->
+				<nav class="navbar navbar-expand-lg navbar-light bg-white">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_manu">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="main_manu">
+						<ul class="navbar-nav col-md-12 justify-content-between">
+							<li class="nav-item"> <a href="#" class="nav-link">신차</a> </li>
+							<li class="nav-item"> <a href="#" class="nav-link">베스트</a> </li>
+							<li class="nav-item"> <a href="#" class="nav-link">브랜드별</a> </li>
+							<li class="nav-item"> <a href="#" class="nav-link">국산차</a> </li>
+							<li class="nav-item"> <a href="#" class="nav-link">수입차</a> </li>
+							<li class="nav-item"> <a href="/jsp_website/website(Day45)/view/member/chatting.jsp" class="nav-link">실시간채팅</a> </li>
+							<li class="nav-item"> <a href="#" class="nav-link">구매후기</a> </li>
+							<li class="nav-item"> <a href="/jsp_website/website(Day45)/view/board/boardlist.jsp" class="nav-link">고객센터</a> </li>	
+							<li class="nav-item"> <a href="/jsp_website/website(Day45)/view/product/productcart.jsp" class="nav-link">장바구니</a> </li>				
+						</ul>
+					</div>
+				</nav>
+			</div>
 		</div>
-	</div>
 	<!-- 헤더 end -->
 	<br>
 	<br>

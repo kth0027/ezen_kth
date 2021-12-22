@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<!-- 부트스트랩 가져오기 css -->
+<!-- 부트스트랩 4.0 가져오기 css -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!--  직접 작성한 css 가져오기 -->
 <link href="css/0.index.css" rel="stylesheet">
