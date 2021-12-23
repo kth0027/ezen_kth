@@ -5,7 +5,8 @@
 <%@page import="dao.BoardDao"%>
 <%@page import="dto.Board"%>
 <%@page import="dto.Login"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 
 // 서버로 파일 업로드 
@@ -43,3 +44,13 @@
 	response.sendRedirect("../view/board/boardlist.jsp");
 	
 %>
+
+
+
+
+
+
+
+
+
+

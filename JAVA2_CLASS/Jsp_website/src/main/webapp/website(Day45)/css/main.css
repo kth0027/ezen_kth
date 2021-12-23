@@ -117,4 +117,15 @@
 	border-radius: 30px;	/* 모서리 곡선 */
 	overflow: auto;	
 }
+.profile{
+	font-family: 'GongGothicBold';
+	font-size: 0.8rem;
+}
+
+.roomstart{
+	font-family: 'GongGothicBold';
+	font-size: 0.8rem;
+	background-color: #eeeeee;
+	
+}
 

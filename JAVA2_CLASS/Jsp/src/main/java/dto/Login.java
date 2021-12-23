@@ -1,10 +1,10 @@
 package dto;
 
 public class Login {
-
+	
 	private int m_num;
 	private String m_id;
-
+	
 	public Login(int m_num, String m_id) {
 		this.m_num = m_num;
 		this.m_id = m_id;
