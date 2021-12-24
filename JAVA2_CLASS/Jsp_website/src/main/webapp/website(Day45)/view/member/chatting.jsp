@@ -65,7 +65,7 @@
 						roomnum = num; // 방번호 인수를 방번호 변수에 저장 
 				document.getElementById("chattingdiv").value = num; // 방번호 저장
 				// 4. 접속객체 	 [ 웹소켓 메모리 할당[서버소켓과 연결] ] 	// var webSocket = new WebSocket("ws://ip:http port번호/프로젝트명/경로");
-				webSocket = new WebSocket("ws://localhost:8090/jsp_website/chatting/"+ roomnum);
+				webSocket = new WebSocket("ws://localhost:8080/jsp_website/chatting/"+ roomnum);
 				// 5. 웹소켓 이벤트 [ 인수에 현재 세션 정보 WsSession@9d4f4b0 ]
 				webSocket.onopen = function(event) {
 					onOpen(event)
