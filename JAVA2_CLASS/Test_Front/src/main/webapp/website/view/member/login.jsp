@@ -24,12 +24,12 @@
 				<h6 class="text-center mt-3">sign in</h6>
 				<form action="" class="text-center">
 					<p>
-						<span>아이디</span> <input type="text" placeholder="아이디는 소문자+숫자 조합 5~15자리
+						<span>아이디</span> <input type="text" placeholder="아이디는 소문자+숫자 조합 최디 10자리
 				
 				" />
 					</p>
 					<p>
-						<span>비밀번호</span> <input type="text" placeholder="아이디는 소문자+숫자 조합 5~15자리
+						<span>비밀번호</span> <input type="text" placeholder="대소문자 조합 최대10자리
                 
                 " />
 					</p>
