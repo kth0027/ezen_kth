@@ -2,14 +2,14 @@ package dto;
 
 public class Member {
 // 필드생성
-	private int m_num;
-	private String m_id;
-	private String m_password;
-	private String m_name;
-	private String m_email;
-	private String m_address;
-	private String m_phone;
-	private String m_sdate;
+	private int test_num;
+	private String test_id;
+	private String test_password;
+	private String test_name;
+	private String test_email;
+	private String test_address;
+	private String test_phone;
+	private String test_sdate;
 
 // 빈생성자
 	public Member() {
@@ -17,92 +17,103 @@ public class Member {
 	}
 
 	// 자동생성자
-	public Member(int m_num, String m_id, String m_password, String m_name, String m_email, String m_address,
-			String m_phone, String m_sdate) {
+	public Member(int test_num, String test_id, String test_password, String test_name, String test_email, String test_address,
+			String test_phone, String test_sdate) {
 		super();
-		this.m_num = m_num;
-		this.m_id = m_id;
-		this.m_password = m_password;
-		this.m_name = m_name;
-		this.m_email = m_email;
-		this.m_address = m_address;
-		this.m_phone = m_phone;
-		this.m_sdate = m_sdate;
+		this.test_num = test_num;
+		this.test_id = test_id;
+		this.test_password = test_password;
+		this.test_name = test_name;
+		this.test_email = test_email;
+		this.test_address = test_address;
+		this.test_phone = test_phone;
+		this.test_sdate = test_sdate;
 	}
 
 	// 회원가입 생성자
-	public Member(String m_id, String m_password, String m_name, String m_email, String m_address, String m_phone) {
-		this.m_id = m_id;
-		this.m_password = m_password;
-		this.m_name = m_name;
-		this.m_email = m_email;
-		this.m_address = m_address;
-		this.m_phone = m_phone;
+	
+	public Member(String test_id, String test_password, String test_name, String test_email, String test_address,
+			String test_phone) {
+		super();
+		this.test_id = test_id;
+		this.test_password = test_password;
+		this.test_name = test_name;
+		this.test_email = test_email;
+		this.test_address = test_address;
+		this.test_phone = test_phone;
 	}
 
 	// get / set 생성자
-	public int getM_num() {
-		return m_num;
+	public int gettest_num() {
+		return test_num;
 	}
 
-	public void setM_num(int m_num) {
-		this.m_num = m_num;
+
+
+	public int getTest_num() {
+		return test_num;
 	}
 
-	public String getM_id() {
-		return m_id;
+	public void setTest_num(int test_num) {
+		this.test_num = test_num;
 	}
 
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
+	public String getTest_id() {
+		return test_id;
 	}
 
-	public String getM_password() {
-		return m_password;
+	public void setTest_id(String test_id) {
+		this.test_id = test_id;
 	}
 
-	public void setM_password(String m_password) {
-		this.m_password = m_password;
+	public String getTest_password() {
+		return test_password;
 	}
 
-	public String getM_name() {
-		return m_name;
+	public void setTest_password(String test_password) {
+		this.test_password = test_password;
 	}
 
-	public void setM_name(String m_name) {
-		this.m_name = m_name;
+	public String getTest_name() {
+		return test_name;
 	}
 
-	public String getM_email() {
-		return m_email;
+	public void setTest_name(String test_name) {
+		this.test_name = test_name;
 	}
 
-	public void setM_email(String m_email) {
-		this.m_email = m_email;
+	public String getTest_email() {
+		return test_email;
 	}
 
-	public String getM_address() {
-		return m_address;
+	public void setTest_email(String test_email) {
+		this.test_email = test_email;
 	}
 
-	public void setM_address(String m_address) {
-		this.m_address = m_address;
+	public String getTest_address() {
+		return test_address;
 	}
 
-	public String getM_phone() {
-		return m_phone;
+	public void setTest_address(String test_address) {
+		this.test_address = test_address;
 	}
 
-	public void setM_phone(String m_phone) {
-		this.m_phone = m_phone;
+	public String getTest_phone() {
+		return test_phone;
 	}
 
-	public String getM_sdate() {
-		return m_sdate;
+	public void setTest_phone(String test_phone) {
+		this.test_phone = test_phone;
 	}
 
-	public void setM_sdate(String m_sdate) {
-		this.m_sdate = m_sdate;
+	public String getTest_sdate() {
+		return test_sdate;
 	}
+
+	public void setTest_sdate(String test_sdate) {
+		this.test_sdate = test_sdate;
+	}
+
+	
 
 }

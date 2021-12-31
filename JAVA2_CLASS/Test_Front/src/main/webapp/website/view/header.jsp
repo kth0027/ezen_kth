@@ -20,7 +20,7 @@
 	String loginid = null;
 	// 세션이 있을경우
 	if (login != null) {
-		loginid = login.getM_id();
+		loginid = login.gettest_id();
 	}
 	%>
 	<!-- header start -->

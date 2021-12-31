@@ -17,33 +17,32 @@ public class MemberDao {
 	public MemberDao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?serverTimezone=UTC", "root", "1234");
-																			
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testmember?serverTimezone=UTC", "root", "1234");
 
 		} catch (Exception e) {
 			System.out.println("[연동 실패]");
 		}
 	}
 
-	public static MemberDao memberDao = new MemberDao(); // Dao 객체 생성
+	public static MemberDao memberDao = new MemberDao(); 
 
 	public static MemberDao getmemberDao() {
 		return memberDao;
-	} // Dao 객체 반환
+	} //
+
 
 	// 1. 회원가입 메소드
 	public boolean membersignup(Member member) {
-		
-		String sql = "insert into member(m_id,m_password,m_name,m_email,m_address, m_phone) values(?,?,?,?,?,?)";
+
+		String sql = "insert into member (test_id, test_password, test_name, test_email, test_address, test_phone) values (?, ?, ?, ?, ?, ?)";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, member.getM_id());
-			ps.setString(2, member.getM_password());
-			ps.setString(3, member.getM_name());
-			ps.setString(4, member.getM_email());
-			ps.setString(5, member.getM_address());
-			ps.setString(6, member.getM_phone());
-
+			ps.setString(1, member.getTest_id());
+			ps.setString(2, member.getTest_password());
+			ps.setString(3, member.getTest_name());
+			ps.setString(4, member.getTest_email());
+			ps.setString(5, member.getTest_address());
+			ps.setString(6, member.getTest_phone());
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -55,7 +54,7 @@ public class MemberDao {
 	// 아이디 체크 메소드
 	public boolean idcheck(String userid) {
 
-		String sql = "select m_id from member where m_id = ?";
+		String sql = "select test_id from member where test_id = ?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, userid);
@@ -70,7 +69,7 @@ public class MemberDao {
 
 	// 로그인 체크 메소드
 	public boolean login(String id, String password) {
-		String sql = "select * from member where m_id =? and m_password = ? ";
+		String sql = "select * from member where test_id =? and test_password = ? ";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
@@ -87,7 +86,7 @@ public class MemberDao {
 	// 회원번호 검색 메소드
 	public int getmembernum(String id) {
 
-		String sql = "select m_num from member where m_id=?";
+		String sql = "select test_num from member where test_id=?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
@@ -99,8 +98,5 @@ public class MemberDao {
 		}
 		return 0;
 	}
-	
-
-
 
 }
